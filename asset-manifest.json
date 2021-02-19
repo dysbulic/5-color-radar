@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/5-color-radar/static/css/main.4d881159.chunk.css",
-    "main.js": "/5-color-radar/static/js/main.ebcedd2a.chunk.js",
-    "main.js.map": "/5-color-radar/static/js/main.ebcedd2a.chunk.js.map",
+    "main.css": "/5-color-radar/static/css/main.82314717.chunk.css",
+    "main.js": "/5-color-radar/static/js/main.82b9c98a.chunk.js",
+    "main.js.map": "/5-color-radar/static/js/main.82b9c98a.chunk.js.map",
     "runtime-main.js": "/5-color-radar/static/js/runtime-main.8edda556.js",
     "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.8edda556.js.map",
     "static/js/2.0fa3c9bb.chunk.js": "/5-color-radar/static/js/2.0fa3c9bb.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f263e69d.chunk.js": "/5-color-radar/static/js/3.f263e69d.chunk.js",
     "static/js/3.f263e69d.chunk.js.map": "/5-color-radar/static/js/3.f263e69d.chunk.js.map",
     "index.html": "/5-color-radar/index.html",
-    "static/css/main.4d881159.chunk.css.map": "/5-color-radar/static/css/main.4d881159.chunk.css.map",
+    "static/css/main.82314717.chunk.css.map": "/5-color-radar/static/css/main.82314717.chunk.css.map",
     "static/js/2.0fa3c9bb.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.0fa3c9bb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8edda556.js",
     "static/js/2.0fa3c9bb.chunk.js",
-    "static/css/main.4d881159.chunk.css",
-    "static/js/main.ebcedd2a.chunk.js"
+    "static/css/main.82314717.chunk.css",
+    "static/js/main.82b9c98a.chunk.js"
   ]
 }
