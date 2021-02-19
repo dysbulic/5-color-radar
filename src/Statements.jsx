@@ -53,9 +53,14 @@ export default () => {
   const load = async () => {
     const res = await fetch(source)
     const statements = yaml.load(await res.text())
+    console.info(answers)
     answers.split('').forEach((char, idx) => {
       statements[idx].response = storageMap[parseInt(char, 36)]
     })
+    setIndex(Math.min(
+      /6/.test(answers) ? answers.indexOf('6') : statements.length, // '6' === undefined
+      statements.length
+    ))
     setStatements(statements)
     const maxes = new Proxy({}, defZero)
     statements.forEach((s) => {
@@ -182,6 +187,7 @@ export default () => {
               onClick={() => setIndex(index - 1)}
             >Back</Button>
             <Button
+              index={index}
               isDisabled={index >= statements.length}
               colorScheme='purple'
               rightIcon={<ArrowForwardIcon/>}
