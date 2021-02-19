@@ -1,9 +1,29 @@
 svg {
   max-height: calc(100vh - 17rem);
+  margin-top: 0;
+  transition: max-height 0.5s;
+
+  .imageOnly & {
+    max-height: calc(100vh - 3rem);
+  }
+}
+
+#statements {
+  overflow: hidden;
+  transition: max-height 0.5s;
+  max-height: 13rem;
+
+  .imageOnly & {
+    max-height: 0;
+  }
 }
 
 nav {
   margin-bottom: 1rem;
+
+  .imageOnly & {
+    margin-bottom: 0.25rem;
+  }
 
   span {
     height: 0.5rem;
@@ -170,11 +190,16 @@ nav {
   }
 }
 
-html body hr {
+#qVis {
   width: 50%;
   border: 2px solid black;
-  margin: 1rem auto;
+  margin: 1.5rem auto 0rem auto;
   margin-inline-start: auto ! important;
+  height: 1rem;
+
+  .imageOnly & {
+    margin: 0rem auto;
+  }
 }
 
 button[data-active] {

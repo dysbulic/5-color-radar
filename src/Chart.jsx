@@ -61,7 +61,9 @@ export default ({ colors, attrs, scores }) => {
                       mask='url("#outside")'
                       fill='none' stroke='black'
                       strokeWidth={incr / 2}
-                    />
+                    >
+                      <title>{attrs[p.key]}</title>
+                    </circle>
                   </g>
                 ))}
               </>
@@ -81,11 +83,11 @@ export default ({ colors, attrs, scores }) => {
                         <use id='outmask' href='#outer'/>
                       </mask>
                     </defs>
-                    <use href='#outer' className='container'/>
+                    <use href='#outer' className='ring'/>
                   </>
                 ) : (
                   <polygon
-                    className='container'
+                    className='ring '
                     points={points.map(p => `${p.x},${p.y}`).join(' ')}
                   />
                 )

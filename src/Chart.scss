@@ -1,9 +1,13 @@
-.container {
+.ring {
   fill: none;
   stroke: black;
   stroke-opacity: 0.25;
   stroke-width: 0.25;
   stroke-dasharray: 0.75, 0.75;
+
+  &:hover {
+    fill: yellow;
+  }
 }
 
 #web {
