@@ -1,0 +1,191 @@
+svg {
+  max-height: calc(100vh - 17rem);
+}
+
+nav {
+  margin-bottom: 1rem;
+
+  span {
+    height: 0.5rem;
+    border: 1px solid gray;
+    flex-grow: 1;
+  }
+
+  $blueAgree: WU, BU, RU, GU;
+  $blueDisagree: UW, UB, UR, UG;
+
+  @each $blue in $blueAgree {
+    .#{$blue}.res1, .#{$blue}.res2 {
+      background-color: blue;
+    }
+  }
+  @each $blue in $blueDisagree {
+    .#{$blue}.res-2, .#{$blue}.res-1 {
+      background-color: blue;
+    }
+  }
+
+  $whiteAgree: UW, BW, RW, GW;
+  $whiteDisagree: WU, WB, WR, WG;
+
+  @each $white in $whiteAgree {
+    .#{$white}.res1, .#{$white}.res2 {
+      background-color: rgb(230, 226, 221);
+    }
+  }
+  @each $white in $whiteDisagree {
+    .#{$white}.res-2, .#{$white}.res-1 {
+      background-color: rgb(230, 226, 221);
+    }
+  }
+
+  $blackAgree: UB, WB, RB, GB;
+  $blackDisagree: BU, BW, BR, BG;
+
+  @each $black in $blackAgree {
+    .#{$black}.res1, .#{$black}.res2 {
+      background-color: black;
+    }
+  }
+  @each $black in $blackDisagree {
+    .#{$black}.res-2, .#{$black}.res-1 {
+      background-color: black;
+    }
+  }
+
+  $redAgree: UR, WR, BR, GR;
+  $redDisagree: RU, RW, RB, RG;
+
+  @each $red in $redAgree {
+    .#{$red}.res1, .#{$red}.res2 {
+      background-color: red;
+    }
+  }
+  @each $red in $redDisagree {
+    .#{$red}.res-2, .#{$red}.res-1 {
+      background-color: red;
+    }
+  }
+
+  $greenAgree: UG, WG, BG, RG;
+  $greenDisagree: GU, GW, GB, GR;
+
+  @each $green in $greenAgree {
+    .#{$green}.res1, .#{$green}.res2 {
+      background-color: green;
+    }
+  }
+  @each $green in $greenDisagree {
+    .#{$green}.res-2, .#{$green}.res-1 {
+      background-color: green;
+    }
+  }
+
+  .res0 {
+    /* eventually this could be a mixed gradient representing a combination of colors */
+    background-color: orange;
+  }
+
+  .resnull {
+    background-color: purple;
+  }
+
+  .res1, .res-1 {
+    opacity: 0.5;
+  }
+
+  .current {
+    background-color: yellow;
+  }
+}
+
+#colors {
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+
+  &.UW {
+    background: linear-gradient(to right, blue, white);
+  }
+  &.WU {
+    background: linear-gradient(to right, white, blue);
+  }
+  &.BW {
+    background: linear-gradient(to right, black, white);
+  }
+  &.WB {
+    background: linear-gradient(to right, white, black);
+  }
+  &.RW {
+    background: linear-gradient(to right, red, white);
+  }
+  &.WR {
+    background: linear-gradient(to right, white, red);
+  }
+  &.GW {
+    background: linear-gradient(to right, green, white);
+  }
+  &.WG {
+    background: linear-gradient(to right, white, green);
+  }
+  &.UG {
+    background: linear-gradient(to right, blue, green);
+  }
+  &.GU {
+    background: linear-gradient(to right, green, blue);
+  }
+  &.UR {
+    background: linear-gradient(to right, blue, red);
+  }
+  &.RU {
+    background: linear-gradient(to right, red, blue);
+  }
+  &.UB {
+    background: linear-gradient(to right, blue, black);
+  }
+  &.BU {
+    background: linear-gradient(to right, black, blue);
+  }
+  &.RB {
+    background: linear-gradient(to right, red, black);
+  }
+  &.BR {
+    background: linear-gradient(to right, black, red);
+  }
+  &.RB {
+    background: linear-gradient(to right, red, black);
+  }
+  &.BR {
+    background: linear-gradient(to right, black, red);
+  }
+  &.GB {
+    background: linear-gradient(to right, green, black);
+  }
+  &.BG {
+    background: linear-gradient(to right, black, green);
+  }
+  &.GR {
+    background: linear-gradient(to right, green, red);
+  }
+  &.RG {
+    background: linear-gradient(to right, red, green);
+  }
+}
+
+html body hr {
+  width: 50%;
+  border: 2px solid black;
+  margin: 1rem auto;
+  margin-inline-start: auto ! important;
+}
+
+button[data-active] {
+  border: 2px solid black;
+  animation-duration: 1s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% { border-color: black; opacity: 1; }
+  50% { border-color: #FFFFFF55; opacity: 0.75; }
+  100% { border-color: black; opacity: 1; }
+}
