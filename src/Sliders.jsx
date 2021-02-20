@@ -81,7 +81,7 @@ export default () => {
       onMouseUp={onMouseUp}
     >
       <defs>
-        <filter id="shadow">
+      <filter id="shadow">
           <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
           <feOffset dx="0" dy="5" result="offsetblur"/>
           <feFlood flood-color="black"/>

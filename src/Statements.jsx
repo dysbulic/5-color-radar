@@ -6,11 +6,10 @@ import {
 import {
   ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon
 } from '@chakra-ui/icons'
-import { useLocation } from 'react-router-dom'
 import { useParams } from 'react-router'
 import Chart from './Chart'
-import Combos from './Combos'
-import Sliders from './Sliders'
+import Results from './Results'
+import './Statements.scss'
 
 const source = (
   'https://raw.githubusercontent.com/Jerdle-code/color-pie-test/main/readable_questions.txt'
@@ -27,17 +26,6 @@ const defZero = {
     name in target ? target[name] : 0
   )
 }
-
-const useQuery = () => (
-  new URLSearchParams(useLocation().search)
-)
-
-const atob = (b64) => (
-  Buffer.from(b64, 'base64').toString('binary')
-)
-const btoa = (bin) => (
-  Buffer.from(bin, 'binary').toString('base64')
-)
 
 const storageMap = {
   0: -2, 1: -1, 2: 0, 3: 1, 4: 2, 5: null, 6: undefined
@@ -195,7 +183,7 @@ export default ({ history }) => {
                 >No Opinion</Button>
               </ButtonGroup>
             ) : (
-              <Sliders/>
+              <Results {...{ current }}/>
             )
           }
         </Flex>

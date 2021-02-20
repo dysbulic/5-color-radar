@@ -1,7 +1,7 @@
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import {
-  ChakraProvider, extendTheme, ColorModeProvider
+  ChakraProvider, extendTheme
 } from "@chakra-ui/react"
 import Statements from './Statements'
 import Combos from './Combos'
