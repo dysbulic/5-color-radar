@@ -116,6 +116,7 @@ export default ({ colors, attrs, scores }) => {
                   />
                 </clipPath>
               </defs>
+              {/* Conic gradients are only supported for HTML elements */}
               <foreignObject
                 key='foreign'
                 x={-size} y={-size}
