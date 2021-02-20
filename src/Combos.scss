@@ -1,12 +1,11 @@
 svg {
-  max-height: 90vh;
+  max-height: 100vh;
+  transform-style: preserve-3d;
 }
 
 text {
   font-size: 3px;
-  fill: white;
-  stroke-width: .3;
-  font-family: sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #circles {
@@ -21,26 +20,89 @@ text {
 .green { fill: #009640; }
 .black { fill: black; }
 
+@mixin pulse($color) {
+  @keyframes pulse-#{$color} {
+    from { stroke: black; stroke-width: 0.25; }
+    25% { stroke: $color; stroke-width: 0.75; }
+    50% { stroke: black; stroke-width: 0.75; }
+    75% { stroke: $color; stroke-width: 0.75; }
+    to { stroke: black; stroke-width: 0.25; }
+  }
+}
+
 .partition {
   fill-rule: evenodd;
   stroke: black;
   stroke-width: .3;
   stroke-linecap: round;
   stroke-linejoin: round;
-  animation-name: pulse;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
 
+  text {
+    stroke: none;
+    fill: white;
+  }
+
+  @include pulse(red);
+  g:hover path {
+    animation-name: pulse-red;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @include pulse(blue);
+  g:focus-within path {
+    animation-name: pulse-blue;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  &.pulse {
+    & > g {
+      transform-origin: center;
+      animation-name: spin;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    text {
+      animation-name: glow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
+ 
   &.strobe {
     animation-name: strobe;
     animation-duration: 1s;
   }
 }
 
-@keyframes pulse {
-  from { stroke: black; }
-  50% { stroke: orangered; }
-  to { stroke: black; }
+@keyframes orig-pulse {
+  from { stroke: black; stroke-width: 0.25; }
+  25% { stroke: orangered; stroke-width: 0.75; }
+  50% { stroke: black; stroke-width: 0.75; }
+  75% { stroke: orangered; stroke-width: 0.75; }
+  to { stroke: black; stroke-width: 0.25; }
+}
+
+@keyframes jiggle {
+  from { stroke: black; stroke-width: 0.25; transform: perspective(250px) translateZ(0); }
+  25% { stroke: orangered; stroke-width: 0.75; transform: perspective(250px) translateZ(-0.1rem); }
+  75% { stroke: orangered; stroke-width: 0.75; transform: perspective(250px) translateZ(0.1rem); }
+  to { stroke: black; stroke-width: 0.25; transform: perspective(250px) translateZ(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  50% { transform: rotate(360); }
+  to { transform: rotate(0); }
+}
+
+@keyframes glow {
+  from { fill: white; }
+  50% { fill: yellow; }
+  to { fill: white; }
 }
 
 @keyframes strobe {

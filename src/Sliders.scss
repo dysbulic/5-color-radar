@@ -1,0 +1,24 @@
+line {
+  stroke-width: 8;
+}
+
+.handle {
+  fill: white;
+  fill-opacity: 0.5;
+  stroke: orangered;
+}
+
+.bg {
+  rect {
+    fill: gold;
+    fill-opacity: 0.5;
+    stroke: gold;
+    stroke-opacity: 0.75;
+    stroke-width: 25;
+  }
+
+  text {
+    font-size: 55px;
+    pointer-events: none;
+  }
+}

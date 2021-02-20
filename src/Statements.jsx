@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom'
 import { useParams } from 'react-router'
 import Chart from './Chart'
 import Combos from './Combos'
+import Sliders from './Sliders'
 
 const source = (
   'https://raw.githubusercontent.com/Jerdle-code/color-pie-test/main/readable_questions.txt'
@@ -194,7 +195,7 @@ export default ({ history }) => {
                 >No Opinion</Button>
               </ButtonGroup>
             ) : (
-              <Combos/>
+              <Sliders/>
             )
           }
         </Flex>
