@@ -1,5 +1,5 @@
 import Range from './Range'
-import './App.scss'
+import './Chart.scss'
 
 export default ({ colors, attrs, scores }) => {
   const numSides = Object.keys(colors).length
@@ -83,7 +83,7 @@ export default ({ colors, attrs, scores }) => {
                         <use id='outmask' href='#outer'/>
                       </mask>
                     </defs>
-                    <use href='#outer' className='ring'/>
+                    <use id='outeruse' href='#outer' className='ring'/>
                   </>
                 ) : (
                   <polygon

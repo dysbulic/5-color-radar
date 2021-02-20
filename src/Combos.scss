@@ -1,0 +1,39 @@
+svg {
+  max-height: 90vh;
+}
+
+text {
+  font-size: 3px;
+  fill: white;
+  stroke-width: .3;
+  font-family: sans-serif;
+}
+
+#circles {
+  fill: none;
+  stroke: white;
+  stroke-width: .3;
+}
+
+.blue { fill: #009fe3; }
+.red { fill: #e30613; }
+.white { fill: #efe8da; }
+.green { fill: #009640; }
+.black { fill: black; }
+
+.partition {
+  fill-rule: evenodd;
+  stroke: black;
+  stroke-width: .3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from { stroke: black; }
+  50% { stroke: orangered; }
+  to { stroke: black; }
+}

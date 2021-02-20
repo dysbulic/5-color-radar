@@ -8,9 +8,8 @@ import {
 } from '@chakra-ui/icons'
 import { useLocation } from 'react-router-dom'
 import { useParams } from 'react-router'
-import { createBrowserHistory } from 'history'
 import Chart from './Chart'
-import './Chart.scss'
+import Combos from './Combos'
 
 const source = (
   'https://raw.githubusercontent.com/Jerdle-code/color-pie-test/main/readable_questions.txt'
@@ -43,13 +42,12 @@ const storageMap = {
   0: -2, 1: -1, 2: 0, 3: 1, 4: 2, 5: null, 6: undefined
 }
 
-export default () => {
+export default ({ history }) => {
   const [statements, setStatements] = useState()
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
-  const { prefix, answers = '' } = useParams()
-  const history = createBrowserHistory()
+  const { answers = '' } = useParams()
   const load = async () => {
     const res = await fetch(source)
     const statements = yaml.load(await res.text())
@@ -58,7 +56,7 @@ export default () => {
       statements[idx].response = storageMap[parseInt(char, 36)]
     })
     setIndex(Math.min(
-      /6/.test(answers) ? answers.indexOf('6') : statements.length, // '6' === undefined
+      /6/.test(answers) ? answers.indexOf('6') : answers.length, // '6' === undefined
       statements.length
     ))
     setStatements(statements)
@@ -147,7 +145,6 @@ export default () => {
           {statements[index] &&
             <Stack pt={5}>
               <Box id='colors'
-                minH={3} borderRadius={10}
                 className={`${statements[index].low}${statements[index].high}`}
               ></Box>
               <Stack direction={['column', 'row']}>
@@ -179,21 +176,27 @@ export default () => {
               </Stack>
             </Stack>
           }
-          <ButtonGroup pt={5}>
-            <Button
-              isDisabled={index === 0}
-              colorScheme='purple'
-              leftIcon={<ArrowBackIcon/>}
-              onClick={() => setIndex(index - 1)}
-            >Back</Button>
-            <Button
-              index={index}
-              isDisabled={index >= statements.length}
-              colorScheme='purple'
-              rightIcon={<ArrowForwardIcon/>}
-              onClick={() => answer(null)}
-            >No Opinion</Button>
-          </ButtonGroup>
+          {index < statements.length
+            ? (
+              <ButtonGroup pt={5}>
+                <Button
+                  isDisabled={index === 0}
+                  colorScheme='purple'
+                  leftIcon={<ArrowBackIcon/>}
+                  onClick={() => setIndex(index - 1)}
+                >Back</Button>
+                <Button
+                  index={index}
+                  isDisabled={index >= statements.length}
+                  colorScheme='purple'
+                  rightIcon={<ArrowForwardIcon/>}
+                  onClick={() => answer(null)}
+                >No Opinion</Button>
+              </ButtonGroup>
+            ) : (
+              <Combos/>
+            )
+          }
         </Flex>
       </Box>
       <Button id='qVis'
