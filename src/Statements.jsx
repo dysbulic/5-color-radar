@@ -62,10 +62,12 @@ export default ({ history }) => {
       change[index].response = res
       const stored = (
         change.map((s) => (
-          Object.entries(storageMap).find(([key, val]) => val === s.response)[0]
+          Object.entries(storageMap).find(
+            ([_, val]) => val === s.response
+          )[0]
         ))
         .join('')
-        .replace(/6+$/g, '')
+        .replace(/6+$/g, '') // '6' === undefined
       )
       history.push(stored)
       return change

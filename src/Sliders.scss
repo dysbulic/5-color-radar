@@ -1,9 +1,11 @@
-svg {
-  max-height: 100vh;
+line {
+  stroke-width: 15;
 }
 
-line {
-  stroke-width: 8;
+.side .bg {
+  stroke: black;
+  stroke-width: 17;
+  stroke-opacity: 0.25;
 }
 
 .side circle {
@@ -29,7 +31,6 @@ line {
 
   text {
     font-size: 55px;
-    pointer-events: none;
     user-select: none;
   }
 }

@@ -1,51 +1,45 @@
+import update from 'immutability-helper'
 import { createSlice } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 
-const initialState = { value: 0 }
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-  reducers: {
-    increment(state) {
-      state.value++
-    },
-    decrement(state) {
-      state.value--
-    },
-    incrementByAmount(state, action) {
-      state.value += action.payload
-    },
+export const reducers = {
+  setActive: (state, action) => (
+    update(state, { active: { $set: action.payload } })
+  ),
+  setOrigin: (state, action) => (
+    update(state, { origin: { $set: action.payload } })
+  ),
+  setPosition: (state, { payload: { id, position }}) => {
+    console.info({ id, position })
+    update(state, { positions: { test: { $set: position } } })
   },
+}
+
+const initialState = {
+  active: undefined,
+  origin: undefined,
+  positions: {},
+}
+const positionSlice = createSlice({
+  name: 'pos',
+  initialState,
+  reducers,
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-export default counterSlice.reducer
+export const Store = configureStore({
+  reducer: positionSlice.reducer,
+})
 
-/*
-  const reducer = (state, action) => {
-    console.info(action.payload)
-    switch(action.type) {
-      case 'move':
-        return {...state, ...{ pos: {
-          x: action.payload.clientX,
-          y: action.payload.clientY,
-        } } }
-      case 'press':
-        return {...state, ...{ listening: true } }
-      case 'release':
-        return {...state, ...{ listening: false } }
-      default:
-        throw new Error(`Unknown Type: ${action.type}`)
-    }
-  }
-  const initialState = {}
-  const [state, dispatch] = useReducer(reducer, initialState)
+//export const { setActive } = positionSlice.actions
 
-  const onMouseMove = (evt) => {
-    if(state.listening) {
-      dispatch({ type: 'move', payload: evt })
-    }
-  }
-  const onMouseUp = (evt) => {
-    dispatch({ type: 'release', payload: evt })
-  }
-*/
+export const setActive = (type) => (
+  Store.dispatch(positionSlice.actions.setActive(type))
+)
+export const setOrigin = (origin) => (
+  Store.dispatch(positionSlice.actions.setOrigin(origin))
+)
+export const setPosition = (id, position) => {
+  Store.dispatch(positionSlice.actions.setPosition({ id, position }))
+}
+
+export default positionSlice.reducer

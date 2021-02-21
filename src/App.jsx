@@ -3,9 +3,11 @@ import { createBrowserHistory } from 'history'
 import {
   ChakraProvider, extendTheme
 } from "@chakra-ui/react"
+import { Provider } from 'react-redux'
 import Statements from './Statements'
 import Combos from './Combos'
 import Sliders from './Sliders'
+import { Store } from './Reducer'
 
 const config = {
   initialColorMode: 'dark',
@@ -16,7 +18,7 @@ export default () => {
   const history = createBrowserHistory()
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}><Provider store={Store}>
       <Router history={history} basename='/'>
         <Switch>
           <Route path='/combos' component={Combos}/>
@@ -25,6 +27,6 @@ export default () => {
           <Route path='/' component={Statements}/>
         </Switch>
       </Router>
-    </ChakraProvider>
+    </Provider></ChakraProvider>
   )
 }
