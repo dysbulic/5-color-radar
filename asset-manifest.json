@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/5-color-radar/static/css/main.72e26c70.chunk.css",
-    "main.js": "/5-color-radar/static/js/main.92322bf8.chunk.js",
-    "main.js.map": "/5-color-radar/static/js/main.92322bf8.chunk.js.map",
-    "runtime-main.js": "/5-color-radar/static/js/runtime-main.d866529a.js",
-    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.d866529a.js.map",
-    "static/js/2.ec14c084.chunk.js": "/5-color-radar/static/js/2.ec14c084.chunk.js",
-    "static/js/2.ec14c084.chunk.js.map": "/5-color-radar/static/js/2.ec14c084.chunk.js.map",
-    "static/js/3.fee2afb0.chunk.js": "/5-color-radar/static/js/3.fee2afb0.chunk.js",
-    "static/js/3.fee2afb0.chunk.js.map": "/5-color-radar/static/js/3.fee2afb0.chunk.js.map",
+    "main.css": "/5-color-radar/static/css/main.cccf8054.chunk.css",
+    "main.js": "/5-color-radar/static/js/main.dfb79dc6.chunk.js",
+    "main.js.map": "/5-color-radar/static/js/main.dfb79dc6.chunk.js.map",
+    "runtime-main.js": "/5-color-radar/static/js/runtime-main.81e580de.js",
+    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.81e580de.js.map",
+    "static/js/2.a847d235.chunk.js": "/5-color-radar/static/js/2.a847d235.chunk.js",
+    "static/js/2.a847d235.chunk.js.map": "/5-color-radar/static/js/2.a847d235.chunk.js.map",
+    "static/js/3.a4442b98.chunk.js": "/5-color-radar/static/js/3.a4442b98.chunk.js",
+    "static/js/3.a4442b98.chunk.js.map": "/5-color-radar/static/js/3.a4442b98.chunk.js.map",
     "index.html": "/5-color-radar/index.html",
-    "static/css/main.72e26c70.chunk.css.map": "/5-color-radar/static/css/main.72e26c70.chunk.css.map",
-    "static/js/2.ec14c084.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.ec14c084.chunk.js.LICENSE.txt",
+    "static/css/main.cccf8054.chunk.css.map": "/5-color-radar/static/css/main.cccf8054.chunk.css.map",
+    "static/js/2.a847d235.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.a847d235.chunk.js.LICENSE.txt",
     "static/media/ambition.9b2c66ed.svg": "/5-color-radar/static/media/ambition.9b2c66ed.svg",
     "static/media/Statements.scss": "/5-color-radar/static/media/background.89a5c9b4.jpg",
     "static/media/balance.4c2aa444.svg": "/5-color-radar/static/media/balance.4c2aa444.svg",
@@ -20,9 +20,9 @@
     "static/media/wisdom.fbfef02c.svg": "/5-color-radar/static/media/wisdom.fbfef02c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d866529a.js",
-    "static/js/2.ec14c084.chunk.js",
-    "static/css/main.72e26c70.chunk.css",
-    "static/js/main.92322bf8.chunk.js"
+    "static/js/runtime-main.81e580de.js",
+    "static/js/2.a847d235.chunk.js",
+    "static/css/main.cccf8054.chunk.css",
+    "static/js/main.dfb79dc6.chunk.js"
   ]
 }
