@@ -6,10 +6,16 @@ line {
   stroke-width: 8;
 }
 
-.handle {
+.side circle {
   fill: white;
   fill-opacity: 0.5;
   stroke: orangered;
+  transition: fill 0.25s;
+
+  &:hover {
+    fill: blue;
+    fill-opacity: 0.25;
+  }
 }
 
 .bg {
@@ -24,5 +30,6 @@ line {
   text {
     font-size: 55px;
     pointer-events: none;
+    user-select: none;
   }
 }
