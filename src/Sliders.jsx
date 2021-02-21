@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useRef } from 'react'
 import { chakra } from '@chakra-ui/react'
 import { connect } from 'react-redux'
 import { setActive, setPosition } from './Reducer'
@@ -8,6 +8,7 @@ import Chaos from './icons/chaos.svg'
 import Justice from './icons/justice.svg'
 import Wisdom from './icons/wisdom.svg'
 import Side from './Side'
+import Linkages from './Linkages'
 import './Sliders.scss'
 
 const SVG = chakra('svg', {
@@ -21,39 +22,57 @@ const Sliders = ({ active }) => {
   const r = 500 // the radius of the circle
   // the length of the star's sides
   const l = r * Math.sin(4 * Math.PI / 5) / Math.sin(Math.PI / 10)
-  
-  console.info({ active })
+  const svg = useRef()
+
+  const pointFor = (pos) => {
+    if(svg.current) {
+      const p = svg.current.createSVGPoint()
+      p.x = pos.x
+      p.y = pos.y
+      return p
+    }
+  }
 
   const BgImage = ({ x = 0, y = 0, image, name }) => (
-    <g className='bg' transform={`translate(${x - (r / 4)}, ${y - (r / 4)})`}>
+    <g className={`bg ${name.toLowerCase()}`}
+      transform={`translate(${x - (r / 4)}, ${y - (r / 4)})`}
+    >
       <rect
         x={-r / 8} y={-r / 16}
         width={6 * r / 8} height={6 * r / 8}
         rx={r / 10} ry={r / 10}
       />
-      <image xlinkHref={image} width={r / 2} height={r / 2} filter='url(#shadow)'/>
-      <text textAnchor='middle' x={2 * r / 8} y={5 * r / 8}>{name}</text>
+      <image
+        xlinkHref={image}
+        width={r / 2} height={r / 2}
+        filter='url(#shadow)'
+      />
+      <text
+        textAnchor='middle'
+        x={2 * r / 8} y={5 * r / 8}
+      >{name}</text>
     </g>
   )
 
-  const StarSide = ({ colors, rot }) => {
-    {/* this is a hack. the component generates the same code */}
-    const abbr = `${colors[0][0]}${colors[1][0]}`.toUpperCase()
-    return (
-      <Side {...{ colors, rot, l, r }}/>
-    )
-  }
+  const StarSide = ({ colors, rot }) => (
+    <Side {...{ colors, rot, l, r }}/>
+  )
 
-  const mouseMove = useCallback((evt) => {
-    console.info('move', active)
-    if(!!active) {
-      setPosition(active, { x: evt.clientX, y: evt.clientY })
+  const mouseMove = (evt) => {
+    if(!!active && !!svg.current) {
+      const pos = { x: evt.clientX, y: evt.clientY }
+      const p = pointFor(pos)
+      p.matrixTransform(
+        svg.current.getScreenCTM().inverse()
+      )
+      const { x, y } = p
+      console.info('POS', active, { x, y })
+      setPosition(active, { x, y })
     }
-  })
-  const mouseUp = useCallback((evt) => {
-    console.info('up')
-    setActive(undefined)
-  })
+  }
+  const mouseUp = (evt) => {
+    setActive(false)
+  }
 
   return (
     <SVG
@@ -62,12 +81,18 @@ const Sliders = ({ active }) => {
       width="100%" height="100%"
       viewBox={[-r * 1.6, -r * 1.6, 3.2 * r, 3.15 * r].join(' ')}
       onMouseMove={mouseMove} onMouseUp={mouseUp}
+      preserveAspectRatio='xMidYMid meet'
+      ref={svg}
     >
       <defs>
         <filter id="shadow">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8">
+            <animate attributeName='stdDeviation' values='8; 10; 8' dur='1s' begin='0s' repeatCount='indefinite'/>
+          </feGaussianBlur>
           <feOffset dx="0" dy="5" result="offsetblur"/>
-          <feFlood floodColor="black"/>
+          <feFlood floodColor="black">
+            <animate attributeName='floodColor' values='black; orange; black; red; blue; white' dur='4s' begin='0s' repeatCount='indefinite'/>
+          </feFlood>
           <feComposite in2="offsetblur" operator="in"/>
           <feMerge>
             <feMergeNode/>
@@ -84,7 +109,7 @@ const Sliders = ({ active }) => {
               orient="auto-start-reverse"
             >
               <use href='#head' fill={color}/>
-          </marker>
+            </marker>
           ))
         }
       </defs>
@@ -114,6 +139,9 @@ const Sliders = ({ active }) => {
           y={-(r * Math.sin(Math.PI / 10) / Math.sin(Math.PI / 2) + r / 4)}
           image={Wisdom} name='Wisdom'
         />
+      </g>
+      <g className='links'>
+        <Linkages/>
       </g>
       <g className='sides' transform={`translate(0, ${r / 8})`}>
         <StarSide rot={-4 * Math.PI / 10} colors={['red', 'white']}/>
