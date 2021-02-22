@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import Statements from './Statements'
 import Combos from './Combos'
 import Sliders from './Sliders'
+import Home from './Home'
 import { store } from './Reducer'
 
 const config = {
@@ -23,8 +24,9 @@ export default () => {
         <Switch>
           <Route path='/combos' component={Combos}/>
           <Route path='/sliders' component={Sliders}/>
-          <Route path='/:answers' exact={false} component={Statements}/>
-          <Route path='/' component={Statements}/>
+          <Route path='/test/:answers' exact={false} component={Statements}/>
+          <Route path='/test' component={Statements}/>
+          <Route path='/' exact={false} component={Home}/>
         </Switch>
       </Router>
     </Provider></ChakraProvider>

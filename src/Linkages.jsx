@@ -41,33 +41,16 @@ const Linkages = ({
     return out
   }, {})
 
-  console.info({ centers, transforms })
-
   return (
     <g ref={linkRef}>
       {(() => {
         return Object.entries(centers).map(([id, handle], idx) => {
-          const l = 100 //prev && (
-            // Math.sqrt((handle.x - prev.x) ** 2 + (handle.y - prev.y) ** 2)
-          // )
           return (
             <g className='link'>
               <circle className='joint'
                 cx={handle.x} cy={handle.y}
                 r={25}
               />
-              {idx > 0 && (
-                <g transform={`
-                  translate(${handle.x}, ${handle.y})
-                  rotate(0)
-                `}>
-                  <rect
-                    x={10} y={-l / 2}
-                    height={2 * 10} width={l}
-                    fill='green' stroke='black'
-                  />
-                </g>
-              )}
             </g>
           )
         })

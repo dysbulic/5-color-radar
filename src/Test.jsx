@@ -9,7 +9,7 @@ import {
 import { useParams } from 'react-router'
 import Chart from './Chart'
 import Results from './Results'
-import './Statements.scss'
+import './Test.scss'
 
 const source = (
   'https://raw.githubusercontent.com/Jerdle-code/color-pie-test/main/readable_questions.txt'
