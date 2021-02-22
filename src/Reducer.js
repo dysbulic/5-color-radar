@@ -15,6 +15,9 @@ export const reducers = {
   setHandle: (state, { payload: { id, handle }}) => (
     update(state, { handles: { $merge: { [id]: handle } } })
   ),
+  setTransform: (state, { payload: { id, transform }}) => (
+    update(state, { transforms: { $merge: { [id]: transform } } })
+  ),
 }
 
 const initialState = {
@@ -22,6 +25,7 @@ const initialState = {
   origin: undefined,
   positions: {},
   handles: {},
+  transforms: {},
 }
 const positionSlice = createSlice({
   name: 'pos',
@@ -46,6 +50,9 @@ export const setPosition = (id, position) => {
 }
 export const setHandle = (id, handle) => {
   store.dispatch(positionSlice.actions.setHandle({ id, handle }))
+}
+export const setTransform = (id, transform) => {
+  store.dispatch(positionSlice.actions.setTransform({ id, transform }))
 }
 
 export default positionSlice.reducer

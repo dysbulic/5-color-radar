@@ -1,30 +1,40 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { connect } from 'react-redux'
-import { setActive, setOrigin, setHandle } from './Reducer' 
+import {
+  setActive, setOrigin, setHandle, setTransform
+} from './Reducer' 
 import './Sliders.scss'
 
 const toDeg = (rad) => rad * 180 / Math.PI
 
 export const Side = ({
   rot = 0, shrink = 0.9, colors = ['black', 'black'],
-  r, l, active, origin, positions, 
+  r, l, origin, positions, handles, transforms
 }) => {
-  const abbr = `${colors[0]}-${colors[1]}`
-  const position = positions[abbr]
-  const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
+  const id = `${colors[0]}-${colors[1]}`
+  const position = positions[id]
+  const transform = transforms[id]
+  const handle = handles[id] ?? { x: 0, y: 0 }
   const x = { 1: -l / 2 * shrink, 2: l / 2 * shrink }
-  const [viction, setViction] = useState(0)
-  const [portance, setPortance] = useState(0)
+  const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
   const [last, setLast] = useState()
+  const bounds = {
+    x: { min: -400, max: 400 },
+    y: { min: -250, max: 150 },
+  }
+  const extents = {
+    x: Math.abs(bounds.x.min) + Math.abs(bounds.x.max),
+    y: Math.abs(bounds.y.min) + Math.abs(bounds.y.max),
+  }
   const mouseDown = (evt) => {
     setOrigin({ x: evt.clientX, y: evt.clientY })
-    setActive(abbr)
+    setActive(id)
   }
-  const handle = useRef()
-  const svg = (
-    handle.current?.closest('svg')
+  const handleRef = useRef()
+  const svg = useMemo(() => (
+    handleRef.current?.closest('svg')
     || document.querySelector('svg')
-  )
+  ))
   const pointFor = (pos) => {
     if(svg) {
       const p = svg.createSVGPoint()
@@ -33,52 +43,57 @@ export const Side = ({
       return p
     }
   }
-
-  if(active === abbr) {
-    if(!origin) {
-      console.warn('No Origin!')
-    } else if(!position) {
-      console.warn('No Position!')
-    } else if(position.x !== last?.x || position.y !== last?.y) {
-      const d = { x: position.x - origin.x, y: position.y - origin.y }
-      const m = d.x === 0 ? 0 : d.y / d.x
-      //console.info({ d, m, max: Math.max(-0.9, Math.min(0.9, 4 * d.x / l)) })
-      setViction(
-        // This progresses at different speeds at different resolutions
-        Math.max(-0.9, Math.min(0.9, 4 * d.x / l))
-      )
-      setPortance(
-        // These values were determined by experimentation
-        Math.max(-0.5, Math.min(0.31, 2 * d.y / r))
-      )
-      setLast(position)
+  const matrixFor = (mat) => {
+    if(svg) {
+      const m = svg.createSVGMatrix()
+      Object.keys(mat).forEach((attr) => {
+        m[attr] = mat[attr]
+      })
+      return m
     }
   }
 
   useEffect(() => {
     if(svg) {
-      const point = pointFor({ x: l / 2 * viction, y: r * portance })
-      // console.info(
-      //   handle.current.getScreenCTM().inverse(),
-      //   svg.getScreenCTM().inverse()
-      // )
-      point.matrixTransform(
-        handle.current.getCTM().inverse()
+      const { a, b, c, d, e, f } = (
+        handleRef.current
+        .getScreenCTM()
+        .inverse()
+        .multiply(
+          svg.getScreenCTM()
+        )
       )
-      //console.info('P1', point)
-      // point.matrixTransform(
-      //   svg.getScreenCTM().inverse()
-      // )
-      //console.info('P2', point)
-      const { x, y } = point
-      setHandle(abbr, { x, y })
+      setTransform(id, { a, b, c, d, e, f })
     }
-  }, [viction, portance])
+  }, [id, svg])
+
+  useEffect(() => {
+    setHandle(id, { x: 0, y: 0 })
+  }, [])
+
+  useEffect(() => {
+    if(!origin || !position || !transform) {
+      return
+    } else if(!handleRef.current) {
+      console.warn('No Handle!')
+    } else if(position.x !== last?.x || position.y !== last?.y) {
+      const p = pointFor(position)
+      const svg = handleRef.current.closest('svg')
+      const trans = matrixFor(transform)
+      const { x, y } = p.matrixTransform(trans)
+      const bounded = {
+        x: Math.min(Math.max(x, bounds.x.min), bounds.x.max),
+        y: Math.min(Math.max(y, bounds.y.min), bounds.y.max),
+      }
+      setHandle(id, bounded)
+      setLast(position)
+    }
+  }, [positions[id], transform])
 
   return (
     <>
       <defs>
-        <linearGradient id={abbr}
+        <linearGradient id={id}
           gradientUnits='userSpaceOnUse' // required for vertical lines
           x1={x[1]} y1={0} x2={x[2]} y2={0}
         >
@@ -92,8 +107,11 @@ export const Side = ({
           rotate(${toDeg(rot)} 0 ${toEdge})
         `}
         onMouseDown={mouseDown}
+        ref={handleRef}
       >
-        <g transform={`translate(0, ${position?.y ?? 0})`}>
+        <g
+          transform={`translate(0, ${handle.y})`}
+        >
           <line className='bg'
             x1={x[1]} y1={0}
             x2={x[2]} y2={0}
@@ -103,14 +121,34 @@ export const Side = ({
           <line
             x1={x[1]} y1={0}
             x2={x[2]} y2={0}
-            stroke={`url(#${abbr})`}
+            stroke={`url(#${id})`}
             markerStart={`url(#${colors[0]}arrow)`}
             markerEnd={`url(#${colors[1]}arrow)`}
           />
-          <circle
-            cx={position?.x ?? 0} cy={0} r={r / 10}
-            ref={handle}
-          />
+          <g className='handle'>
+            <circle
+              cx={handle.x} cy={0} r={r / 10}
+              style={{
+                fillOpacity: (
+                  0.5 * (1 - (handle.y - bounds.y.min) / extents.y)
+                ),
+              }}
+            />
+            <circle
+              cx={handle.x} cy={0} r={r / 25}
+              style={{
+                fill: colors[0],
+                fillOpacity: 1 - (handle.x - bounds.x.min) / extents.x,
+              }}
+            />
+            <circle
+              cx={handle.x} cy={0} r={r / 30}
+              style={{
+                fill: colors[1],
+                fillOpacity: (handle.x - bounds.x.min) / extents.x,
+              }}
+            />
+          </g>
         </g>
       </g>
     </>
@@ -119,7 +157,9 @@ export const Side = ({
 
 export default connect(
   (state) => {
-    const { active, origin, positions, handles } = state
-    return { active, origin, positions, handles }
+    const {
+      active, origin, positions, handles, transforms
+    } = state
+    return { active, origin, positions, handles, transforms }
   },
 )(Side)

@@ -8,16 +8,28 @@ line {
   stroke-opacity: 0.25;
 }
 
-.side circle {
-  fill: white;
-  fill-opacity: 0.5;
-  stroke: orangered;
-  transition: fill 0.25s;
+.side .handle {
+  transition: fill, transform 0.25s;
+
+  circle:first-of-type {
+    stroke: orangered;
+  }
+
+  circle {
+    transform-origin: center;
+  }
 
   &:hover {
+    //transform: scale(1.25);
     fill: blue;
-    fill-opacity: 0.25;
+    fill-opacity: 0.5;
   }
+}
+
+.joint {
+  stroke: orange;
+  stroke-width: 5;
+  stroke-opacity: 0.75;
 }
 
 .bg {

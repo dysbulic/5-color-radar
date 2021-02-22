@@ -62,11 +62,9 @@ const Sliders = ({ active }) => {
     if(!!active && !!svg.current) {
       const pos = { x: evt.clientX, y: evt.clientY }
       const p = pointFor(pos)
-      p.matrixTransform(
+      const { x, y } = p.matrixTransform(
         svg.current.getScreenCTM().inverse()
       )
-      const { x, y } = p
-      console.info('POS', active, { x, y })
       setPosition(active, { x, y })
     }
   }
