@@ -41,20 +41,22 @@ const Linkages = ({
     return out
   }, {})
 
+  const points = Object.values(centers)
+  const polygon = (
+    points.map((c) => (`${c.x},${c.y}`)).join(' ')
+  )
+
   return (
     <g ref={linkRef}>
-      {(() => {
-        return Object.entries(centers).map(([id, handle], idx) => {
-          return (
-            <g className='link'>
-              <circle className='joint'
-                cx={handle.x} cy={handle.y}
-                r={25}
-              />
-            </g>
-          )
-        })
-      })()}
+      {Object.entries(centers).map(([id, handle], idx) => (
+        <g className='link'>
+          <circle className='joint'
+            cx={handle.x} cy={handle.y}
+            r={25}
+          />
+        </g>
+      ))}
+      <polygon points={polygon} stroke='black' fillRule='evenodd'/>
     </g>
   )
 }

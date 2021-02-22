@@ -1,5 +1,14 @@
 line {
   stroke-width: 15;
+  stroke-opacity: 0.5;
+}
+
+#head {
+  opacity: 0.25;
+}
+
+.conflict {
+  -webkit-text-stroke-width: 1px;
 }
 
 .side .bg {

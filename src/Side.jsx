@@ -1,11 +1,20 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { connect } from 'react-redux'
 import {
-  setActive, setOrigin, setHandle, setTransform
+  setActive, setOrigin, setHandle, setTransform,
+  setConflict,
 } from './Reducer' 
 import './Sliders.scss'
 
 const toDeg = (rad) => rad * 180 / Math.PI
+
+const conflicts = {
+  'red-white': { left: 'Chaos', right: 'Order' },
+  'white-black': { left: 'Group', right: 'Individual' },
+  'black-green': { left: 'Exploitation', right: 'Preservation' },
+  'green-blue': { left: 'Nature', right: 'Nurture' },
+  'blue-red': { left: 'Reason', right: 'Emotion' },
+}
 
 export const Side = ({
   rot = 0, shrink = 0.9, colors = ['black', 'black'],
@@ -29,6 +38,11 @@ export const Side = ({
   const mouseDown = (evt) => {
     setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
+    const conflict = conflicts[id]
+    setConflict({
+      left: { color: colors[0], text: conflict.left },
+      right: { color: colors[1], text: conflict.right },
+    })
   }
   const handleRef = useRef()
   const svg = useMemo(() => (

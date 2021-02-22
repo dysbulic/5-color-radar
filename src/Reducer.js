@@ -18,6 +18,9 @@ export const reducers = {
   setTransform: (state, { payload: { id, transform }}) => (
     update(state, { transforms: { $merge: { [id]: transform } } })
   ),
+  setConflict: (state, action) => (
+    update(state, { conflict: { $set: action.payload } })
+  ),
 }
 
 const initialState = {
@@ -54,5 +57,8 @@ export const setHandle = (id, handle) => {
 export const setTransform = (id, transform) => {
   store.dispatch(positionSlice.actions.setTransform({ id, transform }))
 }
+export const setConflict = (conflict) => (
+  store.dispatch(positionSlice.actions.setConflict(conflict))
+)
 
 export default positionSlice.reducer

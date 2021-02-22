@@ -4,7 +4,7 @@ import {
 import { createBrowserHistory } from 'history'
 import {
   ChakraProvider, extendTheme, Menu, MenuItem,
-  MenuButton, Button, MenuList, Link,
+  MenuButton, Button, MenuList, Link as ChakraLink,
 } from "@chakra-ui/react"
 import {
   ChevronDownIcon, HamburgerIcon
@@ -22,6 +22,14 @@ const config = {
 }
 const theme = extendTheme({ config })
 
+const Link = ({ children, to }) => (
+  <ChakraLink
+  as={RouterLink}
+  {...{ to }}
+  w='100%'
+  >{children}</ChakraLink>
+)
+
 export default () => {
   const history = createBrowserHistory()
 
@@ -38,14 +46,17 @@ export default () => {
                 {isOpen ? <ChevronDownIcon/> : <HamburgerIcon/>}
               </MenuButton>
               <MenuList>
-                <MenuItem>
-                  <Link as={RouterLink} to='/test'>Test</Link>
+              <MenuItem>
+                  <Link to='/'>🏡 Home</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link as={RouterLink} to='/combos'>Combinations</Link>
+                  <Link to='/test'>✍ Test</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link as={RouterLink} to='/slide'>Explore</Link>
+                  <Link to='/combos'>🕸 Combinations</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to='/slide'>🔭 Explore</Link>
                 </MenuItem>
               </MenuList>
             </>
