@@ -12,7 +12,6 @@ const Linkages = ({
 }) => {
   const linkRef = useRef()
   const svg = linkRef.current?.closest('svg')
-  console.info({ svg })
   const pointFor = (pos) => {
     if(svg) {
       const p = svg.createSVGPoint()
@@ -43,13 +42,13 @@ const Linkages = ({
 
   const points = Object.values(centers)
   const polygon = (
-    points.map((c) => (`${c.x},${c.y}`)).join(' ')
+    points.map(c => `${c.x},${c.y}`).join(' ')
   )
 
   return (
     <g ref={linkRef}>
       {Object.entries(centers).map(([id, handle], idx) => (
-        <g className='link'>
+        <g key={id} className='link'>
           <circle className='joint'
             cx={handle.x} cy={handle.y}
             r={25}

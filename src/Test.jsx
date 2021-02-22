@@ -1,10 +1,10 @@
 import * as yaml from 'js-yaml'
 import { useEffect, useState } from 'react'
 import {
-  Flex, Stack, Box, Spinner, Button, ButtonGroup
+  Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
 } from '@chakra-ui/react'
 import {
-  ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon
+  ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon,
 } from '@chakra-ui/icons'
 import { useParams } from 'react-router'
 import Chart from './Chart'
@@ -129,13 +129,22 @@ export default ({ history }) => {
           ></span>
         ))}
       </Flex>
-      <Box id='statements'>
+      <Box id='statements' maxH={['none', '13rem']}>
         <Flex justify='center' align='center' flexDir='column'>
-          <Box maxW={['10rem', '40rem']} minH='3rem'>
-            {statements[index] && <q>{statements[index]?.question}</q>}
+          <Box
+            maxW={['20rem', '40rem']}
+            minH={['6rem', '3rem']}
+            ml={['3rem', 0]}
+          >
+            {statements[index] && (
+              <Text textAlign='justify'>
+                <q>{statements[index]?.question}</q>
+              </Text>
+            )}
           </Box>
           {statements[index] &&
             <Stack pt={5}>
+              {/* ToDo: Make 100% width on mobile, preserving button width */}
               <Box id='colors'
                 className={`${statements[index].low}${statements[index].high}`}
               ></Box>

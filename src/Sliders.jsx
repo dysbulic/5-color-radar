@@ -16,7 +16,7 @@ import './Sliders.scss'
 
 const SVG = chakra('svg', {
   baseStyle: {
-    maxH: 'calc(100vh - 3rem)',
+    maxH: 'calc(100vh - 3.75rem)',
   },
 })
 
@@ -76,41 +76,53 @@ const Sliders = ({ active, conflict }) => {
     setActive(false)
     setConflict(false)
   }
+  const mouseOut = (evt) => {
+    // ToDo: handle mouse outs of the document as release events
+    return
+    if(evt.target === svg.current) {
+      mouseUp(evt)
+    } else {
+      evt.stopPropagation()
+    }
+  }
 
   return (
     <>
-      {!!conflict && (
-        <Box
-          align='center' className='conflict' ml='3rem'
-          background={`linear-gradient(
-            to left,
-            transparent, ${conflict.right.color},
-            ${conflict.left.color}, transparent
-          )`}
-        >
-          <Heading maxW='25rem' minH='3rem'>
-            <Stack direction='row'>
-              <Text color={conflict.left.color}
-                style={{ WebkitTextStrokeColor: conflict.right.color }}
-              >
-                {conflict.left.text}
-              </Text>
-              <Spacer/>
-              <Text color={conflict.right.color}
-                style={{ WebkitTextStrokeColor: conflict.left.color }}
-              >
-                {conflict.right.text}
-              </Text>
-            </Stack>
-          </Heading>
-        </Box>
-      )}
+      <Box minH='3.75rem'>
+        {!!conflict && (
+          <Box
+            align='center' className='conflict'
+            ml='3rem'
+            background={`linear-gradient(
+              to left,
+              transparent, ${conflict.right.color},
+              ${conflict.left.color}, transparent
+            )`}
+          >
+            <Heading maxW='25rem' p={2}>
+              <Stack direction='row'>
+                <Text color={conflict.left.color}
+                  style={{ WebkitTextStrokeColor: conflict.right.color }}
+                >
+                  {conflict.left.text}
+                </Text>
+                <Spacer/>
+                <Text color={conflict.right.color}
+                  style={{ WebkitTextStrokeColor: conflict.left.color }}
+                >
+                  {conflict.right.text}
+                </Text>
+              </Stack>
+            </Heading>
+          </Box>
+        )}
+      </Box>
       <SVG
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         width="100%" height="100%"
-        viewBox={[-r * 1.6, -r * 1.6, 3.2 * r, 3.15 * r].join(' ')}
-        onMouseMove={mouseMove} onMouseUp={mouseUp}
+        viewBox={[-r * 1.6, -r * 1.35, 3.2 * r, 2.7 * r].join(' ')}
+        onMouseMove={mouseMove} onMouseUp={mouseUp} onMouseOut={mouseOut}
         preserveAspectRatio='xMidYMid meet'
         ref={svg}
       >

@@ -8,7 +8,15 @@ import './Sliders.scss'
 
 const toDeg = (rad) => rad * 180 / Math.PI
 
-const conflicts = {
+export const bounds = {
+  x: { min: -400, max: 400 },
+  y: { min: -250, max: 150 },
+}
+export const extents = {
+  x: Math.abs(bounds.x.min) + Math.abs(bounds.x.max),
+  y: Math.abs(bounds.y.min) + Math.abs(bounds.y.max),
+}
+export const conflicts = {
   'red-white': { left: 'Chaos', right: 'Order' },
   'white-black': { left: 'Group', right: 'Individual' },
   'black-green': { left: 'Exploitation', right: 'Preservation' },
@@ -18,7 +26,7 @@ const conflicts = {
 
 export const Side = ({
   rot = 0, shrink = 0.9, colors = ['black', 'black'],
-  r, l, origin, positions, handles, transforms
+  r, l, positions, handles, transforms
 }) => {
   const id = `${colors[0]}-${colors[1]}`
   const position = positions[id]
@@ -27,14 +35,6 @@ export const Side = ({
   const x = { 1: -l / 2 * shrink, 2: l / 2 * shrink }
   const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
   const [last, setLast] = useState()
-  const bounds = {
-    x: { min: -400, max: 400 },
-    y: { min: -250, max: 150 },
-  }
-  const extents = {
-    x: Math.abs(bounds.x.min) + Math.abs(bounds.x.max),
-    y: Math.abs(bounds.y.min) + Math.abs(bounds.y.max),
-  }
   const mouseDown = (evt) => {
     setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
@@ -48,7 +48,7 @@ export const Side = ({
   const svg = useMemo(() => (
     handleRef.current?.closest('svg')
     || document.querySelector('svg')
-  ))
+  ), [])
   const pointFor = (pos) => {
     if(svg) {
       const p = svg.createSVGPoint()
@@ -86,13 +86,12 @@ export const Side = ({
   }, [])
 
   useEffect(() => {
-    if(!origin || !position || !transform) {
+    if(!position || !transform) {
       return
     } else if(!handleRef.current) {
       console.warn('No Handle!')
     } else if(position.x !== last?.x || position.y !== last?.y) {
       const p = pointFor(position)
-      const svg = handleRef.current.closest('svg')
       const trans = matrixFor(transform)
       const { x, y } = p.matrixTransform(trans)
       const bounded = {
