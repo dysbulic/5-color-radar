@@ -69,7 +69,8 @@ export default ({ history }) => {
         .join('')
         .replace(/6+$/g, '') // '6' === undefined
       )
-      history.push(stored)
+      // ToDo: This should not be hard coded (or here at all)
+      history.push(`/test/${stored}`)
       return change
     })
     setIndex(index + 1)
