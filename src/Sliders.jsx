@@ -69,6 +69,7 @@ const Sliders = ({ active, conflict }) => {
       const { x, y } = p.matrixTransform(
         svg.current.getScreenCTM().inverse()
       )
+      //console.info('SCR', pos, {x,y})
       setPosition(active, { x, y })
     }
   }
@@ -182,8 +183,8 @@ const Sliders = ({ active, conflict }) => {
             image={Wisdom} name='Wisdom'
           />
         </g>
-        <g className='links'>
-          <Linkages/>
+        <g className='links' transform={`translate(0, ${r / 8})`}>
+          <Linkages {...{ r }}/>
         </g>
         <g className='sides' transform={`translate(0, ${r / 8})`}>
           <StarSide rot={-4 * Math.PI / 10} colors={['red', 'white']}/>

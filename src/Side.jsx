@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { connect } from 'react-redux'
 import {
-  setActive, setOrigin, setHandle, setTransform,
-  setConflict,
+  setActive, setOrigin, setHandle as setNormHandle,
+  setTransform, setConflict,
 } from './Reducer' 
 import './Sliders.scss'
 
@@ -31,14 +31,14 @@ export const Side = ({
   const id = `${colors[0]}-${colors[1]}`
   const position = positions[id]
   const transform = transforms[id]
-  const handle = handles[id] ?? { x: 0, y: 0 }
+  const normHandle = handles[id] ?? { x: 0, y: 0 }
   const x = { 1: -l / 2 * shrink, 2: l / 2 * shrink }
   const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
-  const [last, setLast] = useState()
+  const [handle, setHandle] = useState({ x: 0, y: 0 })
   const mouseDown = (evt) => {
+    const conflict = conflicts[id]
     setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
-    const conflict = conflicts[id]
     setConflict({
       left: { color: colors[0], text: conflict.left },
       right: { color: colors[1], text: conflict.right },
@@ -48,7 +48,7 @@ export const Side = ({
   const svg = useMemo(() => (
     handleRef.current?.closest('svg')
     || document.querySelector('svg')
-  ), [])
+  ))
   const pointFor = (pos) => {
     if(svg) {
       const p = svg.createSVGPoint()
@@ -82,6 +82,7 @@ export const Side = ({
   }, [id, svg])
 
   useEffect(() => {
+    setNormHandle(id, { x: 0, y: 0.34 })
     setHandle(id, { x: 0, y: 0 })
   }, [])
 
@@ -90,7 +91,7 @@ export const Side = ({
       return
     } else if(!handleRef.current) {
       console.warn('No Handle!')
-    } else if(position.x !== last?.x || position.y !== last?.y) {
+    } else {
       const p = pointFor(position)
       const trans = matrixFor(transform)
       const { x, y } = p.matrixTransform(trans)
@@ -98,8 +99,12 @@ export const Side = ({
         x: Math.min(Math.max(x, bounds.x.min), bounds.x.max),
         y: Math.min(Math.max(y, bounds.y.min), bounds.y.max),
       }
-      setHandle(id, bounded)
-      setLast(position)
+      const norm = {
+        x: -1 + 2.0 * (bounded.x - bounds.x.min) / extents.x,
+        y: 1 - (bounded.y - bounds.y.min) / extents.y,
+      }
+      setHandle(bounded)
+      setNormHandle(id, norm)
     }
   }, [positions[id], transform])
 
@@ -123,7 +128,8 @@ export const Side = ({
         ref={handleRef}
       >
         <g
-          transform={`translate(0, ${handle.y})`}
+          // ToDo: figure out why this is sometimes undefined
+          transform={`translate(0, ${handle?.y ?? 0})`}
         >
           <line className='bg'
             x1={x[1]} y1={0}
@@ -143,7 +149,7 @@ export const Side = ({
               cx={handle.x} cy={0} r={r / 10}
               style={{
                 fillOpacity: (
-                  0.5 * (1 - (handle.y - bounds.y.min) / extents.y)
+                  0.5 * normHandle.y ?? 0
                 ),
               }}
             />
@@ -151,14 +157,14 @@ export const Side = ({
               cx={handle.x} cy={0} r={r / 25}
               style={{
                 fill: colors[0],
-                fillOpacity: 1 - (handle.x - bounds.x.min) / extents.x,
+                fillOpacity: 1 - (1 + normHandle.x) / 2,
               }}
             />
             <circle
               cx={handle.x} cy={0} r={r / 30}
               style={{
                 fill: colors[1],
-                fillOpacity: (handle.x - bounds.x.min) / extents.x,
+                fillOpacity: (1 + normHandle.x) / 2,
               }}
             />
           </g>
