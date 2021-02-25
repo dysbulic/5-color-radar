@@ -34,8 +34,8 @@ const BigInt = window.BigInt
 // convert BigInt to web safe base64
 const btoa = (big) => {
   let hex = big.toString(16)
+  // Buffer.from raises an error on an odd number of characters
   hex = hex.padStart(Math.ceil(hex.length / 2) * 2)
-  console.info({ hex })
   return Buffer.from(hex, 'hex').toString('base64')
 }
 // convert from base64 to a BigInt
@@ -56,16 +56,17 @@ export default ({ history }) => {
   const load = async () => {
     let max, idx = 0
     for(
-      let packed = atob(answers);
+      let packed = atob(answers),
+      num = packed.toString(2).length,
+      off = (Math.ceil(num / 3) - 1) * 3;
       packed > 0 && idx < statements.length;
-      idx++
+      idx++, off -= 3
     ) {
-      const next = parseInt(rev(packed & BigInt(0b111)))
-      packed = packed >> 3n
-      const val = storageMap[next]
-      //console.info({ packed, idx, next, val, max })
-      statements[idx].response = val
-      if(max === undefined && val === undefined) {
+      let bits = (packed & (BigInt(0b111) << BigInt(off))) >> BigInt(off)
+      const stored = parseInt(bits)
+      const res = storageMap[stored]
+      statements[idx].response = res
+      if(max === undefined && res === undefined) {
         max = idx
       }
     }
@@ -92,7 +93,7 @@ export default ({ history }) => {
         storage = (storage << 3n) | BigInt(res)
       })
       // ToDo: `/test/` should not be hard coded
-      history.push(`/test/${btoa(rev(storage))}`)
+      history.push(`/test/${btoa(storage)}`)
       return change
     })
     setIndex(index + 1)
