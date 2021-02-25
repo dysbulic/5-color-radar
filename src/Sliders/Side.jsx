@@ -28,7 +28,10 @@ export const Side = ({
   rot = 0, shrink = 0.9, colors = ['black', 'black'],
   r, l, positions, handles, transforms
 }) => {
-  const id = `${colors[0]}-${colors[1]}`
+  const id = useMemo(
+    () => `${colors[0]}-${colors[1]}`,
+    [colors]
+  )
   const position = positions[id]
   const transform = transforms[id]
   const normHandle = handles[id] ?? { x: 0, y: 0 }
@@ -67,7 +70,7 @@ export const Side = ({
     }
   }
 
-  useEffect(() => {
+  const trans = () => {
     if(svg) {
       const { a, b, c, d, e, f } = (
         handleRef.current
@@ -79,14 +82,15 @@ export const Side = ({
       )
       setTransform(id, { a, b, c, d, e, f })
     }
-  }, [id, svg])
+  }
+  //useEffect(trans, [id, svg])
 
   useEffect(() => {
     setNormHandle(id, { x: 0, y: 0.325 })
     setHandle(id, { x: 0, y: 0 })
   }, [id])
 
-  useEffect(() => {
+  const repos = () => {
     if(!position || !transform) {
       return
     } else if(!handleRef.current) {
@@ -106,7 +110,8 @@ export const Side = ({
       setHandle(bounded)
       setNormHandle(id, norm)
     }
-  }, [positions[id], transform])
+  }
+  //useEffect(repos, [position, transform])
 
   return (
     <>

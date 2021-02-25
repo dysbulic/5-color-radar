@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import {
   chakra, Box, Heading, Spacer, Stack, Text,
 } from '@chakra-ui/react'
@@ -62,7 +62,7 @@ const Sliders = ({ active, conflict }) => {
   )
 
   const StarSide = ({ colors, rot }) => (
-    <Side {...{ colors, rot, l, r }}/>
+    <Side {...{ colors: useMemo(() => colors, []), rot, l, r }}/>
   )
 
   const mouseMove = (evt) => {
@@ -72,7 +72,6 @@ const Sliders = ({ active, conflict }) => {
       const { x, y } = p.matrixTransform(
         svg.current.getScreenCTM().inverse()
       )
-      //console.info('SCR', pos, {x,y})
       setPosition(active, { x, y })
     }
   }
@@ -84,9 +83,8 @@ const Sliders = ({ active, conflict }) => {
     // ToDo: handle mouse outs of the document as release events
     if(evt.target === svg.current) {
       mouseUp(evt)
-    } else {
-      evt.stopPropagation()
     }
+    evt.stopPropagation()
   }
 
   return (
@@ -186,14 +184,16 @@ const Sliders = ({ active, conflict }) => {
           />
         </g>
         <g className='links' transform={`translate(0, ${r / 8})`}>
-          <Linkages {...{ size: 2 * r }}/>
+          {/*<Linkages {...{ size: 2 * r }}/>*/}
         </g>
         <g className='sides' transform={`translate(0, ${r / 8})`}>
           <StarSide rot={-4 * Math.PI / 10} colors={['red', 'white']}/>
+          {/*
           <StarSide rot={4 * Math.PI / 10} colors={['white', 'black']}/>
           <StarSide rot={-8 * Math.PI / 10} colors={['black', 'green']}/>
           <StarSide rot={0} colors={['green', 'blue']}/>
           <StarSide rot={8 * Math.PI / 10} colors={['blue', 'red']}/>
+          */}
         </g>
       </SVG>
     </>

@@ -6,7 +6,7 @@ import { normsToWeights } from './Sliders'
 
 const Explore = ({ handles }) => {
   const scores = normsToWeights(handles)
-
+  console.info({ scores })
   return(
     <Stack direction='row'>
       <Sliders {...{ scores }}/>

@@ -11,11 +11,13 @@ export const normsToWeights = (handles) => {
   if(Object.values(handles).filter(defined).length > 0) {
     // order the normalized scores
     const norms = order.reduce((out, id) => {
-      out[id] = handles[id] // out.tap(o => o[id] = handles[id])
+       // I want out.tap(o => o[id] = handles[id])
+      handles[id] && (out[id] = handles[id])
       return out
     }, {})
 
     const scores = Object.values(norms)
+    console.info( { SCRs: scores })
     for(let idx = 1; idx <= scores.length; idx++) {
       const p1 = scores[(idx + scores.length - 2) % scores.length]
       const p2 = scores[(idx + 1) % scores.length]
@@ -37,7 +39,7 @@ const Linkages = ({
   const r = size / 2 // radius for polar coordinates
   const revOrder = [...order].reverse()
 
-  useEffect(() => {
+  const plot = () => {
     const offset = 3 * Math.PI / 10
     const arc = 2 * Math.PI / 5
     const points = (
@@ -49,9 +51,11 @@ const Linkages = ({
         }
       })
     )
+    console.info({ handles })
     points.reverse()
     ;(points.length > 0) && setPolygon(points)
-  }, [handles, r])
+  }
+  useEffect(plot, [plot, handles, r])
 
   return (
     (!polygon ? null : (
