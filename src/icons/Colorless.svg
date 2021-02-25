@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
-  viewBox="0 0 100 100"
+  viewBox="-2.5 -2.5 105 105"
   xmlns="http://www.w3.org/2000/svg"
-  xmlnsXlink="http://www.w3.org/1999/xlink"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
-  <image xlinkHref='Black.png'/>
+  <circle
+    cx='50' cy='50' r='50'
+    fill='none' stroke='#3B2615' stroke-width='5'
+  />
 </svg>

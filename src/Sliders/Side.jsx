@@ -4,9 +4,8 @@ import {
   setActive, setOrigin, setHandle as setNormHandle,
   setTransform, setConflict,
 } from '../Reducer'
-//import './Sliders.scss'
-
-const toDeg = (rad) => rad * 180 / Math.PI
+import { reasons } from '../data/order'
+import { toDeg } from '../util'
 
 export const bounds = {
   x: { min: -400, max: 400 },
@@ -15,13 +14,6 @@ export const bounds = {
 export const extents = {
   x: Math.abs(bounds.x.min) + Math.abs(bounds.x.max),
   y: Math.abs(bounds.y.min) + Math.abs(bounds.y.max),
-}
-export const conflicts = {
-  'red-white': { left: 'Chaos', right: 'Order' },
-  'white-black': { left: 'Group', right: 'Individual' },
-  'black-green': { left: 'Exploitation', right: 'Preservation' },
-  'green-blue': { left: 'Nature', right: 'Nurture' },
-  'blue-red': { left: 'Reason', right: 'Emotion' },
 }
 
 export const Side = ({
@@ -39,7 +31,7 @@ export const Side = ({
   const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
   const [handle, setHandle] = useState({ x: 0, y: 0 })
   const mouseDown = (evt) => {
-    const conflict = conflicts[id]
+    const conflict = reasons[id]
     setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
     setConflict({
@@ -83,12 +75,12 @@ export const Side = ({
       setTransform(id, { a, b, c, d, e, f })
     }
   }
-  //useEffect(trans, [id, svg])
+  useEffect(trans, [id, svg])
 
-  useEffect(() => {
-    setNormHandle(id, { x: 0, y: 0.325 })
-    setHandle(id, { x: 0, y: 0 })
-  }, [id])
+  // useEffect(() => {
+  //   setNormHandle(id, { x: 0, y: 0.325 })
+  //   setHandle(id, { x: 0, y: 0 })
+  // }, [id])
 
   const repos = () => {
     if(!position || !transform) {

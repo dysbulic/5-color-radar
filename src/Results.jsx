@@ -1,3 +1,5 @@
+import { Image } from '@chakra-ui/image'
+import { Heading, Stack } from '@chakra-ui/react'
 import { useEffect, useState, useCallback } from 'react'
 import combos from './data/combos'
 import { colors as order } from './data/order'
@@ -8,15 +10,13 @@ export default ({ scores }) => {
   const [icons, setIcons] = useState()
   const load = useCallback(async () => {
     const icons = {}
-    for(
-      let [id, combo] of Object.entries(combos)
-    ) {
-      icons[id] = await import(`./icons/${combo}.svg`)
+    for(let combo of Object.values(combos)) {
+      icons[combo] = (await import(`./icons/${combo}.svg`)).default
     }
     setIcons(icons)
   }, [combos])
 
-  //useEffect(() => load(), [load])
+  useEffect(() => load(), [load])
 
   const maxScore = Math.max(...Object.values(scores))
   const position = {}
@@ -33,8 +33,12 @@ export default ({ scores }) => {
     order.map(c => position[c] ? '1' : '0').join(''),
     2
   )
+  const name = combos[mask]
   
   return (
-    <h1>Result: {combos[mask]}</h1>
+    <Stack>
+      {icons && <Image alt={name} src={icons[name]}/>}
+      <Heading>{name}</Heading>
+    </Stack>
   )
 }

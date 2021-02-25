@@ -5,6 +5,9 @@ export const Range = (
   }
 )
 
+// radians to degrees
+export const toDeg = (rad) => rad * 180 / Math.PI
+
 // making BigInt available
 export const BigInt = window.BigInt
 

@@ -10,11 +10,11 @@ export const normsToWeights = (handles) => {
   const defined = n => n !== undefined
   if(Object.values(handles).filter(defined).length > 0) {
     // order the normalized scores
-    const norms = order.reduce((out, id) => {
-       // I want out.tap(o => o[id] = handles[id])
-      handles[id] && (out[id] = handles[id])
-      return out
-    }, {})
+    const norms = Object.fromEntries(
+      order.map((out, id) => (
+        handles[id] && [id, handles[id]]
+      ))
+    )
 
     const scores = Object.values(norms)
     console.info( { SCRs: scores })

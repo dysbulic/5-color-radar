@@ -13,11 +13,20 @@ export const conflicts = [
   'red-white', 
 ]
 
+export const reasons = {
+  'red-white': { left: 'Chaos', right: 'Order' },
+  'white-black': { left: 'Group', right: 'Individual' },
+  'black-green': { left: 'Exploitation', right: 'Preservation' },
+  'green-blue': { left: 'Nature', right: 'Nurture' },
+  'blue-red': { left: 'Reason', right: 'Emotion' },
+}
+
+
 // MetaGame specific mapping of colors to terms
 // The deeper I get into this, the worse an idea leaving
 // the canon seems. There's just too much built using
 // an existing vocabulary to just abandon it…
-export const attrs = {
+export const names = {
   white: 'Justice', blue: 'Wisdom', red: 'Chaos',
   black: 'Ambition', green: 'Balance',
 }
