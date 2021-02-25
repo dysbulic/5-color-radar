@@ -77,10 +77,10 @@ export const Side = ({
   }
   useEffect(trans, [id, svg])
 
-  // useEffect(() => {
-  //   setNormHandle(id, { x: 0, y: 0.325 })
-  //   setHandle(id, { x: 0, y: 0 })
-  // }, [id])
+  useEffect(() => {
+    setNormHandle(id, { x: 0, y: 0.325 })
+    setHandle(id, { x: 0, y: 0 })
+  }, [id])
 
   const repos = () => {
     if(!position || !transform) {

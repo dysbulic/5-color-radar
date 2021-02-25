@@ -1,4 +1,6 @@
-import { useRef, useMemo, useState, useEffect } from 'react'
+import {
+  useRef, useMemo, useState, useEffect, useCallback,
+} from 'react'
 import {
   chakra, Box, Heading, Spacer, Stack, Text,
 } from '@chakra-ui/react'
@@ -10,6 +12,13 @@ import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
 import { names } from '../data/order'
+
+// needed b/c dynamic loading is failing
+import Ambition from '../icons/MetaGame/Ambition.svg'
+import Balance from '../icons/MetaGame/Balance.svg'
+import Chaos from '../icons/MetaGame/Chaos.svg'
+import Justice from '../icons/MetaGame/Justice.svg'
+import Wisdom from '../icons/MetaGame/Wisdom.svg'
 
 export { normsToWeights } from './Linkages'
 
@@ -38,29 +47,23 @@ const Sliders = ({ active, conflict }) => {
     }
   }
 
-  const imgs = async () => {
+  const load = useCallback(async () => {
     try {
-      setImages(Object.fromEntries(
-        await Promise.all(
-          Object.values(names).map(
-            async (name) => {
-              const path = `../icons/MetaGame/${name}.svg`
-              return [
-                name,
-                (await import(path)).default,
-              ]
-            }
-          )
-        )
-      ))
+      const images = {}
+      for(let name of Object.values(names)) {
+        const path = `./../icons/Red.svg`
+        images[name] = (await import(path)).default
+      }
+      setImages(images)
     } catch(err) {
-      console.warn('Using Static Initialization')
-      //import Ambition from '../icons/MetaGame/Ambition.svg'
-      //import Balance from '../icons/MetaGame/Balance.svg'
-      //setImages({ Ambition })
+      console.warn("Couldn't Load Images", err)
+      setImages({
+        Ambition, Balance, Chaos, Justice, Wisdom,
+      })
     }
-  }
-  useEffect(() => imgs(), [names])
+  }, [names])
+
+  useEffect(() => load(), [load])
   
   const BgImage = ({ x = 0, y = 0, name }) => (
     <g className={`bg ${name.toLowerCase()}`}
