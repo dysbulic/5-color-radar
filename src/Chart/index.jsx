@@ -1,6 +1,6 @@
 import ConicRadar from './ConicRadar'
 import { Range } from '../util'
-import { order } from '../Test'
+import { colors as order } from '../data/order'
 import './Chart.scss'
 
 export default ({ scores }) => {

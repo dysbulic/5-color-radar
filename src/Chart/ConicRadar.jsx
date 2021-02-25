@@ -1,6 +1,5 @@
 import { Range } from '../util'
-import { order } from '../Test'
-//import './Chart.scss'
+import { colors as order } from '../data/order'
 
 export default ({ scores, size }) => {
   const numScores = Object.keys(scores).length

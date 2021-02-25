@@ -12,7 +12,7 @@ import { Provider } from 'react-redux'
 import { Link as RouterLink } from 'react-router-dom'
 import Test from './Test'
 import Combos from './Combos'
-import Sliders from './Sliders'
+import Explore from './Explore'
 import Home from './Home'
 import { store } from './Reducer'
 import bg from './images/background.jpg'
@@ -62,7 +62,7 @@ export default () => (
                 <Link to='/combos'>🕸 Combinations</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/slide'>🔭 Explore</Link>
+                <Link to='/explore'>🔭 Explore</Link>
               </MenuItem>
             </MenuList>
           </>
@@ -70,7 +70,7 @@ export default () => (
       </Menu>
       <Switch>
         <Route path='/combos' component={Combos}/>
-        <Route path='/slide' component={Sliders}/>
+        <Route path='/explore' component={Explore}/>
         <Route path='/test/:answers' component={Test}/>
         <Route path='/test' component={Test}/>
         <Route path='/' exact={false} component={Home}/>

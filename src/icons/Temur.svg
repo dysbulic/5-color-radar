@@ -9,10 +9,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg5019"
-   width="860.61194"
-   height="860.61194"
-   viewBox="0 0 860.61194 860.61194"
-   sodipodi:docname="temur.svg"
+   width="100%"
+   height="100%"
+   viewBox="0 0 884.60925 884.60925"
+   sodipodi:docname="Temur.svg"
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
   <metadata
      id="metadata5025">
@@ -45,20 +45,21 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="0.35654098"
-     inkscape:cx="-17.592032"
-     inkscape:cy="552.24761"
+     inkscape:zoom="0.50498411"
+     inkscape:cx="90.839143"
+     inkscape:cy="238.68131"
      inkscape:window-x="486"
      inkscape:window-y="311"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g5027" />
+     inkscape:current-layer="g5027"
+     inkscape:document-rotation="0" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g5027"
-     transform="translate(-72.062317,34.441986)">
+     transform="translate(-60.063666,46.440637)">
     <circle
-       style="fill:#fbff00;fill-opacity:1;fill-rule:evenodd"
+       style="fill:#fbff00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:24;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path5045"
        sodipodi:type="arc"
        sodipodi:cx="502.36829"
@@ -66,9 +67,9 @@
        sodipodi:rx="430.30597"
        sodipodi:ry="430.30597"
        sodipodi:start="5.0963963"
-       sodipodi:end="5.0823736"
+       sodipodi:end="5.0963174"
        sodipodi:arc-type="arc"
-       d="M 663.57766,-3.1031406 A 430.30597,430.30597 0 0 1 901.8981,555.67372 430.30597,430.30597 0 0 1 343.96015,795.95159 430.30597,430.30597 0 0 1 101.72781,238.8594 430.30597,430.30597 0 0 1 657.96739,-5.3244322"
+       d="M 663.57766,-3.1031406 A 430.30597,430.30597 0 0 1 901.33859,557.06548 430.30597,430.30597 0 0 1 341.17465,794.83747 430.30597,430.30597 0 0 1 103.39162,234.67822 430.30597,430.30597 0 0 1 663.54618,-3.1158588"
        sodipodi:open="true" />
     <path
        style="fill:#131107;stroke:none"

@@ -15,6 +15,8 @@ import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
 
+export { normsToWeights } from './Linkages'
+
 const SVG = chakra('svg', {
   baseStyle: {
     maxH: 'calc(100vh - 3.75rem)',

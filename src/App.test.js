@@ -3,8 +3,8 @@ import App from './App'
 
 test('renders header', () => {
   render(<App/>)
-  const linkElement = screen.getByText(
+  const header = screen.getByText(
     /Magic: The Gathering Five Color Disposition/
   )
-  expect(linkElement).toBeInTheDocument()
+  expect(header).toBeInTheDocument()
 })

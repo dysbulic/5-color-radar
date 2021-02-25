@@ -1,11 +1,34 @@
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { conflicts as order, colors } from '../data/order'
 
-const order = [
-  'green-blue', 'white-black',
-  'blue-red', 'black-green', 
-  'red-white', 
-]
+// Converts a set of normalized handles for conflicts
+// (-1≤x≤1; 0≤y≤1) into a set of weights for the different
+// colors
+export const normsToWeights = (handles) => {
+  const weights = []
+  const defined = n => n !== undefined
+  if(Object.values(handles).filter(defined).length > 0) {
+    // order the normalized scores
+    const norms = order.reduce((out, id) => {
+      out[id] = handles[id] // out.tap(o => o[id] = handles[id])
+      return out
+    }, {})
+
+    const scores = Object.values(norms)
+    for(let idx = 1; idx <= scores.length; idx++) {
+      const p1 = scores[(idx + scores.length - 2) % scores.length]
+      const p2 = scores[(idx + 1) % scores.length]
+      let l = 0.05 // minimum size
+      const portance = (p1.y + p2.y) / 2 // mean of distance from center
+      const viction = (p2.x + -p1.x) / 2
+      l += 0.7 * portance
+      l += 0.25 * viction 
+      weights.push(l)
+    }
+  }
+  return weights
+}
 
 const Linkages = ({
   handles, size,
@@ -15,42 +38,27 @@ const Linkages = ({
   const revOrder = [...order].reverse()
 
   useEffect(() => {
-    const defined = n => n !== undefined
-    if(Object.values(handles).filter(defined).length > 0) {
-      // order the normalized scores
-      const norms = order.reduce((out, id) => {
-        out[id] = handles[id] // out.tap(o => o[id] = handles[id])
-        return out
-      }, {})
-      const offset = 3 * Math.PI / 10
-      const arc = 2 * Math.PI / 5
-      const scores = Object.values(norms)
-      const points = []
-      for(let idx = 1; idx <= scores.length; idx++) {
-        const p1 = scores[(idx + scores.length - 2) % scores.length]
-        const p2 = scores[(idx + 1) % scores.length]
+    const offset = 3 * Math.PI / 10
+    const arc = 2 * Math.PI / 5
+    const points = (
+      normsToWeights(handles).map((w, idx) => {
         const theta = offset + idx * arc
-        let l = 0.05 * r // minimum size
-        const portance = (p1.y + p2.y) / 2 // mean of distance from center
-        const viction = (p2.x + -p1.x) / 2
-        l += 0.7 * r * portance
-        l += 0.25 * r * viction 
-        points.push({
-          x: l * Math.cos(theta),
-          y: l * Math.sin(theta),
-        })
-      }
-      points.reverse()
-      setPolygon(points)
-    }
+        return {
+          x: r * w * Math.cos(theta),
+          y: r * w * Math.sin(theta),
+        }
+      })
+    )
+    points.reverse()
+    ;(points.length > 0) && setPolygon(points)
   }, [handles, r])
 
   return (
-    !polygon ? null : (
+    (!polygon ? null : (
       <>
         {polygon.map((point, idx) => {
           const color = (
-            revOrder[(idx + 3) % order.length].split('-')[1]
+            colors[idx]
           )
           return (
             <g key={idx} className='link'>
@@ -71,7 +79,7 @@ const Linkages = ({
         />
       </>
     )
-  )
+  ))
 }
 
 export default connect(

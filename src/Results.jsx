@@ -1,9 +1,23 @@
+import { useEffect, useState, useCallback } from 'react'
 import combos from './data/combos'
-import { order } from './Test'
-
-
+import { colors as order } from './data/order'
 
 export default ({ scores }) => {
+  if(!scores) throw new Error('Missing Required Prop: scores')
+
+  const [icons, setIcons] = useState()
+  const load = useCallback(async () => {
+    const icons = {}
+    for(
+      let [id, combo] of Object.entries(combos)
+    ) {
+      icons[id] = await import(`./icons/${combo}.svg`)
+    }
+    setIcons(icons)
+  }, [combos])
+
+  //useEffect(() => load(), [load])
+
   const maxScore = Math.max(...Object.values(scores))
   const position = {}
 

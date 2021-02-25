@@ -11,15 +11,9 @@ import Chart from '../Chart'
 import Results from '../Results'
 import { BigInt, atob, btoa, defZero } from '../util'
 import ments from '../data/statements'
+import { colors as order } from '../data/order'
 import './index.scss'
 
-// order the colors appear in
-export const order = ['white', 'blue', 'black', 'red', 'green']
-// MetaGame specific mapping of colors to terms
-export const attrs = {
-  white: 'Justice', blue: 'Wisdom', red: 'Chaos',
-  black: 'Ambition', green: 'Balance',
-}
 // mapping of responses to an octal-representable number
 const storageMap = {
   0: undefined, 1: -2, 2: -1, 3: 0, 4: 1, 5: 2, 6: null,
