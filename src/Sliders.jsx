@@ -1,10 +1,11 @@
 import { useRef } from 'react'
 import {
-  Box,
-  chakra, Heading, Spacer, Stack, Text,
+  chakra, Box, Input, Heading, Spacer, Stack, Text,
 } from '@chakra-ui/react'
 import { connect } from 'react-redux'
-import { setActive, setConflict, setPosition } from './Reducer'
+import {
+  setActive, setConflict, setPosition
+} from './Reducer'
 import Ambition from './icons/ambition.svg'
 import Balance from './icons/balance.svg'
 import Chaos from './icons/chaos.svg'
@@ -21,7 +22,7 @@ const SVG = chakra('svg', {
 })
 
 // draw a five pointed star inscribed in a circle
-const Sliders = ({ active, conflict }) => {
+const Sliders = ({ active, conflict, handles }) => {
   const r = 500 // the radius of the circle
   // the length of the star's sides
   const l = r * Math.sin(4 * Math.PI / 5) / Math.sin(Math.PI / 10)
@@ -199,8 +200,8 @@ const Sliders = ({ active, conflict }) => {
 }
 
 export default connect(
-  (state) => ({
-    active: state.active,
-    conflict: state.conflict,
-  }),
+  (state) => {
+    const { active, conflict, handles } = state
+    return { active, conflict }
+  },
 )(Sliders)

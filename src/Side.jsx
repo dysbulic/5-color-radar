@@ -82,7 +82,7 @@ export const Side = ({
   }, [id, svg])
 
   useEffect(() => {
-    setNormHandle(id, { x: 0, y: 0.34 })
+    setNormHandle(id, { x: 0, y: 0.325 })
     setHandle(id, { x: 0, y: 0 })
   }, [])
 

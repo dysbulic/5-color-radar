@@ -1,4 +1,3 @@
-import * as yaml from 'js-yaml'
 import { useEffect, useState } from 'react'
 import {
   Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
@@ -9,45 +8,68 @@ import {
 import { useParams } from 'react-router'
 import Chart from './Chart'
 import Results from './Results'
+import ments from './statements'
 import './Test.scss'
 
-const source = (
-  'https://raw.githubusercontent.com/Jerdle-code/color-pie-test/main/readable_questions.txt'
-)
-const colors = {
-  W: 'white', U: 'blue', R: 'red', B: 'black', G: 'green'
+// order the colors appear in
+export const order = ['white', 'blue', 'black', 'red', 'green']
+// MetaGame specific mapping of colors to terms
+export const attrs = {
+  white: 'Justice', blue: 'Wisdom', red: 'Chaos',
+  black: 'Ambition', green: 'Balance',
 }
-const attrs = {
-  W: 'Justice', U: 'Wisdom', R: 'Chaos', B: 'Ambition', G: 'Balance'
+// mapping of responses to an octal-representable number
+const storageMap = {
+  0: undefined, 1: -2, 2: -1, 3: 0, 4: 1, 5: 2, 6: null,
 }
 
+// Proxy function for a hash that returns 0 if falsey
 const defZero = {
   get: (target, name) => (
     name in target ? target[name] : 0
   )
 }
-
-const storageMap = {
-  0: -2, 1: -1, 2: 0, 3: 1, 4: 2, 5: null, 6: undefined
+// making BigInt available
+const BigInt = window.BigInt
+// convert BigInt to web safe base64
+const btoa = (big) => {
+  let hex = big.toString(16)
+  hex = hex.padStart(Math.ceil(hex.length / 2) * 2)
+  console.info({ hex })
+  return Buffer.from(hex, 'hex').toString('base64')
 }
+// convert from base64 to a BigInt
+const atob = (b64) => (
+  BigInt(`0x${Buffer.from(b64, 'base64').toString('hex') || '00'}`)
+)
+// reverse the bits in a BigInt
+const rev = (num) => (
+  BigInt(`0b${[...num.toString(2)].reverse().join('')}`)
+)
 
 export default ({ history }) => {
-  const [statements, setStatements] = useState()
+  const [statements, setStatements] = useState(ments)
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
   const { answers = '' } = useParams()
   const load = async () => {
-    const res = await fetch(source)
-    const statements = yaml.load(await res.text())
-    console.info(answers)
-    answers.split('').forEach((char, idx) => {
-      statements[idx].response = storageMap[parseInt(char, 36)]
-    })
-    setIndex(Math.min(
-      /6/.test(answers) ? answers.indexOf('6') : answers.length, // '6' === undefined
-      statements.length
-    ))
+    let max, idx = 0
+    for(
+      let packed = atob(answers);
+      packed > 0 && idx < statements.length;
+      idx++
+    ) {
+      const next = parseInt(rev(packed & BigInt(0b111)))
+      packed = packed >> 3n
+      const val = storageMap[next]
+      //console.info({ packed, idx, next, val, max })
+      statements[idx].response = val
+      if(max === undefined && val === undefined) {
+        max = idx
+      }
+    }
+    setIndex(max ?? idx)
     setStatements(statements)
     const maxes = new Proxy({}, defZero)
     statements.forEach((s) => {
@@ -60,17 +82,17 @@ export default ({ history }) => {
     setStatements((statements) => {
       const change = [...statements]
       change[index].response = res
-      const stored = (
-        change.map((s) => (
+      let storage = 0n
+      change.forEach((s) => {
+        const res = (
           Object.entries(storageMap).find(
             ([_, val]) => val === s.response
-          )[0]
-        ))
-        .join('')
-        .replace(/6+$/g, '') // '6' === undefined
-      )
-      // ToDo: This should not be hard coded (or here at all)
-      history.push(`/test/${stored}`)
+          )?.[0]
+        )
+        storage = (storage << 3n) | BigInt(res)
+      })
+      // ToDo: `/test/` should not be hard coded
+      history.push(`/test/${btoa(rev(storage))}`)
       return change
     })
     setIndex(index + 1)
@@ -111,21 +133,27 @@ export default ({ history }) => {
     }
   })
   const normalized = {}
-  Object.keys(colors).forEach(k => normalized[k] = (current[k] ?? 0) / maxes[k])
+  order.forEach(k => normalized[k] = (current[k] ?? 0) / maxes[k])
 
   return (
     <Stack className={!showing && 'imageOnly'}>
       <Flex as='nav' key='head'>
-        {statements.map((q, i) => (
+        {statements.map((s, i) => (
           <span key={i}
-            className={[
-              index === i ? 'current' : null,
-              q.response !== undefined ? 'done' : 'unanswered',
-              `${q.low}${q.high}`,
-              q.response !== undefined ? `res${q.response}` : null,
-            ].join(' ')}
-            title={`Question #${i + 1}: ${statements[i].question}`}
+            title={`Position #${i + 1}: ${s.position}`}
             onClick={() => setIndex(i)}
+            style={{
+              background: ((() => {
+                if(index === i) return 'yellow'
+                if(s.response < 0) return s.low
+                if(s.response > 0) return s.high
+                if(s.response === 0) return 'orange'
+                return 'transparent'
+              })()),
+              filter: `brightness(
+                ${Math.abs(s.response) === 1 ? '75%' : '100%'}
+              )`
+            }}
           ></span>
         ))}
       </Flex>
@@ -138,7 +166,7 @@ export default ({ history }) => {
           >
             {statements[index] && (
               <Text textAlign='justify'>
-                <q>{statements[index]?.question}</q>
+                <q>{statements[index]?.position}</q>
               </Text>
             )}
           </Box>
@@ -146,7 +174,12 @@ export default ({ history }) => {
             <Stack pt={5}>
               {/* ToDo: Make 100% width on mobile, preserving button width */}
               <Box id='colors'
-                className={`${statements[index].low}${statements[index].high}`}
+                style={{
+                  background: `linear-gradient(
+                    to right, ${statements[index].low}, ${statements[index].high}
+                  )`
+                }}
+                className={``}
               ></Box>
               <Stack direction={['column', 'row']}>
                 <Button
@@ -201,13 +234,13 @@ export default ({ history }) => {
         </Flex>
       </Box>
       <Button id='qVis'
-        title={`${showing ? 'Hide' : 'Show'} Questions`}
+        title={`${showing ? 'Hide' : 'Show'} Position`}
         maxH='1rem'
         minW='50%'
         margin='auto'
         onClick={() => setShowing(s => !s)}
       >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
-      <Chart key='chart' {...{ colors, attrs, scores: normalized }}/>
+      <Chart key='chart' {...{ scores: normalized }}/>
     </Stack>
   )
 }
