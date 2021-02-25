@@ -8,18 +8,19 @@ const order = [
 ]
 
 const Linkages = ({
-  handles, r,
+  handles, size,
 }) => {
   const [polygon, setPolygon] = useState()
+  const r = size / 2 // radius for polar coordinates
 
   useEffect(() => {
     const defined = n => n !== undefined
     if(Object.values(handles).filter(defined).length > 0) {
       // order the normalized scores
-      const norms = order.reduce((out, id) => {
-        out[id] = handles[id]
+      const norms = order.reduce((out = {}, id) => {
+        out[id] = handles[id] // out.tap(o => o[id] = handles[id])
         return out
-      }, {})
+      })
       const offset = 3 * Math.PI / 10
       const arc = 2 * Math.PI / 5
       const scores = Object.values(norms)
@@ -43,6 +44,8 @@ const Linkages = ({
       setPolygon(points )
     }
   }, [handles])
+
+
 
   return (
     !polygon ? null : (

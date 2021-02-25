@@ -5,15 +5,15 @@ import {
 import { connect } from 'react-redux'
 import {
   setActive, setConflict, setPosition
-} from './Reducer'
+} from '../Reducer'
 import Ambition from './icons/ambition.svg'
 import Balance from './icons/balance.svg'
 import Chaos from './icons/chaos.svg'
 import Justice from './icons/justice.svg'
 import Wisdom from './icons/wisdom.svg'
-import Side from './Side'
+import Side from '../Side'
 import Linkages from './Linkages'
-import './Sliders.scss'
+import './index.scss'
 
 const SVG = chakra('svg', {
   baseStyle: {
@@ -185,7 +185,7 @@ const Sliders = ({ active, conflict, handles }) => {
           />
         </g>
         <g className='links' transform={`translate(0, ${r / 8})`}>
-          <Linkages {...{ r }}/>
+          <Linkages {...{ size: 2 * r }}/>
         </g>
         <g className='sides' transform={`translate(0, ${r / 8})`}>
           <StarSide rot={-4 * Math.PI / 10} colors={['red', 'white']}/>

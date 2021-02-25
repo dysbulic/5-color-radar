@@ -6,10 +6,10 @@ import {
   ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon,
 } from '@chakra-ui/icons'
 import { useParams } from 'react-router'
-import Chart from './Chart'
-import Results from './Results'
-import ments from './statements'
-import './Test.scss'
+import Chart from '../Chart'
+import Results from '../Results'
+import ments from '../data/statements'
+import './index.scss'
 
 // order the colors appear in
 export const order = ['white', 'blue', 'black', 'red', 'green']
@@ -100,15 +100,6 @@ export default ({ history }) => {
   }
   useEffect(() => load(), [])
 
-  if(!statements) {
-    return (
-      <Stack align='center' pt={10}>
-        <Box>Loading Statements…</Box>
-        <Spinner/>
-      </Stack>
-    )
-  }
-
   if(!maxes) {
     return (
       <Stack align='center' pt={10}>
@@ -133,8 +124,10 @@ export default ({ history }) => {
       }
     }
   })
-  const normalized = {}
-  order.forEach(k => normalized[k] = (current[k] ?? 0) / maxes[k])
+  const scores = {}
+  order.forEach(
+    c => scores[c] = (current[c] ?? 0) / maxes[c] // normalized
+  )
 
   return (
     <Stack className={!showing && 'imageOnly'}>
@@ -229,7 +222,7 @@ export default ({ history }) => {
                 >No Opinion</Button>
               </ButtonGroup>
             ) : (
-              <Results {...{ current }}/>
+              <Results {...{ scores }}/>
             )
           }
         </Flex>
@@ -241,7 +234,7 @@ export default ({ history }) => {
         margin='auto'
         onClick={() => setShowing(s => !s)}
       >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
-      <Chart key='chart' {...{ scores: normalized }}/>
+      <Chart key='chart' {...{ scores }}/>
     </Stack>
   )
 }

@@ -1,62 +1,13 @@
-import Range from './Range'
-import { order } from './Test'
+import ConicRadar from './ConicRadar'
+import Range from '../util/Range'
+import { order } from '../Test'
 import './Chart.scss'
 
-export const ConicRadar = ({ scores }) => {
-  const size = 100
-  const segment = 2 * Math.PI / scores.length
+export default ({ scores }) => {
+  const numScores = Object.keys(scores).length
+  const segment = 2 * Math.PI / numScores
   const start = Math.PI / 2
-  const thetas = [...Range(scores.length, segment, start)]
-  const points = (
-    Object.entries(order)
-    .map((color, i) => {
-      const r = scores[color] * size
-      return {
-        color,
-        x: r * Math.cos(thetas[i]),
-        y: r * -Math.sin(thetas[i]),
-      }
-    })
-  )
-  return (
-    <g>
-      <defs key='defs'>
-        <polygon id='spread'
-          points={points.map(p => `${p.x},${p.y}`).join(' ')}
-        />
-        <clipPath id='spreadclip'>
-          <use href='#spread'
-            transform={`translate(${size},${size})`}
-          />
-        </clipPath>
-      </defs>
-      {/* Conic gradients are only supported for HTML elements */}
-      <foreignObject
-        key='foreign'
-        x={-size} y={-size}
-        width={size * 2} height={size * 2}
-      >
-        <div id='coloredspread' key='coloredspread'/>
-      </foreignObject>
-      <use key='use' href='#spread' fill='none' stroke='black'/>
-      {points.map((p, i) => (
-        <circle key={p.key}
-          cx={p.x} cy={p.y} r={0.25 * size}
-          className='point'
-          style={{ fill: order[i] }}
-        >
-          <title>{`${p.key.toUpperCase()}: ${(scores[p.key] * 100).toFixed(1)}%`}</title>
-        </circle>
-      ))}
-    </g>
-  )
-}
-
-export default ({ colors, attrs, scores }) => {
-  scores = order.map(color => scores[color])
-  const segment = 2 * Math.PI / scores.length
-  const start = Math.PI / 2
-  const thetas = [...Range(scores.length, segment, start)]
+  const thetas = [...Range(numScores, segment, start)]
   const numPolys = 10
   const incr = 10
   const size = numPolys * incr
@@ -66,8 +17,7 @@ export default ({ colors, attrs, scores }) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100%" height="100%"
-      viewBox="-110 -110 220 220"
-      version="1.1"
+      viewBox={[-size * 1.1, -size * 1.1, size * 2.2, size * 2.2].join(' ')}
       id="5-color-radar"
     >
       <title>Magic: The Gathering Five Color Personality Radar Chart</title>
@@ -141,6 +91,7 @@ export default ({ colors, attrs, scores }) => {
             </g>
           </>
         })}
+        <ConicRadar {...{ scores, size }}/>
       </g>
    </svg>
   )

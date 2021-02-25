@@ -1,5 +1,5 @@
 import { chakra } from '@chakra-ui/react'
-import './Combos.scss'
+import './index.scss'
 
 const SVG = chakra('svg', {
   baseStyle: {
