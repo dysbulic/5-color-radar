@@ -1,12 +1,3 @@
-html {
-  background-image: url('./background.jpg');
-  color: white;
-
-  body {
-    background: none;
-  }
-}
-
 svg {
   max-height: calc(100vh - 17rem);
   margin-top: 0;
@@ -37,93 +28,6 @@ nav {
     height: 0.5rem;
     border: 1px solid gray;
     flex-grow: 1;
-  }
-
-  $blueAgree: WU, BU, RU, GU;
-  $blueDisagree: UW, UB, UR, UG;
-
-  @each $blue in $blueAgree {
-    .#{$blue}.res1, .#{$blue}.res2 {
-      background-color: blue;
-    }
-  }
-  @each $blue in $blueDisagree {
-    .#{$blue}.res-2, .#{$blue}.res-1 {
-      background-color: blue;
-    }
-  }
-
-  $whiteAgree: UW, BW, RW, GW;
-  $whiteDisagree: WU, WB, WR, WG;
-
-  @each $white in $whiteAgree {
-    .#{$white}.res1, .#{$white}.res2 {
-      background-color: rgb(230, 226, 221);
-    }
-  }
-  @each $white in $whiteDisagree {
-    .#{$white}.res-2, .#{$white}.res-1 {
-      background-color: rgb(230, 226, 221);
-    }
-  }
-
-  $blackAgree: UB, WB, RB, GB;
-  $blackDisagree: BU, BW, BR, BG;
-
-  @each $black in $blackAgree {
-    .#{$black}.res1, .#{$black}.res2 {
-      background-color: black;
-    }
-  }
-  @each $black in $blackDisagree {
-    .#{$black}.res-2, .#{$black}.res-1 {
-      background-color: black;
-    }
-  }
-
-  $redAgree: UR, WR, BR, GR;
-  $redDisagree: RU, RW, RB, RG;
-
-  @each $red in $redAgree {
-    .#{$red}.res1, .#{$red}.res2 {
-      background-color: red;
-    }
-  }
-  @each $red in $redDisagree {
-    .#{$red}.res-2, .#{$red}.res-1 {
-      background-color: red;
-    }
-  }
-
-  $greenAgree: UG, WG, BG, RG;
-  $greenDisagree: GU, GW, GB, GR;
-
-  @each $green in $greenAgree {
-    .#{$green}.res1, .#{$green}.res2 {
-      background-color: green;
-    }
-  }
-  @each $green in $greenDisagree {
-    .#{$green}.res-2, .#{$green}.res-1 {
-      background-color: green;
-    }
-  }
-
-  .res0 {
-    /* eventually this could be a mixed gradient representing a combination of colors */
-    background-color: orange;
-  }
-
-  .resnull {
-    background-color: purple;
-  }
-
-  .res1, .res-1 {
-    opacity: 0.5;
-  }
-
-  .current {
-    background-color: yellow ! important;
   }
 }
 

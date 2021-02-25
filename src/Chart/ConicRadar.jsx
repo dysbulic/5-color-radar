@@ -1,6 +1,6 @@
-import Range from './Range'
-import { order } from './Test'
-import './Chart.scss'
+import { Range } from '../util'
+import { order } from '../Test'
+//import './Chart.scss'
 
 export default ({ scores, size }) => {
   const numScores = Object.keys(scores).length

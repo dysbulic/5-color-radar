@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import {
-  Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
+  Flex, Stack, VStack, Box, Spinner, Button, ButtonGroup, Text,
 } from '@chakra-ui/react'
 import {
   ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon,
 } from '@chakra-ui/icons'
 import { useParams } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import Chart from '../Chart'
 import Results from '../Results'
+import { BigInt, atob, btoa, defZero } from '../util'
 import ments from '../data/statements'
 import './index.scss'
 
@@ -23,35 +25,21 @@ const storageMap = {
   0: undefined, 1: -2, 2: -1, 3: 0, 4: 1, 5: 2, 6: null,
 }
 
-// Proxy function for a hash that returns 0 if falsey
-const defZero = {
-  get: (target, name) => (
-    name in target ? target[name] : 0
-  )
-}
-// making BigInt available
-const BigInt = window.BigInt
-// convert BigInt to web safe base64
-const btoa = (big) => {
-  let hex = big.toString(16)
-  // Buffer.from raises an error on an odd number of characters
-  hex = hex.padStart(Math.ceil(hex.length / 2) * 2)
-  return Buffer.from(hex, 'hex').toString('base64')
-}
-// convert from base64 to a BigInt
-const atob = (b64) => (
-  BigInt(`0x${Buffer.from(b64, 'base64').toString('hex') || '00'}`)
-)
-// reverse the bits in a BigInt
-const rev = (num) => (
-  BigInt(`0b${[...num.toString(2)].reverse().join('')}`)
-)
-
 export default ({ history }) => {
   const [statements, setStatements] = useState(ments)
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
+
+  if(!maxes) {
+    return (
+      <Stack align='center' pt={10}>
+        <Box>Processing Statements…</Box>
+        <Spinner/>
+      </Stack>
+    )
+  }
+
   const { answers = '' } = useParams()
   const load = async () => {
     let max, idx = 0
@@ -79,6 +67,10 @@ export default ({ history }) => {
     })
     setMaxes(maxes)
   }
+
+  useEffect(() => load(), [])
+
+  const location = useLocation()
   const answer = (res) => {
     setStatements((statements) => {
       const change = [...statements]
@@ -92,22 +84,40 @@ export default ({ history }) => {
         )
         storage = (storage << 3n) | BigInt(res)
       })
+      console.info(location)
       // ToDo: `/test/` should not be hard coded
       history.push(`/test/${btoa(storage)}`)
       return change
     })
     setIndex(index + 1)
   }
-  useEffect(() => load(), [])
-
-  if(!maxes) {
-    return (
-      <Stack align='center' pt={10}>
-        <Box>Processing Statements…</Box>
-        <Spinner/>
-      </Stack>
-    )
+  const timents = {
+    'Strongly Disagree': {
+      points: -2, color: 'red'
+    },
+    'Disagree': {
+      points: -1, color: 'pink'
+    },
+    'Ambivalent': {
+      points: 0, color: 'blue'
+    },
+    'Agree': {
+      points: 1, color: 'lightgreen'
+    },
+    'Strongly Agree': {
+      points: 2, color: 'green'
+    },
   }
+  const Sentiments = (
+    Object.entries(timents)
+    .map(([timent, { points, color }]) => (
+      <Button
+        isActive={statements[index].response === points}
+        colorScheme={color}
+        onClick={() => answer(points)}
+      >{timent}</Button>
+    ))
+  )
 
   const current = new Proxy({}, defZero)
   statements.forEach(q => {
@@ -142,6 +152,7 @@ export default ({ history }) => {
                 if(s.response < 0) return s.low
                 if(s.response > 0) return s.high
                 if(s.response === 0) return 'orange'
+                if(s.response === null) return 'cyan'
                 return 'transparent'
               })()),
               filter: `brightness(
@@ -160,69 +171,52 @@ export default ({ history }) => {
           >
             {statements[index] && (
               <Text textAlign='justify'>
-                <q>{statements[index]?.position}</q>
+                <q>{statements[index].position}</q>
               </Text>
             )}
           </Box>
-          {statements[index] &&
-            <Stack pt={5}>
-              {/* ToDo: Make 100% width on mobile, preserving button width */}
-              <Box id='colors'
-                style={{
-                  background: `linear-gradient(
-                    to right, ${statements[index].low}, ${statements[index].high}
-                  )`
-                }}
-                className={``}
-              ></Box>
-              <Stack direction={['column', 'row']}>
-                <Button
-                  isActive={statements[index].response === -2}
-                  colorScheme='red'
-                  onClick={() => answer(-2)}
-                >Strongly Disagree</Button>
-                <Button
-                  isActive={statements[index].response === -1}
-                  colorScheme='pink'
-                  onClick={() => answer(-1)}
-                >Disagree</Button>
-                <Button
-                  isActive={statements[index].response === 0}
-                  colorScheme='blue'
-                  onClick={() => answer(0)}
-                >Ambivalent</Button>
-                <Button
-                  isActive={statements[index].response === 1}
-                  colorScheme='teal'
-                  onClick={() => answer(1)}
-                >Agree</Button>
-                <Button
-                  isActive={statements[index].response === 2}
-                  colorScheme='green'
-                  onClick={() => answer(2)}
-                >Strongly Agree</Button>
-              </Stack>
-            </Stack>
-          }
-          {index < statements.length
+          {!statements[index]
             ? (
-              <ButtonGroup pt={5}>
-                <Button
-                  isDisabled={index === 0}
-                  colorScheme='purple'
-                  leftIcon={<ArrowBackIcon/>}
-                  onClick={() => setIndex(index - 1)}
-                >Back</Button>
-                <Button
-                  index={index}
-                  isDisabled={index >= statements.length}
-                  colorScheme='purple'
-                  rightIcon={<ArrowForwardIcon/>}
-                  onClick={() => answer(null)}
-                >No Opinion</Button>
-              </ButtonGroup>
-            ) : (
               <Results {...{ scores }}/>
+            ) : (
+              <VStack>
+                <Stack pt={5}>
+                  {/* ToDo: Make 100% width on mobile, preserving button width */}
+                  <Box id='colors'
+                    style={{
+                      background: `linear-gradient(
+                        to right, ${statements[index].low}, ${statements[index].high}
+                      )`
+                    }}
+                    className={``}
+                  ></Box>
+                  <Stack direction={['column', 'row']}>
+                    <Sentiments/>
+                  </Stack>
+                  {index < statements.length && (
+                    <Stack align='center'>
+                      <ButtonGroup pt={5}>
+                        <Button
+                          isDisabled={index === 0}
+                          colorScheme='purple'
+                          leftIcon={<ArrowBackIcon/>}
+                          onClick={() => setIndex(index - 1)}
+                        >Back</Button>
+                        <Button
+                          index={index}
+                          isDisabled={index >= statements.length}
+                          colorScheme='purple'
+                          rightIcon={<ArrowForwardIcon/>}
+                          onClick={() => answer(null)}
+                        >No Opinion</Button>
+                      </ButtonGroup>
+                    </Stack>
+                  )}
+                </Stack>
+                <Box>
+                  <Text>Test</Text>
+                </Box>
+              </VStack>
             )
           }
         </Flex>

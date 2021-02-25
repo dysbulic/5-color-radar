@@ -12,15 +12,16 @@ const Linkages = ({
 }) => {
   const [polygon, setPolygon] = useState()
   const r = size / 2 // radius for polar coordinates
+  const revOrder = [...order].reverse()
 
   useEffect(() => {
     const defined = n => n !== undefined
     if(Object.values(handles).filter(defined).length > 0) {
       // order the normalized scores
-      const norms = order.reduce((out = {}, id) => {
+      const norms = order.reduce((out, id) => {
         out[id] = handles[id] // out.tap(o => o[id] = handles[id])
         return out
-      })
+      }, {})
       const offset = 3 * Math.PI / 10
       const arc = 2 * Math.PI / 5
       const scores = Object.values(norms)
@@ -32,7 +33,6 @@ const Linkages = ({
         let l = 0.05 * r // minimum size
         const portance = (p1.y + p2.y) / 2 // mean of distance from center
         const viction = (p2.x + -p1.x) / 2
-        console.info(portance, viction)
         l += 0.7 * r * portance
         l += 0.25 * r * viction 
         points.push({
@@ -41,26 +41,30 @@ const Linkages = ({
         })
       }
       points.reverse()
-      setPolygon(points )
+      setPolygon(points)
     }
-  }, [handles])
-
-
+  }, [handles, r])
 
   return (
     !polygon ? null : (
       <>
-        {polygon.map((point, idx) => (
-          <g key={idx} className='link'>
-            <circle className='joint'
-              cx={point.x} cy={point.y}
-              fill={order[idx].split('-')[1]}
-              strokeOpacity='0.1'
-              fillOpacity='0.25'
-              r={25}
-            />
-          </g>
-        ))}
+        {polygon.map((point, idx) => {
+          const color = (
+            revOrder[(idx + 3) % order.length].split('-')[1]
+          )
+          return (
+            <g key={idx} className='link'>
+              <circle className='joint'
+                cx={point.x} cy={point.y}
+                fill={color} stroke={color}
+                strokeWidth={5}
+                strokeOpacity='0.25'
+                fillOpacity='0.5'
+                r={25}
+              />
+            </g>
+          )
+        })}
         <polygon
           points={polygon.map(p => `${p.x},${p.y}`).join(' ')}
           stroke='black' fill='white' fillOpacity={0.5}

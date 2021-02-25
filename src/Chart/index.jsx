@@ -1,5 +1,5 @@
 import ConicRadar from './ConicRadar'
-import Range from '../util/Range'
+import { Range } from '../util'
 import { order } from '../Test'
 import './Chart.scss'
 
@@ -20,7 +20,7 @@ export default ({ scores }) => {
       viewBox={[-size * 1.1, -size * 1.1, size * 2.2, size * 2.2].join(' ')}
       id="5-color-radar"
     >
-      <title>Magic: The Gathering Five Color Personality Radar Chart</title>
+      <title>Magic: The Gathering Five Color Disposition Radar Chart</title>
       {/* The pentagon is taller on top than the bottom & needs to be shifted */}
       <g transform={`translate(0, ${(size - size * Math.cos(segment / 2)) / 2})`}>
         {[...Range(numPolys, 1, 1)].map((idx) => {

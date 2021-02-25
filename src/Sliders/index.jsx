@@ -1,17 +1,17 @@
 import { useRef } from 'react'
 import {
-  chakra, Box, Input, Heading, Spacer, Stack, Text,
+  chakra, Box, Heading, Spacer, Stack, Text,
 } from '@chakra-ui/react'
 import { connect } from 'react-redux'
 import {
   setActive, setConflict, setPosition
 } from '../Reducer'
-import Ambition from './icons/ambition.svg'
-import Balance from './icons/balance.svg'
-import Chaos from './icons/chaos.svg'
-import Justice from './icons/justice.svg'
-import Wisdom from './icons/wisdom.svg'
-import Side from '../Side'
+import Ambition from '../icons/ambition.svg'
+import Balance from '../icons/balance.svg'
+import Chaos from '../icons/chaos.svg'
+import Justice from '../icons/justice.svg'
+import Wisdom from '../icons/wisdom.svg'
+import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
 
@@ -22,7 +22,7 @@ const SVG = chakra('svg', {
 })
 
 // draw a five pointed star inscribed in a circle
-const Sliders = ({ active, conflict, handles }) => {
+const Sliders = ({ active, conflict }) => {
   const r = 500 // the radius of the circle
   // the length of the star's sides
   const l = r * Math.sin(4 * Math.PI / 5) / Math.sin(Math.PI / 10)
@@ -80,7 +80,6 @@ const Sliders = ({ active, conflict, handles }) => {
   }
   const mouseOut = (evt) => {
     // ToDo: handle mouse outs of the document as release events
-    return
     if(evt.target === svg.current) {
       mouseUp(evt)
     } else {
@@ -201,7 +200,7 @@ const Sliders = ({ active, conflict, handles }) => {
 
 export default connect(
   (state) => {
-    const { active, conflict, handles } = state
+    const { active, conflict } = state
     return { active, conflict }
   },
 )(Sliders)

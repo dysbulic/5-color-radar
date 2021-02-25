@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import {
   setActive, setOrigin, setHandle as setNormHandle,
   setTransform, setConflict,
-} from './Reducer' 
-import './Sliders.scss'
+} from '../Reducer'
+//import './Sliders.scss'
 
 const toDeg = (rad) => rad * 180 / Math.PI
 
@@ -45,10 +45,10 @@ export const Side = ({
     })
   }
   const handleRef = useRef()
-  const svg = useMemo(() => (
+  const svg = (
     handleRef.current?.closest('svg')
     || document.querySelector('svg')
-  ))
+  )
   const pointFor = (pos) => {
     if(svg) {
       const p = svg.createSVGPoint()
@@ -84,7 +84,7 @@ export const Side = ({
   useEffect(() => {
     setNormHandle(id, { x: 0, y: 0.325 })
     setHandle(id, { x: 0, y: 0 })
-  }, [])
+  }, [id])
 
   useEffect(() => {
     if(!position || !transform) {
@@ -141,6 +141,7 @@ export const Side = ({
             x1={x[1]} y1={0}
             x2={x[2]} y2={0}
             stroke={`url(#${id})`}
+            // the arrow markers are defined in the chart
             markerStart={`url(#${colors[0]}arrow)`}
             markerEnd={`url(#${colors[1]}arrow)`}
           />
