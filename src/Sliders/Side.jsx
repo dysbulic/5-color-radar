@@ -62,25 +62,25 @@ export const Side = ({
     }
   }
 
-  const trans = () => {
-    if(svg) {
-      const { a, b, c, d, e, f } = (
-        handleRef.current
-        .getScreenCTM()
-        .inverse()
-        .multiply(
-          svg.getScreenCTM()
-        )
-      )
-      setTransform(id, { a, b, c, d, e, f })
-    }
-  }
-  useEffect(trans, [id, svg])
+  // const trans = () => {
+  //   if(svg) {
+  //     const { a, b, c, d, e, f } = (
+  //       handleRef.current
+  //       .getScreenCTM()
+  //       .inverse()
+  //       .multiply(
+  //         svg.getScreenCTM()
+  //       )
+  //     )
+  //     setTransform(id, { a, b, c, d, e, f })
+  //   }
+  // }
+  // useEffect(trans, [id, svg])
 
   useEffect(() => {
     setNormHandle(id, { x: 0, y: 0.325 })
-    setHandle(id, { x: 0, y: 0 })
-  }, [id])
+    setHandle({ x: 0, y: 0 })
+  }, [])
 
   const repos = () => {
     if(!position || !transform) {

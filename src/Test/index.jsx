@@ -24,18 +24,8 @@ export default ({ history }) => {
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
-
-  if(!maxes) {
-    return (
-      <Stack align='center' pt={10}>
-        <Box>Processing Statements…</Box>
-        <Spinner/>
-      </Stack>
-    )
-  }
-
   const { answers = '' } = useParams()
-  const load = async () => {
+  const load = () => {
     let max, idx = 0
     for(
       let packed = atob(answers),
@@ -59,10 +49,11 @@ export default ({ history }) => {
       maxes[s.low] += 2
       maxes[s.high] += 2
     })
+    console.info(maxes)
     setMaxes(maxes)
   }
 
-  useEffect(() => load(), [])
+  useEffect(load, [])
 
   const location = useLocation()
   const answer = (res) => {
@@ -78,9 +69,10 @@ export default ({ history }) => {
         )
         storage = (storage << 3n) | BigInt(res)
       })
-      console.info(location)
-      // ToDo: `/test/` should not be hard coded
-      history.push(`/test/${btoa(storage)}`)
+      const path = (
+        location.pathname.replace(/(\/[^/]+)\/?.*/, '$1')
+      )
+      history.push(`${path}/${btoa(storage)}`)
       return change
     })
     setIndex(index + 1)
@@ -96,17 +88,18 @@ export default ({ history }) => {
       points: 0, color: 'blue'
     },
     'Agree': {
-      points: 1, color: 'lightgreen'
+      points: 1, color: 'teal'
     },
     'Strongly Agree': {
       points: 2, color: 'green'
     },
   }
-  const Sentiments = (
+  const sentiments = (
     Object.entries(timents)
     .map(([timent, { points, color }]) => (
       <Button
-        isActive={statements[index].response === points}
+        key={color}
+        isActive={statements[index]?.response === points}
         colorScheme={color}
         onClick={() => answer(points)}
       >{timent}</Button>
@@ -128,6 +121,16 @@ export default ({ history }) => {
       }
     }
   })
+
+  if(!maxes) {
+    return (
+      <Stack align='center' pt={10}>
+        <Box>Processing Statements…</Box>
+        <Spinner/>
+      </Stack>
+    )
+  }
+
   const scores = {}
   order.forEach(
     c => scores[c] = (current[c] ?? 0) / maxes[c] // normalized
@@ -158,17 +161,17 @@ export default ({ history }) => {
       </Flex>
       <Box id='statements' maxH={['none', '13rem']}>
         <Flex justify='center' align='center' flexDir='column'>
-          <Box
-            maxW={['20rem', '40rem']}
-            minH={['6rem', '3rem']}
-            ml={['3rem', 0]}
-          >
-            {statements[index] && (
+          {statements[index] && (
+            <Box
+              maxW={['20rem', '40rem']}
+              minH={['6rem', '3rem']}
+              ml={['3rem', 0]}
+            >
               <Text textAlign='justify'>
                 <q>{statements[index].position}</q>
               </Text>
-            )}
-          </Box>
+            </Box>
+          )}
           {!statements[index]
             ? (
               <Results {...{ scores }}/>
@@ -185,7 +188,7 @@ export default ({ history }) => {
                     className={``}
                   ></Box>
                   <Stack direction={['column', 'row']}>
-                    <Sentiments/>
+                    {sentiments}
                   </Stack>
                   {index < statements.length && (
                     <Stack align='center'>

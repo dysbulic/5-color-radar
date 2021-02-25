@@ -7,25 +7,23 @@ import { setHandle } from './Reducer'
 import { reasons } from './data/order'
 
 const Ranges = () => {
+  const range = 100
   const numReasons = Object.keys(reasons).length
   const [values, setValues] = (
     useState(Array(numReasons).fill(0))
   )
-  const range = 100
+  const change = (id, idx, { target: { value: val }}) => {
+    setValues(vs => {
+      vs = [...vs]
+      vs.splice(idx, 1, val)
+      return vs
+    })
+    setHandle(id, { x: val / range, y: 0.5 })
+  }
 
   return (
     <Stack align='center' minW={['100%', '20rem']} ml='5rem'>
       {Object.entries(reasons).map(([id, split], idx) => {
-        const change = (evt) => {
-          setValues(vs => {
-            const val = evt.target.value
-            vs = [...vs]
-            vs.splice(idx, 1, val)
-            setHandle(id, val / range)
-            return vs
-          })
-        }
-
         return (
           <Stack key={id} w='100%'>
             <HStack w='100%'>
@@ -39,7 +37,7 @@ const Ranges = () => {
               bg={`linear-gradient(
                 to right, ${id.split('-').join(', ')}
               )`}
-              onChange={change}
+              onChange={evt => change(id, idx, evt)}
             />
           </Stack>
         )

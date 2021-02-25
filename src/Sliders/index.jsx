@@ -51,6 +51,7 @@ const Sliders = ({ active, conflict }) => {
     try {
       const images = {}
       for(let name of Object.values(names)) {
+        // const path = `../icons/MetaGame/${name}.svg`
         const path = `./../icons/Red.svg`
         images[name] = (await import(path)).default
       }
