@@ -11,9 +11,11 @@ export const normsToWeights = (handles) => {
   if(Object.values(handles).filter(defined).length > 0) {
     // order the normalized scores
     const norms = Object.fromEntries(
-      order.map((id) => (
+      order
+      .map((id) => (
         handles[id] && [id, handles[id]]
       ))
+      .filter(defined)
     )
 
     const scores = Object.values(norms)
