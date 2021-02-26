@@ -6,7 +6,7 @@ import { normsToWeights } from './Sliders'
 import combos from './data/combos'
 import { colors as order } from './data/order'
 
-const Results = ({ handles }) => {
+const Results = ({ weights }) => {
   const [icons, setIcons] = useState()
   const load = useCallback(async () => {
     const icons = {}
@@ -14,21 +14,18 @@ const Results = ({ handles }) => {
       icons[combo] = (await import(`./icons/${combo}.svg`)).default
     }
     setIcons(icons)
-  }, [combos])
+  }, [])
 
   useEffect(() => load(), [load])
 
   const [name, setName] = useState()
   const update = useCallback(() => {
-    const scores = normsToWeights(handles)
-    const maxScore = Math.max(...Object.values(scores))
+    const maxWeight = Math.max(...Object.values(weights))
     const position = {}
-
-    console.info({ scores })
-    if(maxScore >= 0.5) { // Colorless if all ≤ 50%
-      Object.entries(scores).forEach(([color, score]) => {
-        if(score / maxScore >= 0.8) { // score is ≥ 80% of max
-          position[color] = score
+    if(maxWeight >= 0.5) { // Colorless if all ≤ 50%
+      Object.entries(weights).forEach(([color, weight]) => {
+        if(weight / maxWeight >= 0.8) { // score is ≥ 80% of max
+          position[color] = weight
         }
       })
     }
@@ -38,9 +35,9 @@ const Results = ({ handles }) => {
       2
     )
     setName(combos[mask])
-  }, [handles])
+  }, [weights])
 
-    useEffect(() => update(), [update])
+  useEffect(() => update(), [update])
 
   return (
     <Stack>
@@ -53,7 +50,7 @@ const Results = ({ handles }) => {
 
 export default connect(
   (state) => {
-    const { handles } = state
-    return { handles }
+    const { weights } = state
+    return { weights }
   },
 )(Results)

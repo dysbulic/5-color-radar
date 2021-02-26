@@ -18,6 +18,12 @@ export const reducers = {
   setTransform: (state, { payload: { id, transform }}) => (
     update(state, { transforms: { $merge: { [id]: transform } } })
   ),
+  setWeight: (state, { payload: { id, weight }}) => (
+    update(state, { weights: { $merge: { [id]: weight } } })
+  ),
+  setWeights: (state, { payload }) => (
+    update(state, { weights: { $set: payload } })
+  ),
   setConflict: (state, action) => (
     update(state, { conflict: { $set: action.payload } })
   ),
@@ -29,6 +35,7 @@ const initialState = {
   positions: {},
   handles: {},
   transforms: {},
+  weights: {},
 }
 const positionSlice = createSlice({
   name: 'pos',
@@ -56,6 +63,12 @@ export const setHandle = (id, handle) => {
 }
 export const setTransform = (id, transform) => {
   store.dispatch(positionSlice.actions.setTransform({ id, transform }))
+}
+export const setWeight = (id, weight) => {
+  store.dispatch(positionSlice.actions.setWeight({ id, weight }))
+}
+export const setWeights = (weights) => {
+  store.dispatch(positionSlice.actions.setWeights(weights))
 }
 export const setConflict = (conflict) => (
   store.dispatch(positionSlice.actions.setConflict(conflict))

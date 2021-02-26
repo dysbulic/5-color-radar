@@ -1,3 +1,4 @@
+import { connect } from 'react-redux'
 import { useEffect, useState, useCallback } from 'react'
 import {
   Flex, Stack, VStack, Box, Spinner, Button, ButtonGroup, Text,
@@ -13,13 +14,14 @@ import { BigInt, atob, btoa, defZero } from '../util'
 import ments from '../data/statements'
 import { colors as order } from '../data/order'
 import './index.scss'
+import { setWeights } from '../Reducer'
 
 // mapping of responses to an octal-representable number
 const storageMap = {
   0: undefined, 1: -2, 2: -1, 3: 0, 4: 1, 5: 2, 6: null,
 }
 
-export default ({ history }) => {
+const Test = ({ history }) => {
   const [statements, setStatements] = useState(ments)
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
@@ -49,7 +51,6 @@ export default ({ history }) => {
       maxes[s.low] += 2
       maxes[s.high] += 2
     })
-    console.info(maxes)
     setMaxes(maxes)
   }
 
@@ -57,26 +58,27 @@ export default ({ history }) => {
 
   const location = useLocation()
   const answer = (res) => {
-    setStatements((statements) => {
-      const change = [...statements]
-      change[index].response = res
-      let storage = 0n
-      change.forEach((s) => {
-        const res = (
-          Object.entries(storageMap).find(
-            ([_, val]) => val === s.response
-          )?.[0]
-        )
-        storage = (storage << 3n) | BigInt(res)
-      })
-      const path = (
-        location.pathname.replace(/(\/[^/]+)\/?.*/, '$1')
+    const change = [...statements]
+    change[index].response = res
+    let storage = 0n
+    change.forEach((s) => {
+      const res = (
+        Object.entries(storageMap).find(
+          ([_, val]) => val === s.response
+        )?.[0]
       )
-      history.push(`${path}/${btoa(storage)}`)
-      return change
+      storage = (storage << 3n) | BigInt(res)
     })
+    const path = (
+      location.pathname.replace(/(\/[^/]+)\/?.*/, '$1')
+    )
+    try {
+      history.push(`${path}/${btoa(storage)}`)
+    } catch(err) { /* duplicate */ }
+    setStatements(change)
     setIndex(index + 1)
   }
+
   const timents = {
     'Strongly Disagree': {
       points: -2, color: 'red'
@@ -94,16 +96,50 @@ export default ({ history }) => {
       points: 2, color: 'green'
     },
   }
-  const sentiments = (
-    Object.entries(timents)
-    .map(([timent, { points, color }]) => (
-      <Button
-        key={color}
-        isActive={statements[index]?.response === points}
-        colorScheme={color}
-        onClick={() => answer(points)}
-      >{timent}</Button>
-    ))
+  const Sentiments = () => (
+    <Stack direction={['column', 'row']}>
+      {Object.entries(timents)
+        .map(([timent, { points, color }]) => (
+          <Button
+            key={color}
+            isActive={statements[index]?.response === points}
+            colorScheme={color}
+            onClick={() => answer(points)}
+          >{timent}</Button>
+        ))
+      }
+    </Stack>
+  )
+
+  const Navigation = () => (
+    <Stack align='center'>
+      <ButtonGroup pt={5}>
+        <Button
+          isDisabled={index === 0}
+          colorScheme='purple'
+          leftIcon={<ArrowBackIcon/>}
+          onClick={() => setIndex(index - 1)}
+        >Back</Button>
+        <Button
+          index={index}
+          isDisabled={index >= statements.length}
+          colorScheme='purple'
+          rightIcon={<ArrowForwardIcon/>}
+          onClick={() => answer(null)}
+        >No Opinion</Button>
+      </ButtonGroup>
+    </Stack>
+  )
+
+  const ColorBar = ({ from, to }) => (
+    <Box id='colors'
+      style={{
+        background: `linear-gradient(
+          to right, ${from}, ${to}
+        )`
+      }}
+      className={``}
+    ></Box>
   )
 
   const current = new Proxy({}, defZero)
@@ -131,10 +167,15 @@ export default ({ history }) => {
     )
   }
 
-  const scores = {}
-  order.forEach(
-    c => scores[c] = (current[c] ?? 0) / maxes[c] // normalized
+  const scores = (
+    Object.fromEntries(
+      order.map(
+        c => [c, (current[c] ?? 0) / maxes[c]] // normalized
+      )
+    )
   )
+
+  setWeights(scores)
 
   return (
     <Stack className={!showing && 'imageOnly'}>
@@ -161,64 +202,46 @@ export default ({ history }) => {
       </Flex>
       <Box id='statements' maxH={['none', '13rem']}>
         <Flex justify='center' align='center' flexDir='column'>
-          {statements[index] && (
-            <Box
-              maxW={['20rem', '40rem']}
-              minH={['6rem', '3rem']}
-              ml={['3rem', 0]}
-            >
-              <Text textAlign='justify'>
-                <q>{statements[index].position}</q>
-              </Text>
-            </Box>
-          )}
           {!statements[index]
             ? (
               <Results {...{ scores }}/>
             ) : (
-              <VStack>
-                <Stack pt={5}>
-                  {/* ToDo: Make 100% width on mobile, preserving button width */}
-                  <Box id='colors'
-                    style={{
-                      background: `linear-gradient(
-                        to right, ${statements[index].low}, ${statements[index].high}
-                      )`
-                    }}
-                    className={``}
-                  ></Box>
-                  <Stack direction={['column', 'row']}>
-                    {sentiments}
-                  </Stack>
-                  {index < statements.length && (
-                    <Stack align='center'>
-                      <ButtonGroup pt={5}>
-                        <Button
-                          isDisabled={index === 0}
-                          colorScheme='purple'
-                          leftIcon={<ArrowBackIcon/>}
-                          onClick={() => setIndex(index - 1)}
-                        >Back</Button>
-                        <Button
-                          index={index}
-                          isDisabled={index >= statements.length}
-                          colorScheme='purple'
-                          rightIcon={<ArrowForwardIcon/>}
-                          onClick={() => answer(null)}
-                        >No Opinion</Button>
-                      </ButtonGroup>
-                    </Stack>
-                  )}
-                </Stack>
-                <Box>
-                  <Text>Test</Text>
+              <Flex direction='column'>
+                <Box
+                  maxW={['20rem', '40rem']}
+                  minH={['6rem', '3rem']}
+                  ml={['3rem', 0]}
+                >
+                  <Text textAlign='justify'>
+                    <q>{statements[index].position}</q>
+                  </Text>
                 </Box>
-              </VStack>
+                <Stack direction='row'>
+                  <Stack pt={5}>
+                    {/* ToDo: Make 100% width on mobile, preserving button width */}
+                    <ColorBar
+                      from={statements[index].low}
+                      to={statements[index].high}
+                    />
+                    <Sentiments/>
+                    <Navigation/>
+                  </Stack>
+                  <Box>
+                  <Button id='qVis'
+                    title='Skip To Results'
+                    minH='75%'
+                    w='2rem'
+                    onClick={() => setIndex(statements.length)}
+                  ><ArrowForwardIcon/></Button>
+                  </Box>
+                </Stack>
+              </Flex>
             )
           }
         </Flex>
       </Box>
       <Button id='qVis'
+        key='qVis'
         title={`${showing ? 'Hide' : 'Show'} Position`}
         maxH='1rem'
         minW='50%'
@@ -229,3 +252,11 @@ export default ({ history }) => {
     </Stack>
   )
 }
+
+
+export default connect(
+  (state) => {
+    const { } = state
+    return { }
+  },
+)(Test)

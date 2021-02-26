@@ -5,6 +5,14 @@ export const Range = (
   }
 )
 
+export const capitalize = (str) => (
+  str && str.length > 0 ? (
+    `${str[0].toUpperCase()}${str.substring(1)}`
+  ) : (
+    str
+  )
+)
+
 // radians to degrees
 export const toDeg = (rad) => rad * 180 / Math.PI
 

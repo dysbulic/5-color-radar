@@ -1,8 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-  viewBox="0 0 100 100"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
->
-  <image xlink:href='Orzhov.png' width='100%' height='100%'/>
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 103.73806 103.73806"
+   version="1.1"
+   id="svg881"
+   sodipodi:docname="Orzhov.svg"
+   width="100%"
+   height="100%"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <metadata
+     id="metadata887">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs885" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1738"
+     inkscape:window-height="1086"
+     id="namedview883"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4.417582"
+     inkscape:cx="44.002385"
+     inkscape:cy="55.823174"
+     inkscape:window-x="1110"
+     inkscape:window-y="258"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg881" />
+  <circle
+     style="fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:#3b3509;stroke-width:3.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path891"
+     cx="51.86903"
+     cy="51.86903"
+     r="50.269032" />
+  <path
+     style="fill:#000000;stroke-width:0.78125"
+     d="m 51.439327,99.064528 -3.365553,-25.203737 -3.496343,2.933544 -1.671567,-4.280793 -4.155367,1.94219 -0.743902,-4.996704 -12.661882,10.516075 8.322785,-14.11326 -4.189039,-0.03941 1.362322,-4.71427 -4.393088,-1.843888 2.49333,-4.411014 -25.19214,-3.473427 25.620457,-3.474285 -3.382562,-2.929631 4.349405,-2.225173 -1.887791,-4.143116 4.699428,-0.148841 -8.935593,-14.173428 13.36395,9.292256 0.86744,-4.81351 4.469227,1.782687 2.046625,-4.439431 3.270903,2.502557 3.332835,-25.0461411 3.719734,25.2331061 3.650225,-2.39148 1.397923,3.849639 4.139971,-1.503015 1.192645,4.752678 14.450342,-9.7754 -9.796537,13.571714 4.322725,1.003365 -1.438461,3.711282 3.449217,1.11823 -1.154632,3.291262 24.568371,4.980701 -24.44848,2.478626 1.429023,4.167003 -4.009864,2.078858 1.340261,4.201472 -3.779428,0.987071 7.396005,15.168576 -12.239566,-10.763948 -0.261137,4.36743 -4.442607,-1.371386 -2.056796,4.047417 -2.965578,-1.921201 z M 60.80483,69.268164 c 4.364786,-2.092797 8.546707,-7.084335 9.980629,-11.912871 1.447748,-4.875098 1.448623,-7.020551 0.0048,-11.859905 C 67.261145,33.666188 53.230252,27.918841 42.3536,33.84712 30.668207,40.216202 28.102558,55.505526 37.066959,65.351495 c 1.882695,2.067841 6.750788,4.758788 10.263398,5.673324 3.409676,0.887737 9.658266,0.07312 13.474473,-1.756655 z"
+     id="path889"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccsscssss" />
+  <circle
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path893-3"
+     sodipodi:type="arc"
+     sodipodi:cx="51.921318"
+     sodipodi:cy="51.578278"
+     sodipodi:rx="17.422564"
+     sodipodi:ry="17.422564"
+     sodipodi:start="4.9748661"
+     sodipodi:end="4.9741884"
+     sodipodi:open="true"
+     sodipodi:arc-type="arc"
+     d="M 56.442014,34.752433 A 17.422564,17.422564 0 0 1 68.747928,56.096123 17.422564,17.422564 0 0 1 47.406324,68.405653 17.422564,17.422564 0 0 1 35.093178,47.066135 17.422564,17.422564 0 0 1 56.43061,34.749374" />
 </svg>
