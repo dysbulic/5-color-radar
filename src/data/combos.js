@@ -1,3 +1,5 @@
+import { Text, Link, Stack } from '@chakra-ui/react'
+
 export const masks = {
 	0b00000: 'Colorless',
 	0b10000: 'White',

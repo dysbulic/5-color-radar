@@ -54,9 +54,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="121.49504"
-     inkscape:cy="133.36797"
+     inkscape:zoom="1.4"
+     inkscape:cx="124.09753"
+     inkscape:cy="253.7715"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -88,7 +88,7 @@
      id="layer1"
      transform="translate(7.6346438,-16.469131)">
     <circle
-       style="fill:#ff0000;fill-rule:evenodd;stroke:#010c09;stroke-width:4.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.900373"
+       style="fill:#7dfee0;fill-rule:evenodd;stroke:#010c09;stroke-width:4.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.900373;fill-opacity:1"
        id="path20073"
        cx="107.09772"
        cy="131.20149"

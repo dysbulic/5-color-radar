@@ -26,6 +26,9 @@ const overrides = {
       body: {
         bgImage: `url('${bg}')`,
       },
+      a: {
+        textDecoration: 'underline',
+      },
     },
   },
 }

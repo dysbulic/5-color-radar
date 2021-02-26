@@ -177,6 +177,27 @@ const Test = ({ history }) => {
 
   setWeights(scores)
 
+  const Statement = ({ positon }) => (
+    <Box
+      maxW={['20rem', '40rem']}
+      minH={['6rem', '3rem']}
+      ml={['3rem', 0]}
+    >
+      <Text textAlign='justify'>
+        <q>{statements[index].position}</q>
+      </Text>
+    </Box>
+  )
+
+  const GetResult = () => (
+    <Button
+      title='Skip To Results'
+      h='auto'
+      w='2rem'
+      onClick={() => setIndex(statements.length)}
+    ><ArrowForwardIcon/></Button>
+  )
+
   return (
     <Stack className={!showing && 'imageOnly'}>
       <Flex as='nav' key='head'>
@@ -200,59 +221,38 @@ const Test = ({ history }) => {
           ></span>
         ))}
       </Flex>
-      <Box id='statements'>
-        <Flex justify='center' align='center' flexDir='column'>
-          {!statements[index]
-            ? (
-              <Results {...{ scores }}/>
-            ) : (
-              <Flex direction='column'>
-                <Box
-                  maxW={['20rem', '40rem']}
-                  minH={['6rem', '3rem']}
-                  ml={['3rem', 0]}
-                >
-                  <Text textAlign='justify'>
-                    <q>{statements[index].position}</q>
-                  </Text>
-                </Box>
-                <Stack direction='row'>
-                  <Stack pt={5}>
-                    {/* ToDo: Make 100% width on mobile, preserving button width */}
-                    <ColorBar
-                      from={statements[index].low}
-                      to={statements[index].high}
-                    />
-                    <Sentiments/>
-                    <Navigation/>
-                  </Stack>
-                  <Box>
-                  <Button id='qVis'
-                    title='Skip To Results'
-                    minH='75%'
-                    w='2rem'
-                    onClick={() => setIndex(statements.length)}
-                  ><ArrowForwardIcon/></Button>
-                  </Box>
-                </Stack>
-              </Flex>
-            )
-          }
-        </Flex>
-      </Box>
-      <Button id='qVis'
-        key='qVis'
-        title={`${showing ? 'Hide' : 'Show'} Position`}
-        maxH='1rem'
-        minW='50%'
-        margin='auto'
-        onClick={() => setShowing(s => !s)}
-      >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
-      <Chart key='chart' {...{ scores }}/>
+      {!statements[index]
+        ? (
+          <Results {...{ scores }}/>
+        ) : (
+          <Flex direction='column' align='center'>
+            <Stack direction='row'>
+              <Stack pt={5} id='statements'>
+                <Statement positon={statements[index].position}/>
+                {/* ToDo: Make 100% width on mobile, preserving button width */}
+                <ColorBar
+                  from={statements[index].low}
+                  to={statements[index].high}
+                />
+                <Sentiments/>
+                <Navigation/>
+              </Stack>
+              <GetResult/>
+            </Stack>
+            <Button
+              title={`${showing ? 'Hide' : 'Show'} Position`}
+              maxH='1rem'
+              minW='50%'
+              margin='1rem auto'
+              onClick={() => setShowing(s => !s)}
+            >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
+            <Chart key='chart' {...{ scores }}/>
+          </Flex>
+        )
+      }
     </Stack>
   )
 }
-
 
 export default connect(
   (state) => {
