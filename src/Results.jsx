@@ -1,5 +1,5 @@
 import { Image } from '@chakra-ui/image'
-import { Heading, Stack } from '@chakra-ui/react'
+import { Heading, Stack, Text } from '@chakra-ui/react'
 import { useEffect, useState, useCallback } from 'react'
 import { connect } from 'react-redux'
 import { normsToWeights } from './Sliders'
@@ -40,9 +40,13 @@ const Results = ({ weights }) => {
   useEffect(() => update(), [update])
 
   return (
-    <Stack>
-      {icons && <Image alt={name} src={icons[name]}/>}
-      <Heading>{name}</Heading>
+
+    <Stack direction='row' align='center' justify='center'>
+      {icons && <object alt={name} data={icons[name]}/>}
+      <Stack>
+        <Heading>{name}</Heading>
+        <Text>You have no personality. Sorry. ☹</Text>
+      </Stack>
     </Stack>
   )
 }

@@ -200,7 +200,7 @@ const Test = ({ history }) => {
           ></span>
         ))}
       </Flex>
-      <Box id='statements' maxH={['none', '13rem']}>
+      <Box id='statements'>
         <Flex justify='center' align='center' flexDir='column'>
           {!statements[index]
             ? (
