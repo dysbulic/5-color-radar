@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[24],{152:function(s,a,r){"use strict";r.r(a),a.default=r.p+"static/media/Grixis.ede05736.svg"}}]);
-//# sourceMappingURL=24.99f65312.chunk.js.map

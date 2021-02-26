@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[39],{167:function(a,s,t){"use strict";t.r(s),s.default=t.p+"static/media/Sultai.a6416284.svg"}}]);
-//# sourceMappingURL=39.eb4d9ed6.chunk.js.map

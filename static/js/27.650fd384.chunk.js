@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[27],{155:function(a,c,s){"use strict";s.r(c),c.default=s.p+"static/media/Izzet.ed2cfac4.svg"}}]);
-//# sourceMappingURL=27.650fd384.chunk.js.map

@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[4],{132:function(s,a,r){"use strict";r.r(a),a.default=r.p+"static/media/Aggression.99452e9d.svg"}}]);
-//# sourceMappingURL=4.931c9a9e.chunk.js.map

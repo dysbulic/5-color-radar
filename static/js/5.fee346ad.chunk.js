@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[5],{133:function(s,a,r){"use strict";r.r(a),a.default=r.p+"static/media/Altruism.10f8c826.svg"}}]);
-//# sourceMappingURL=5.fee346ad.chunk.js.map
