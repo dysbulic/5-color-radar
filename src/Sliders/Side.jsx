@@ -4,9 +4,8 @@ import {
   setActive, setOrigin, setHandle as setNormHandle,
   setTransform, setConflict,
 } from '../Reducer'
-//import './Sliders.scss'
-
-const toDeg = (rad) => rad * 180 / Math.PI
+import { reasons } from '../data/order'
+import { toDeg } from '../util'
 
 export const bounds = {
   x: { min: -400, max: 400 },
@@ -16,19 +15,15 @@ export const extents = {
   x: Math.abs(bounds.x.min) + Math.abs(bounds.x.max),
   y: Math.abs(bounds.y.min) + Math.abs(bounds.y.max),
 }
-export const conflicts = {
-  'red-white': { left: 'Chaos', right: 'Order' },
-  'white-black': { left: 'Group', right: 'Individual' },
-  'black-green': { left: 'Exploitation', right: 'Preservation' },
-  'green-blue': { left: 'Nature', right: 'Nurture' },
-  'blue-red': { left: 'Reason', right: 'Emotion' },
-}
 
 export const Side = ({
   rot = 0, shrink = 0.9, colors = ['black', 'black'],
   r, l, positions, handles, transforms
 }) => {
-  const id = `${colors[0]}-${colors[1]}`
+  const id = useMemo(
+    () => `${colors[0]}-${colors[1]}`,
+    [colors]
+  )
   const position = positions[id]
   const transform = transforms[id]
   const normHandle = handles[id] ?? { x: 0, y: 0 }
@@ -36,8 +31,8 @@ export const Side = ({
   const toEdge = Math.sqrt(Math.abs((l / 2) ** 2 - r ** 2))
   const [handle, setHandle] = useState({ x: 0, y: 0 })
   const mouseDown = (evt) => {
-    const conflict = conflicts[id]
-    setOrigin({ x: evt.clientX, y: evt.clientY })
+    const conflict = reasons[id]
+    // setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
     setConflict({
       left: { color: colors[0], text: conflict.left },
@@ -67,26 +62,27 @@ export const Side = ({
     }
   }
 
-  useEffect(() => {
-    if(svg) {
-      const { a, b, c, d, e, f } = (
-        handleRef.current
-        .getScreenCTM()
-        .inverse()
-        .multiply(
-          svg.getScreenCTM()
-        )
-      )
-      setTransform(id, { a, b, c, d, e, f })
-    }
-  }, [id, svg])
+  // const trans = () => {
+  //   if(svg) {
+  //     const { a, b, c, d, e, f } = (
+  //       handleRef.current
+  //       .getScreenCTM()
+  //       .inverse()
+  //       .multiply(
+  //         svg.getScreenCTM()
+  //       )
+  //     )
+  //     setTransform(id, { a, b, c, d, e, f })
+  //   }
+  // }
+  // useEffect(trans, [id, svg])
 
-  useEffect(() => {
-    setNormHandle(id, { x: 0, y: 0.325 })
-    setHandle(id, { x: 0, y: 0 })
-  }, [id])
+  // useEffect(() => {
+  //   setNormHandle(id, { x: 0, y: 0.325 })
+  //   setHandle({ x: 0, y: 0 })
+  // }, [])
 
-  useEffect(() => {
+  const repos = () => {
     if(!position || !transform) {
       return
     } else if(!handleRef.current) {
@@ -106,7 +102,8 @@ export const Side = ({
       setHandle(bounded)
       setNormHandle(id, norm)
     }
-  }, [positions[id], transform])
+  }
+  //useEffect(repos, [position, transform])
 
   return (
     <>

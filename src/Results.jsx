@@ -1,40 +1,83 @@
+import { Image } from '@chakra-ui/image'
+import { Heading, Stack, Text } from '@chakra-ui/react'
 import { useEffect, useState, useCallback } from 'react'
-import combos from './data/combos'
+import { connect } from 'react-redux'
+import { capitalize } from './util'
+import {
+  masks as combos, descriptions
+} from './data/combos'
 import { colors as order } from './data/order'
+import Chart from './Chart'
 
-export default ({ scores }) => {
-  if(!scores) throw new Error('Missing Required Prop: scores')
-
+const Results = ({ weights }) => {
   const [icons, setIcons] = useState()
   const load = useCallback(async () => {
     const icons = {}
-    for(
-      let [id, combo] of Object.entries(combos)
-    ) {
-      icons[id] = await import(`./icons/${combo}.svg`)
+    for(let combo of Object.values(combos)) {
+      icons[combo] = (await import(`./icons/${combo}.svg`)).default
     }
     setIcons(icons)
-  }, [combos])
+  }, [])
 
-  //useEffect(() => load(), [load])
+  useEffect(() => load(), [load])
 
-  const maxScore = Math.max(...Object.values(scores))
-  const position = {}
+  const [mask, setMask] = useState()
+  const name = combos[mask]
+  const update = useCallback(() => {
+    const maxWeight = Math.max(...Object.values(weights))
+    const position = {}
+    if(maxWeight >= 0.4) { // Colorless if all ≤ 40%
+      Object.entries(weights).forEach(([color, weight]) => {
+        if(weight / maxWeight >= 0.8) { // score is ≥ 80% of max
+          position[color] = weight
+        }
+      })
+    }
 
-  if(maxScore >= 0.5) { // Colorless if all ≤ 50%
-    Object.entries(scores).forEach(([color, score]) => {
-      if(score / maxScore >= 0.8) { // score is ≥ 80% of max
-        position[color] = score
-      }
-    })
-  }
+    const mask = parseInt(
+      order.map(c => position[c] ? '1' : '0').join(''),
+      2
+    )
+    setMask(mask)
+  }, [weights])
 
-  const mask = parseInt(
-    order.map(c => position[c] ? '1' : '0').join(''),
-    2
-  )
-  
+  useEffect(() => update(), [update])
+
   return (
-    <h1>Result: {combos[mask]}</h1>
+    <Stack
+      align='center' justify='center'
+    >
+      <Heading pb={5}>{name}</Heading>
+      <Stack direction='row'>
+        {icons && (
+          <Stack direction='column' align='center'>
+            <object
+              alt={name} data={icons[name]}
+              style={{ height: '40vh', width: '40vh' }}
+            />
+            <Stack direction='row'>
+              {order.map((c, i) => (mask & (1 << order.length - i - 1)) ? (
+                <object
+                  key={c} data={icons[capitalize(c)]}
+                  style={{ height: '10vh', width: '10vh'  }}
+                />
+              ) : ( null ))}
+            </Stack>
+            <Chart maxH='50vh'/>
+          </Stack>
+        )}
+        <Stack maxW='25rem'>
+          {descriptions[name]}
+        </Stack>
+      </Stack>
+    </Stack>
   )
 }
+
+
+export default connect(
+  (state) => {
+    const { weights } = state
+    return { weights }
+  },
+)(Results)

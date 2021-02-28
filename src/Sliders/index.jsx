@@ -1,4 +1,6 @@
-import { useRef } from 'react'
+import {
+  useRef, useMemo, useState, useEffect, useCallback,
+} from 'react'
 import {
   chakra, Box, Heading, Spacer, Stack, Text,
 } from '@chakra-ui/react'
@@ -6,14 +8,17 @@ import { connect } from 'react-redux'
 import {
   setActive, setConflict, setPosition
 } from '../Reducer'
-import Ambition from '../icons/ambition.svg'
-import Balance from '../icons/balance.svg'
-import Chaos from '../icons/chaos.svg'
-import Justice from '../icons/justice.svg'
-import Wisdom from '../icons/wisdom.svg'
 import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
+import { names } from '../data/order'
+
+// needed b/c dynamic loading is failing
+import Ambition from '../icons/MetaGame/Ambition.svg'
+import Balance from '../icons/MetaGame/Balance.svg'
+import Chaos from '../icons/MetaGame/Chaos.svg'
+import Justice from '../icons/MetaGame/Justice.svg'
+import Wisdom from '../icons/MetaGame/Wisdom.svg'
 
 export { normsToWeights } from './Linkages'
 
@@ -25,6 +30,7 @@ const SVG = chakra('svg', {
 
 // draw a five pointed star inscribed in a circle
 const Sliders = ({ active, conflict }) => {
+  const [images, setImages] = useState()
   const r = 500 // the radius of the circle
   // the length of the star's sides
   const l = r * Math.sin(4 * Math.PI / 5) / Math.sin(Math.PI / 10)
@@ -40,7 +46,26 @@ const Sliders = ({ active, conflict }) => {
     }
   }
 
-  const BgImage = ({ x = 0, y = 0, image, name }) => (
+  const load = useCallback(async () => {
+    try {
+      const images = {}
+      for(let name of Object.values(names)) {
+        // const path = `../icons/MetaGame/${name}.svg`
+        const path = `./../icons/Red.svg`
+        images[name] = (await import(path)).default
+      }
+      setImages(images)
+    } catch(err) {
+      console.warn("Couldn't Load Images", err)
+      setImages({
+        Ambition, Balance, Chaos, Justice, Wisdom,
+      })
+    }
+  }, [names])
+
+  useEffect(() => load(), [load])
+  
+  const BgImage = ({ x = 0, y = 0, name }) => (
     <g className={`bg ${name.toLowerCase()}`}
       transform={`translate(${x - (r / 4)}, ${y - (r / 4)})`}
     >
@@ -49,11 +74,13 @@ const Sliders = ({ active, conflict }) => {
         width={6 * r / 8} height={6 * r / 8}
         rx={r / 10} ry={r / 10}
       />
-      <image
-        xlinkHref={image}
-        width={r / 2} height={r / 2}
-        filter='url(#shadow)'
-      />
+      {images?.[name] && (
+        <image
+          xlinkHref={images[name]}
+          width={r / 2} height={r / 2}
+          filter='url(#shadow)'
+        />
+      )}
       <text
         textAnchor='middle'
         x={2 * r / 8} y={5 * r / 8}
@@ -62,7 +89,7 @@ const Sliders = ({ active, conflict }) => {
   )
 
   const StarSide = ({ colors, rot }) => (
-    <Side {...{ colors, rot, l, r }}/>
+    <Side {...{ colors: useMemo(() => colors, []), rot, l, r }}/>
   )
 
   const mouseMove = (evt) => {
@@ -72,7 +99,6 @@ const Sliders = ({ active, conflict }) => {
       const { x, y } = p.matrixTransform(
         svg.current.getScreenCTM().inverse()
       )
-      //console.info('SCR', pos, {x,y})
       setPosition(active, { x, y })
     }
   }
@@ -84,18 +110,17 @@ const Sliders = ({ active, conflict }) => {
     // ToDo: handle mouse outs of the document as release events
     if(evt.target === svg.current) {
       mouseUp(evt)
-    } else {
-      evt.stopPropagation()
     }
+    evt.stopPropagation()
   }
 
   return (
-    <>
+    <Stack direction='column' w='100%' align='center'>
       <Box minH='3.75rem'>
         {!!conflict && (
           <Box
             align='center' className='conflict'
-            ml='3rem'
+            ml='3rem' w='100%'
             background={`linear-gradient(
               to left,
               transparent, ${conflict.right.color},
@@ -162,27 +187,27 @@ const Sliders = ({ active, conflict }) => {
         <g className='images'>
           <BgImage
             x={0} y={-(d + r / 4)}
-            image={Justice} name='Justice'
+            name='Justice'
           />
           <BgImage
             x={(d * Math.sin(Math.PI / 5)) / Math.sin(Math.PI / 2) + r / 4}
             y={(d * Math.sin(3 * Math.PI / 10)) / Math.sin(Math.PI / 2) + r / 4}
-            image={Ambition} name='Ambition'
+            name='Ambition'
           />
           <BgImage
             x={-(d * Math.sin(Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4)}
             y={(d * Math.sin(3 * Math.PI / 10)) / Math.sin(Math.PI / 2) + r / 4}
-            image={Chaos} name='Chaos'
+            name='Chaos'
           />
           <BgImage
             x={-(d * Math.sin(2 * Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4)}
             y={-(d * Math.sin(Math.PI / 10) / Math.sin(Math.PI / 2))}
-            image={Balance} name='Balance'
+            name='Balance'
           />
           <BgImage
             x={d * Math.sin(2 * Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4}
             y={-(d * Math.sin(Math.PI / 10) / Math.sin(Math.PI / 2))}
-            image={Wisdom} name='Wisdom'
+            name='Wisdom'
           />
         </g>
         <g className='links' transform={`translate(0, ${r / 8})`}>
@@ -196,7 +221,7 @@ const Sliders = ({ active, conflict }) => {
           <StarSide rot={8 * Math.PI / 10} colors={['blue', 'red']}/>
         </g>
       </SVG>
-    </>
+    </Stack>
   )
 }
 

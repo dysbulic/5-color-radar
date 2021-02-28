@@ -6,15 +6,19 @@ import { conflicts as order, colors } from '../data/order'
 // (-1≤x≤1; 0≤y≤1) into a set of weights for the different
 // colors
 export const normsToWeights = (handles) => {
-  const weights = []
+  const weights = {}
   const defined = n => n !== undefined
   if(Object.values(handles).filter(defined).length > 0) {
     // order the normalized scores
-    const norms = order.reduce((out, id) => {
-      out[id] = handles[id] // out.tap(o => o[id] = handles[id])
-      return out
-    }, {})
+    const norms = Object.fromEntries(
+      order
+      .map((id) => (
+        !handles[id] ? undefined : [id, handles[id]]
+      ))
+      .filter(defined)
+    )
 
+    const axes = Object.keys(norms)
     const scores = Object.values(norms)
     for(let idx = 1; idx <= scores.length; idx++) {
       const p1 = scores[(idx + scores.length - 2) % scores.length]
@@ -23,8 +27,9 @@ export const normsToWeights = (handles) => {
       const portance = (p1.y + p2.y) / 2 // mean of distance from center
       const viction = (p2.x + -p1.x) / 2
       l += 0.7 * portance
-      l += 0.25 * viction 
-      weights.push(l)
+      l += 0.25 * viction
+      const color = axes[(idx + 1) % scores.length].split('-')[0]
+      weights[color] = l
     }
   }
   return weights
@@ -35,13 +40,12 @@ const Linkages = ({
 }) => {
   const [polygon, setPolygon] = useState()
   const r = size / 2 // radius for polar coordinates
-  const revOrder = [...order].reverse()
 
-  useEffect(() => {
+  const plot = () => {
     const offset = 3 * Math.PI / 10
     const arc = 2 * Math.PI / 5
     const points = (
-      normsToWeights(handles).map((w, idx) => {
+      Object.values(normsToWeights(handles)).map((w, idx) => {
         const theta = offset + idx * arc
         return {
           x: r * w * Math.cos(theta),
@@ -51,15 +55,15 @@ const Linkages = ({
     )
     points.reverse()
     ;(points.length > 0) && setPolygon(points)
-  }, [handles, r])
+  }
+  useEffect(plot, [plot, handles, r])
 
   return (
     (!polygon ? null : (
       <>
         {polygon.map((point, idx) => {
-          const color = (
-            colors[idx]
-          )
+          const color = colors[idx]
+          
           return (
             <g key={idx} className='link'>
               <circle className='joint'

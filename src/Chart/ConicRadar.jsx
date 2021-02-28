@@ -1,14 +1,15 @@
-import { Range } from '../util'
+import { connect } from 'react-redux'
+import { Range, capitalize } from '../util'
 import { colors as order } from '../data/order'
 
-export default ({ scores, size }) => {
-  const numScores = Object.keys(scores).length
-  const segment = 2 * Math.PI / numScores
+const ConicRadar = ({ weights, size }) => {
+  const numWeights = order.length
+  const segment = 2 * Math.PI / numWeights
   const start = Math.PI / 2
-  const thetas = [...Range(numScores, segment, start)]
+  const thetas = [...Range(numWeights, segment, start)]
   const points = (
     order.map((color, i) => {
-      const r = scores[color] * size
+      const r = (weights[color] ?? 0) * size
       return {
         color,
         x: r * Math.cos(thetas[i]),
@@ -44,9 +45,17 @@ export default ({ scores, size }) => {
           className='point'
           style={{ fill: order[i] }}
         >
-          <title>{`${p.color.toUpperCase()}: ${(scores[p.color] * 100).toFixed(1)}%`}</title>
+          <title>{`${capitalize(p.color)}: ${(weights[p.color] * 100).toFixed(1)}%
+          `}</title>
         </circle>
       ))}
     </g>
   )
 }
+
+export default connect(
+  (state) => {
+    const { weights } = state
+    return { weights }
+  },
+)(ConicRadar)
