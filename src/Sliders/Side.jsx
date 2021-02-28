@@ -32,7 +32,7 @@ export const Side = ({
   const [handle, setHandle] = useState({ x: 0, y: 0 })
   const mouseDown = (evt) => {
     const conflict = reasons[id]
-    setOrigin({ x: evt.clientX, y: evt.clientY })
+    // setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
     setConflict({
       left: { color: colors[0], text: conflict.left },
@@ -77,10 +77,10 @@ export const Side = ({
   // }
   // useEffect(trans, [id, svg])
 
-  useEffect(() => {
-    setNormHandle(id, { x: 0, y: 0.325 })
-    setHandle({ x: 0, y: 0 })
-  }, [])
+  // useEffect(() => {
+  //   setNormHandle(id, { x: 0, y: 0.325 })
+  //   setHandle({ x: 0, y: 0 })
+  // }, [])
 
   const repos = () => {
     if(!position || !transform) {

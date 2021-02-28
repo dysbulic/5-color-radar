@@ -28,7 +28,6 @@ const SVG = chakra('svg', {
   },
 })
 
-
 // draw a five pointed star inscribed in a circle
 const Sliders = ({ active, conflict }) => {
   const [images, setImages] = useState()

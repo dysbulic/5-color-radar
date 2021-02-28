@@ -1,257 +1,1406 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 164.02 159.17" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(-22.216 -55.357)" fill="none" stroke="#000" stroke-width=".265">
-    <path d="m126.23 84.316a61.793 61.793 0 0 1 35.788 79.694 61.793 61.793 0 0 1-79.672 35.838 61.793 61.793 0 0 1-35.888-79.649 61.793 61.793 0 0 1 79.626-35.938"/>
-    <path d="m119 103.75a41.06 41.06 0 0 1 23.78 52.955 41.06 41.06 0 0 1-52.94 23.813 41.06 41.06 0 0 1-23.846-52.925 41.06 41.06 0 0 1 52.91-23.88"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 164.02 159.17"
+   id="svg444"
+   sodipodi:docname="multicolors.svg"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <metadata
+     id="metadata450">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs448" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2367"
+     inkscape:window-height="1355"
+     id="namedview446"
+     showgrid="false"
+     inkscape:zoom="8.9560048"
+     inkscape:cx="70.074629"
+     inkscape:cy="92.896461"
+     inkscape:window-x="808"
+     inkscape:window-y="93"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g442" />
+  <g
+     transform="translate(-22.216 -55.357)"
+     fill="none"
+     stroke="#000"
+     stroke-width=".265"
+     id="g6">
+    <path
+       d="m126.23 84.316a61.793 61.793 0 0 1 35.788 79.694 61.793 61.793 0 0 1-79.672 35.838 61.793 61.793 0 0 1-35.888-79.649 61.793 61.793 0 0 1 79.626-35.938"
+       id="path2" />
+    <path
+       d="m119 103.75a41.06 41.06 0 0 1 23.78 52.955 41.06 41.06 0 0 1-52.94 23.813 41.06 41.06 0 0 1-23.846-52.925 41.06 41.06 0 0 1 52.91-23.88"
+       id="path4" />
   </g>
-  <g transform="translate(-22.216 -55.357)">
-    <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265">
-      <rect transform="matrix(-.93819 .34613 .34613 .93819 0 0)" x="-27.982" y="168.69" width="43.49" height="1.3198" fill="#009fe3"/>
-      <rect transform="matrix(-.57907 .81528 .81528 .57907 0 0)" x="-8.3933" y="166.51" width="43.49" height="1.3198" fill="#e30613"/>
-      <rect transform="rotate(55.035)" x="112.9" y="-4.719" width="43.49" height="1.3198"/>
-      <rect transform="rotate(90.107)" x="161.62" y="-105.2" width="43.49" height="1.3198" fill="#efe8da"/>
+  <g
+     transform="translate(-22.216 -55.357)"
+     id="g442">
+    <g
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="g16">
+      <rect
+         transform="matrix(-.93819 .34613 .34613 .93819 0 0)"
+         x="-27.982"
+         y="168.69"
+         width="43.49"
+         height="1.3198"
+         fill="#009fe3"
+         id="rect8" />
+      <rect
+         transform="matrix(-.57907 .81528 .81528 .57907 0 0)"
+         x="-8.3933"
+         y="166.51"
+         width="43.49"
+         height="1.3198"
+         fill="#e30613"
+         id="rect10" />
+      <rect
+         transform="rotate(55.035)"
+         x="112.9"
+         y="-4.719"
+         width="43.49"
+         height="1.3198"
+         id="rect12" />
+      <rect
+         transform="rotate(90.107)"
+         x="161.62"
+         y="-105.2"
+         width="43.49"
+         height="1.3198"
+         fill="#efe8da"
+         id="rect14" />
     </g>
-    <path d="m111.59 122.82a20.336 20.336 0 0 1 11.778 26.227 20.336 20.336 0 0 1-26.22 11.794 20.336 20.336 0 0 1-11.811-26.212 20.336 20.336 0 0 1 26.205-11.827" fill="none" stroke="#000" stroke-width=".265"/>
-    <g transform="translate(-.75238 9.3577)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m105.26 137.21a4.5883 4.5883 0 0 1-4.295-3.0248l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-      <path d="m109.6 134.2a4.5883 4.5883 0 0 1-4.2979 3.0086l-0.01-4.5883z" stroke-width=".265"/>
-      <g stroke-width=".26458">
-        <path transform="rotate(-69.691)" d="m-83.428 145.93a4.5883 4.5883 0 0 1-4.4317 3.4371l-0.0098-4.5883z" fill="#009fe3"/>
-        <path transform="rotate(140.34)" d="m7.9105-167.74a4.5883 4.5883 0 0 1-4.6592 2.9951l0.35144-4.5748z" fill="#009640"/>
-        <path transform="rotate(214.41)" d="m-157.52-48.348a4.5883 4.5883 0 0 1-4.2979 3.0085l-0.01-4.5883z" fill="#efe8da"/>
+    <path
+       d="m111.59 122.82a20.336 20.336 0 0 1 11.778 26.227 20.336 20.336 0 0 1-26.22 11.794 20.336 20.336 0 0 1-11.811-26.212 20.336 20.336 0 0 1 26.205-11.827"
+       fill="none"
+       stroke="#000"
+       stroke-width=".265"
+       id="path18" />
+    <g
+       transform="translate(-.75238 9.3577)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g32">
+      <path
+         d="m105.26 137.21a4.5883 4.5883 0 0 1-4.295-3.0248l4.3137-1.5635z"
+         fill="#e30613"
+         stroke-width=".26458"
+         id="path20" />
+      <path
+         d="m109.6 134.2a4.5883 4.5883 0 0 1-4.2979 3.0086l-0.01-4.5883z"
+         stroke-width=".265"
+         id="path22" />
+      <g
+         stroke-width=".26458"
+         id="g30">
+        <path
+           transform="rotate(-69.691)"
+           d="m-83.428 145.93a4.5883 4.5883 0 0 1-4.4317 3.4371l-0.0098-4.5883z"
+           fill="#009fe3"
+           id="path24" />
+        <path
+           transform="rotate(140.34)"
+           d="m7.9105-167.74a4.5883 4.5883 0 0 1-4.6592 2.9951l0.35144-4.5748z"
+           fill="#009640"
+           id="path26" />
+        <path
+           transform="rotate(214.41)"
+           d="m-157.52-48.348a4.5883 4.5883 0 0 1-4.2979 3.0085l-0.01-4.5883z"
+           fill="#efe8da"
+           id="path28" />
       </g>
     </g>
-    <text x="104.52714" y="149.84612" font-family="sans-serif" font-size="3px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="104.52714" y="149.84612" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">WUBRG</tspan></text>
-    <g transform="translate(-2.2915 1.5732)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-      <path transform="rotate(-38.484)" d="m-18.89 171.42a4.5883 4.5883 0 0 1-5.886 2.7286l1.5782-4.3084z" stroke-width=".265"/>
-      <path transform="rotate(140.34)" d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z" fill="#009640" stroke-width=".26458"/>
-      <path transform="rotate(230.85)" d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z" fill="#efe8da" stroke-width=".26458"/>
+    <text
+       x="104.52714"
+       y="149.84612"
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       style="line-height:1.25"
+       xml:space="preserve"
+       id="text36"><tspan
+         x="104.52714"
+         y="149.84612"
+         font-size="3px"
+         stroke-width=".26458"
+         text-align="center"
+         text-anchor="middle"
+         id="tspan34">WUBRG</tspan></text>
+    <g
+       transform="translate(-2.2915 1.5732)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g46">
+      <path
+         d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"
+         fill="#e30613"
+         stroke-width=".26458"
+         id="path38" />
+      <path
+         transform="rotate(-38.484)"
+         d="m-18.89 171.42a4.5883 4.5883 0 0 1-5.886 2.7286l1.5782-4.3084z"
+         stroke-width=".265"
+         id="path40" />
+      <path
+         transform="rotate(140.34)"
+         d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z"
+         fill="#009640"
+         stroke-width=".26458"
+         id="path42" />
+      <path
+         transform="rotate(230.85)"
+         d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z"
+         fill="#efe8da"
+         stroke-width=".26458"
+         id="path44" />
     </g>
-    <g transform="matrix(-.64542 .76383 .76383 .64542 44.502 -44.454)">
-      <g transform="rotate(4.0434 112.45 301.65)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-        <path transform="rotate(-38.484)" d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z" fill="#009fe3" stroke-width=".265"/>
-        <path transform="rotate(140.34)" d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z" fill="#009640" stroke-width=".26458"/>
-        <path transform="rotate(230.85)" d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z" fill="#efe8da" stroke-width=".26458"/>
+    <g
+       transform="matrix(-.64542 .76383 .76383 .64542 44.502 -44.454)"
+       id="g58">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         fill-rule="evenodd"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="g56">
+        <path
+           d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"
+           fill="#e30613"
+           stroke-width=".26458"
+           id="path48"
+           style="fill:#009fe3;fill-opacity:1" />
+        <path
+           transform="rotate(-38.484)"
+           d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z"
+           fill="#009fe3"
+           stroke-width=".265"
+           id="path50"
+           style="fill:#e30613;fill-opacity:1" />
+        <path
+           transform="rotate(140.34)"
+           d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z"
+           fill="#009640"
+           stroke-width=".26458"
+           id="path52" />
+        <path
+           transform="rotate(230.85)"
+           d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z"
+           fill="#efe8da"
+           stroke-width=".26458"
+           id="path54" />
       </g>
     </g>
-    <g transform="rotate(141.57 111.1 138.72)">
-      <g transform="rotate(4.0434 112.45 301.65)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z" stroke-width=".26458"/>
-        <path transform="rotate(-38.484)" d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z" fill="#009fe3" stroke-width=".265"/>
-        <path transform="rotate(140.34)" d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z" fill="#009640" stroke-width=".26458"/>
-        <path transform="rotate(230.85)" d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z" fill="#efe8da" stroke-width=".26458"/>
+    <g
+       transform="rotate(-38.43,77.233599,109.9524)"
+       id="g70">
+      <g
+         transform="rotate(4.0434,112.45,301.65)"
+         fill-rule="evenodd"
+         stroke="#000000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="g68">
+        <path
+           d="m 89.116,151.8 a 4.5883,4.5883 0 0 1 -5.8731,-2.7517 l 4.3137,-1.5635 z"
+           stroke-width="0.26458"
+           id="path60" />
+        <path
+           transform="rotate(-38.484)"
+           d="m -18.837,171.27 a 4.5883,4.5883 0 0 1 -2.2939,2.73 4.5883,4.5883 0 0 1 -3.556,0.26302 l 1.4662,-4.3478 z"
+           fill="#009fe3"
+           stroke-width="0.265"
+           id="path62" />
+        <path
+           transform="rotate(140.34)"
+           d="m 31.038,-167.88 a 4.5883,4.5883 0 0 1 -5.8751,2.7326 l 1.5673,-4.3123 z"
+           fill="#009640"
+           stroke-width="0.26458"
+           id="path64" />
+        <path
+           transform="rotate(-129.15)"
+           d="m -165.38,-23.648 a 4.5883,4.5883 0 0 1 -5.6774,2.7994 l 1.3696,-4.3791 z"
+           fill="#efe8da"
+           stroke-width="0.26458"
+           id="path66" />
       </g>
     </g>
-    <rect transform="rotate(20.251)" x="167.63" y="96.578" width="43.49" height="1.3198" fill="#009640" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(217.22 111.57 143.42)">
-      <g transform="rotate(4.0434 112.45 301.65)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-        <path transform="rotate(-38.484)" d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z" fill="#009fe3" stroke-width=".265"/>
-        <path transform="rotate(140.34)" d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z" stroke-width=".26458"/>
-        <path transform="rotate(230.85)" d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z" fill="#efe8da" stroke-width=".26458"/>
+    <rect
+       transform="rotate(20.251)"
+       x="167.63"
+       y="96.578"
+       width="43.49"
+       height="1.3198"
+       fill="#009640"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect72" />
+    <g
+       transform="rotate(217.22 111.57 143.42)"
+       id="g84">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         fill-rule="evenodd"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="g82">
+        <path
+           d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"
+           fill="#e30613"
+           stroke-width=".26458"
+           id="path74"
+           style="fill:#009fe3;fill-opacity:1" />
+        <path
+           transform="rotate(-38.484)"
+           d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z"
+           fill="#009fe3"
+           stroke-width=".265"
+           id="path76"
+           style="fill:#efe8da;fill-opacity:1" />
+        <path
+           transform="rotate(140.34)"
+           d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z"
+           stroke-width=".26458"
+           id="path78" />
+        <path
+           transform="rotate(230.85)"
+           d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z"
+           fill="#efe8da"
+           stroke-width=".26458"
+           id="path80"
+           style="fill:#e30613;fill-opacity:1" />
       </g>
     </g>
-    <g font-family="sans-serif" font-size="3px" stroke-width=".26458">
-      <text x="88.826691" y="157.08694" style="line-height:1.25" xml:space="preserve"><tspan x="88.826691" y="157.08694" font-size="3px" stroke-width=".26458" text-align="end" text-anchor="end">Aggression</tspan></text>
-      <text x="94.016281" y="132.82716" style="line-height:1.25" xml:space="preserve"><tspan x="94.016281" y="132.82716" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Altruism</tspan></text>
-      <text x="115.37243" y="132.5842" style="line-height:1.25" xml:space="preserve"><tspan x="115.37243" y="132.5842" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Growth</tspan></text>
-      <text x="126.24714" y="156.67242" style="line-height:1.25" xml:space="preserve"><tspan x="126.24714" y="156.67242" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Artifice</tspan></text>
+    <g
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       id="g102">
+      <text
+         x="88.826691"
+         y="157.08694"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text88"><tspan
+           x="88.826691"
+           y="157.08694"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="end"
+           text-anchor="end"
+           id="tspan86">Aggression</tspan></text>
+      <text
+         x="94.016281"
+         y="132.82716"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text92"><tspan
+           x="94.016281"
+           y="132.82716"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan90">Altruism</tspan></text>
+      <text
+         x="115.37243"
+         y="132.5842"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text96"><tspan
+           x="115.37243"
+           y="132.5842"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan94">Growth</tspan></text>
+      <text
+         x="126.24714"
+         y="156.67242"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text100"><tspan
+           x="126.24714"
+           y="156.67242"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan98">Artifice</tspan></text>
     </g>
-    <g transform="rotate(196.95 107.26 152.42)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g transform="translate(8.2708 -4.8021)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-          <path transform="rotate(-38.484)" d="m-18.837 171.27a4.5883 4.5883 0 0 1-2.2939 2.73 4.5883 4.5883 0 0 1-3.556 0.26302l1.4662-4.3478z" fill="#009fe3" stroke-width=".265"/>
-          <path transform="rotate(140.34)" d="m31.038-167.88a4.5883 4.5883 0 0 1-5.8751 2.7326l1.5673-4.3123z" stroke-width=".26458"/>
-          <path transform="rotate(230.85)" d="m-165.38-23.648a4.5883 4.5883 0 0 1-5.6774 2.7994l1.3696-4.3791z" fill="#009640" stroke-width=".26458"/>
+    <g
+       transform="matrix(-0.25888973,-0.96590688,-0.96590688,0.25888973,269.16983,229.20851)"
+       id="g116">
+      <g
+         transform="rotate(4.0434,112.45,301.65)"
+         id="g114">
+        <g
+           transform="translate(8.2708,-4.8021)"
+           fill-rule="evenodd"
+           stroke="#000000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="g112">
+          <path
+             d="m 89.116,151.8 a 4.5883,4.5883 0 0 1 -5.8731,-2.7517 l 4.3137,-1.5635 z"
+             fill="#e30613"
+             stroke-width="0.26458"
+             id="path104" />
+          <path
+             transform="rotate(-38.484)"
+             d="m -18.837,171.27 a 4.5883,4.5883 0 0 1 -2.2939,2.73 4.5883,4.5883 0 0 1 -3.556,0.26302 l 1.4662,-4.3478 z"
+             fill="#009fe3"
+             stroke-width="0.265"
+             id="path106"
+             style="fill:#009640;fill-opacity:1" />
+          <path
+             transform="rotate(140.34)"
+             d="m 31.038,-167.88 a 4.5883,4.5883 0 0 1 -5.8751,2.7326 l 1.5673,-4.3123 z"
+             stroke-width="0.26458"
+             id="path108" />
+          <path
+             transform="rotate(-129.15)"
+             d="m -165.38,-23.648 a 4.5883,4.5883 0 0 1 -5.6774,2.7994 l 1.3696,-4.3791 z"
+             fill="#009640"
+             stroke-width="0.26458"
+             id="path110"
+             style="fill:#009fe3;fill-opacity:1" />
         </g>
       </g>
     </g>
-    <text x="111.35828" y="169.47418" font-family="sans-serif" font-size="3px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="111.35828" y="169.47418" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Chaos</tspan></text>
-    <rect transform="matrix(-.93819 .34613 .34613 .93819 0 0)" x="-134.18" y="169.24" width="43.49" height="1.3198" fill="#009fe3" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(141.57 123.78 144.87)">
-      <g transform="rotate(4.0434 112.45 301.65)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-        <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" stroke-width=".26458"/>
-        <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-        <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#efe8da" stroke-width=".26458"/>
+    <text
+       x="111.35828"
+       y="169.47418"
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       style="line-height:1.25"
+       xml:space="preserve"
+       id="text120"><tspan
+         x="111.35828"
+         y="169.47418"
+         font-size="3px"
+         stroke-width=".26458"
+         text-align="center"
+         text-anchor="middle"
+         id="tspan118">Chaos</tspan></text>
+    <rect
+       transform="matrix(-.93819 .34613 .34613 .93819 0 0)"
+       x="-134.18"
+       y="169.24"
+       width="43.49"
+       height="1.3198"
+       fill="#009fe3"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect122" />
+    <g
+       transform="rotate(141.57 123.78 144.87)"
+       id="g132">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         fill-rule="evenodd"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="g130">
+        <path
+           transform="rotate(33.468)"
+           d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+           stroke-width=".26458"
+           id="path124" />
+        <path
+           transform="rotate(-38.484)"
+           d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+           fill="#009fe3"
+           stroke-width=".265"
+           id="path126" />
+        <path
+           transform="rotate(230.85)"
+           d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+           fill="#efe8da"
+           stroke-width=".26458"
+           id="path128" />
       </g>
     </g>
-    <g transform="rotate(-58.809 129.64 111.85)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-          <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" stroke-width=".26458"/>
-          <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-          <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <g
+       transform="rotate(-58.809 129.64 111.85)"
+       id="g144">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g142">
+        <g
+           fill-rule="evenodd"
+           stroke="#000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="g140">
+          <path
+             transform="rotate(33.468)"
+             d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+             stroke-width=".26458"
+             id="path134" />
+          <path
+             transform="rotate(-38.484)"
+             d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+             fill="#009fe3"
+             stroke-width=".265"
+             id="path136" />
+          <path
+             transform="rotate(230.85)"
+             d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+             fill="#009640"
+             stroke-width=".26458"
+             id="path138" />
         </g>
       </g>
     </g>
-    <rect transform="matrix(-.57907 .81528 .81528 .57907 0 0)" x="96.601" y="167.17" width="43.49" height="1.3198" fill="#e30613" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(-72.679 109.77 172.89)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g>
-          <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-            <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" stroke-width=".26458"/>
-            <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
-            <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <rect
+       transform="matrix(-.57907 .81528 .81528 .57907 0 0)"
+       x="96.601"
+       y="167.17"
+       width="43.49"
+       height="1.3198"
+       fill="#e30613"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect146" />
+    <g
+       transform="rotate(-72.679 109.77 172.89)"
+       id="g160">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g158">
+        <g
+           id="g156">
+          <g
+             fill-rule="evenodd"
+             stroke="#000"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="g154">
+            <path
+               transform="rotate(33.468)"
+               d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+               stroke-width=".26458"
+               id="path148" />
+            <path
+               transform="rotate(-38.484)"
+               d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+               fill="#e30613"
+               stroke-width=".265"
+               id="path150" />
+            <path
+               transform="rotate(230.85)"
+               d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+               fill="#009640"
+               stroke-width=".26458"
+               id="path152" />
           </g>
         </g>
       </g>
     </g>
-    <rect transform="rotate(55.035)" x="215.77" y="-4.6557" width="43.49" height="1.3198" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(96.582 99.904 173.95)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-          <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" stroke-width=".26458"/>
-          <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-          <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#e30613" stroke-width=".26458"/>
+    <rect
+       transform="rotate(55.035)"
+       x="215.77"
+       y="-4.6557"
+       width="43.49"
+       height="1.3198"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect162" />
+    <g
+       transform="rotate(96.582 99.904 173.95)"
+       id="g174">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g172">
+        <g
+           fill-rule="evenodd"
+           stroke="#000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="g170">
+          <path
+             transform="rotate(33.468)"
+             d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+             stroke-width=".26458"
+             id="path164" />
+          <path
+             transform="rotate(-38.484)"
+             d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+             fill="#009fe3"
+             stroke-width=".265"
+             id="path166" />
+          <path
+             transform="rotate(230.85)"
+             d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+             fill="#e30613"
+             stroke-width=".26458"
+             id="path168" />
         </g>
       </g>
     </g>
-    <g transform="rotate(-37.797 96.898 198.95)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-          <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" fill="#e30613" stroke-width=".26458"/>
-          <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-          <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <g
+       transform="rotate(-37.797 96.898 198.95)"
+       id="g186">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g184">
+        <g
+           fill-rule="evenodd"
+           stroke="#000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="g182">
+          <path
+             transform="rotate(33.468)"
+             d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+             fill="#e30613"
+             stroke-width=".26458"
+             id="path176" />
+          <path
+             transform="rotate(-38.484)"
+             d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+             fill="#009fe3"
+             stroke-width=".265"
+             id="path178" />
+          <path
+             transform="rotate(230.85)"
+             d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+             fill="#009640"
+             stroke-width=".26458"
+             id="path180" />
         </g>
       </g>
     </g>
-    <rect transform="rotate(20.251)" x="63.553" y="96.965" width="43.49" height="1.3198" fill="#009640" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(121.14 87.156 127.95)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g>
-          <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-            <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" fill="#efe8da" stroke-width=".26458"/>
-            <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
-            <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <rect
+       transform="rotate(20.251)"
+       x="63.553"
+       y="96.965"
+       width="43.49"
+       height="1.3198"
+       fill="#009640"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect188" />
+    <g
+       transform="rotate(121.14 87.156 127.95)"
+       id="g202">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g200">
+        <g
+           id="g198">
+          <g
+             fill-rule="evenodd"
+             stroke="#000"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="g196">
+            <path
+               transform="rotate(33.468)"
+               d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+               fill="#efe8da"
+               stroke-width=".26458"
+               id="path190" />
+            <path
+               transform="rotate(-38.484)"
+               d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+               fill="#e30613"
+               stroke-width=".265"
+               id="path192" />
+            <path
+               transform="rotate(230.85)"
+               d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+               fill="#009640"
+               stroke-width=".26458"
+               id="path194" />
           </g>
         </g>
       </g>
     </g>
-    <g transform="rotate(-82.349 61.852 131.97)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" stroke-width=".26458"/>
-      <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#efe8da" stroke-width=".265"/>
-      <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <g
+       transform="rotate(-82.349 61.852 131.97)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g210">
+      <path
+         transform="rotate(33.468)"
+         d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+         stroke-width=".26458"
+         id="path204" />
+      <path
+         transform="rotate(-38.484)"
+         d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+         fill="#efe8da"
+         stroke-width=".265"
+         id="path206" />
+      <path
+         transform="rotate(230.85)"
+         d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+         fill="#009640"
+         stroke-width=".26458"
+         id="path208" />
     </g>
-    <rect transform="rotate(90.107)" x="58.829" y="-105.16" width="43.49" height="1.3198" fill="#efe8da" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".265"/>
-    <g transform="rotate(-48.11 50.939 117.02)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-          <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" fill="#efe8da" stroke-width=".26458"/>
-          <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-          <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#009640" stroke-width=".26458"/>
+    <rect
+       transform="rotate(90.107)"
+       x="58.829"
+       y="-105.16"
+       width="43.49"
+       height="1.3198"
+       fill="#efe8da"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       stroke-width=".265"
+       id="rect212" />
+    <g
+       transform="rotate(-48.11 50.939 117.02)"
+       id="g224">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g222">
+        <g
+           fill-rule="evenodd"
+           stroke="#000"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="g220">
+          <path
+             transform="rotate(33.468)"
+             d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+             fill="#efe8da"
+             stroke-width=".26458"
+             id="path214" />
+          <path
+             transform="rotate(-38.484)"
+             d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+             fill="#009fe3"
+             stroke-width=".265"
+             id="path216" />
+          <path
+             transform="rotate(230.85)"
+             d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+             fill="#009640"
+             stroke-width=".26458"
+             id="path218" />
         </g>
       </g>
     </g>
-    <g transform="matrix(.92202 .38715 .38715 -.92202 -18.084 206.31)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g>
-          <g transform="translate(-1.6747 .4394)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-            <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" fill="#efe8da" stroke-width=".26458"/>
-            <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
-            <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" fill="#e30613" stroke-width=".26458"/>
+    <g
+       transform="matrix(.92202 .38715 .38715 -.92202 -18.084 206.31)"
+       id="g238">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g236">
+        <g
+           id="g234">
+          <g
+             transform="translate(-1.6747 .4394)"
+             fill-rule="evenodd"
+             stroke="#000"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="g232">
+            <path
+               transform="rotate(33.468)"
+               d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+               fill="#efe8da"
+               stroke-width=".26458"
+               id="path226" />
+            <path
+               transform="rotate(-38.484)"
+               d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+               fill="#009fe3"
+               stroke-width=".265"
+               id="path228" />
+            <path
+               transform="rotate(230.85)"
+               d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+               fill="#e30613"
+               stroke-width=".26458"
+               id="path230" />
           </g>
         </g>
       </g>
     </g>
-    <g font-family="sans-serif" font-size="3px" stroke-width=".26458">
-      <text x="63.165764" y="164.39967" style="line-height:1.25" xml:space="preserve"><tspan x="63.165764" y="164.39967" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Temur</tspan></text>
-      <text x="72.989021" y="136.0551" style="line-height:1.25" xml:space="preserve"><tspan x="72.989021" y="136.0551" font-size="3px" stroke-width=".26458" text-align="end" text-anchor="end">Naya</tspan></text>
-      <g text-anchor="middle">
-        <text x="103.94183" y="108.98739" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="103.94183" y="108.98739" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Bant</tspan></text>
-        <text x="79.214195" y="116.41006" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="79.214195" y="116.41006" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Abzan</tspan></text>
-        <text x="139.82114" y="136.28549" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="139.82114" y="136.28549" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Esper</tspan></text>
+    <g
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       id="g262">
+      <text
+         x="63.165764"
+         y="164.39967"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text242"><tspan
+           x="63.165764"
+           y="164.39967"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan240">Temur</tspan></text>
+      <text
+         x="72.989021"
+         y="136.0551"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text246"><tspan
+           x="72.989021"
+           y="136.0551"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="end"
+           text-anchor="end"
+           id="tspan244">Naya</tspan></text>
+      <g
+         text-anchor="middle"
+         id="g260">
+        <text
+           x="103.94183"
+           y="108.98739"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text250"><tspan
+             x="103.94183"
+             y="108.98739"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan248">Bant</tspan></text>
+        <text
+           x="79.214195"
+           y="116.41006"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text254"><tspan
+             x="79.214195"
+             y="116.41006"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan252">Abzan</tspan></text>
+        <text
+           x="139.82114"
+           y="136.28549"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text258"><tspan
+             x="139.82114"
+             y="136.28549"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan256">Esper</tspan></text>
       </g>
     </g>
-    <g transform="rotate(130.11 92.762 165.99)">
-      <g transform="rotate(4.0434 112.45 301.65)">
-        <g>
-          <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-            <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z" fill="#efe8da" stroke-width=".26458"/>
-            <path transform="rotate(-38.484)" d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
-            <path transform="rotate(230.85)" d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z" stroke-width=".26458"/>
+    <g
+       transform="rotate(130.11 92.762 165.99)"
+       id="g276">
+      <g
+         transform="rotate(4.0434 112.45 301.65)"
+         id="g274">
+        <g
+           id="g272">
+          <g
+             fill-rule="evenodd"
+             stroke="#000"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             id="g270">
+            <path
+               transform="rotate(33.468)"
+               d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"
+               fill="#efe8da"
+               stroke-width=".26458"
+               id="path264" />
+            <path
+               transform="rotate(-38.484)"
+               d="m-18.659 169.42a4.5883 4.5883 0 0 1-1.8634 4.2103 4.5883 4.5883 0 0 1-4.5798 0.47306l1.8821-4.1845z"
+               fill="#e30613"
+               stroke-width=".265"
+               id="path266" />
+            <path
+               transform="rotate(230.85)"
+               d="m-166.04-28.017a4.5883 4.5883 0 0 1 0.5745 4.5948 4.5883 4.5883 0 0 1-3.7215 2.7554l-0.49646-4.5614z"
+               stroke-width=".26458"
+               id="path268" />
           </g>
         </g>
       </g>
     </g>
-    <g font-family="sans-serif" font-size="3px" stroke-width=".26458" text-anchor="middle">
-      <text x="129.69531" y="116.34969" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="129.69531" y="116.34969" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Jeskai</tspan></text>
-      <text x="111.05529" y="190.504" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="111.05529" y="190.504" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Mardu</tspan></text>
-      <text x="82.65567" y="183.77724" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="82.65567" y="183.77724" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Jund</tspan></text>
-      <text x="125.85937" y="183.6033" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="125.85937" y="183.6033" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Grixis</tspan></text>
-      <text x="145.07784" y="164.37773" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="145.07784" y="164.37773" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Sultai</tspan></text>
+    <g
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       text-anchor="middle"
+       id="g298">
+      <text
+         x="129.69531"
+         y="116.34969"
+         text-align="center"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text280"><tspan
+           x="129.69531"
+           y="116.34969"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan278">Jeskai</tspan></text>
+      <text
+         x="111.05529"
+         y="190.504"
+         text-align="center"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text284"><tspan
+           x="111.05529"
+           y="190.504"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan282">Mardu</tspan></text>
+      <text
+         x="82.65567"
+         y="183.77724"
+         text-align="center"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text288"><tspan
+           x="82.65567"
+           y="183.77724"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan286">Jund</tspan></text>
+      <text
+         x="125.85937"
+         y="183.6033"
+         text-align="center"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text292"><tspan
+           x="125.85937"
+           y="183.6033"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan290">Grixis</tspan></text>
+      <text
+         x="145.07784"
+         y="164.37773"
+         text-align="center"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text296"><tspan
+           x="145.07784"
+           y="164.37773"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan294">Sultai</tspan></text>
     </g>
-    <g transform="matrix(.94702 .32117 .32117 -.94702 9.4846 203.42)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#efe8da" stroke-width=".26458"/>
-      <path transform="rotate(-38.484)" d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
+    <g
+       transform="matrix(.94702 .32117 .32117 -.94702 9.4846 203.42)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g304">
+      <path
+         transform="rotate(33.468)"
+         d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#efe8da"
+         stroke-width=".26458"
+         id="path300" />
+      <path
+         transform="rotate(-38.484)"
+         d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z"
+         fill="#009fe3"
+         stroke-width=".265"
+         id="path302" />
     </g>
-    <g transform="matrix(.96486 -.26276 -.26276 -.96486 58.623 246.09)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#009640" stroke-width=".26458"/>
-      <path transform="rotate(-38.484)" d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
+    <g
+       transform="matrix(.96486 -.26276 -.26276 -.96486 58.623 246.09)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g310">
+      <path
+         transform="rotate(33.468)"
+         d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#009640"
+         stroke-width=".26458"
+         id="path306" />
+      <path
+         transform="rotate(-38.484)"
+         d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z"
+         fill="#009fe3"
+         stroke-width=".265"
+         id="path308" />
     </g>
-    <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="matrix(-.093379 .99563 .99563 .093379 0 0)" d="m88.404 80.425a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#efe8da" stroke-width=".26458"/>
-      <path transform="matrix(-.97557 .21968 .21968 .97557 0 0)" d="m-45.53 100.49a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#009640" stroke-width=".265"/>
+    <g
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g316">
+      <path
+         transform="matrix(-.093379 .99563 .99563 .093379 0 0)"
+         d="m88.404 80.425a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#efe8da"
+         stroke-width=".26458"
+         id="path312" />
+      <path
+         transform="matrix(-.97557 .21968 .21968 .97557 0 0)"
+         d="m-45.53 100.49a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#009640"
+         stroke-width=".265"
+         id="path314" />
     </g>
-    <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="matrix(.50201 .86486 .86486 -.50201 0 0)" d="m131.5-17.406a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#efe8da" stroke-width=".26458"/>
-      <path transform="matrix(-.66678 .74525 .74525 .66678 0 0)" d="m60.84 111.15a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
+    <g
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g322">
+      <path
+         transform="matrix(.50201 .86486 .86486 -.50201 0 0)"
+         d="m131.5-17.406a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#efe8da"
+         stroke-width=".26458"
+         id="path318" />
+      <path
+         transform="matrix(-.66678 .74525 .74525 .66678 0 0)"
+         d="m60.84 111.15a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#e30613"
+         stroke-width=".265"
+         id="path320" />
     </g>
-    <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="matrix(.93672 .35007 .35007 -.93672 0 0)" d="m104.12-133.7a4.5883 4.5883 0 0 1-6.432 0.47022 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#009640" stroke-width=".26458"/>
-      <path transform="matrix(-.042637 .99909 .99909 .042637 0 0)" d="m162.93 49.092a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
+    <g
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g328">
+      <path
+         transform="matrix(.93672 .35007 .35007 -.93672 0 0)"
+         d="m104.12-133.7a4.5883 4.5883 0 0 1-6.432 0.47022 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#009640"
+         stroke-width=".26458"
+         id="path324" />
+      <path
+         transform="matrix(-.042637 .99909 .99909 .042637 0 0)"
+         d="m162.93 49.092a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#e30613"
+         stroke-width=".265"
+         id="path326" />
     </g>
-    <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(252.65)" d="m-56.753 96.652a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" stroke-width=".26458"/>
-      <path transform="rotate(180.7)" d="m-105.93-32.501a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
+    <g
+       transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g334">
+      <path
+         transform="rotate(252.65)"
+         d="m-56.753 96.652a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         stroke-width=".26458"
+         id="path330" />
+      <path
+         transform="rotate(180.7)"
+         d="m-105.93-32.501a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#e30613"
+         stroke-width=".265"
+         id="path332" />
     </g>
-    <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(106.27)" d="m16.873-142.15a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#009fe3" stroke-width=".26458"/>
-      <path transform="rotate(34.322)" d="m143.93-36.482a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#e30613" stroke-width=".265"/>
+    <g
+       transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g340">
+      <path
+         transform="rotate(106.27)"
+         d="m16.873-142.15a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         fill="#009fe3"
+         stroke-width=".26458"
+         id="path336" />
+      <path
+         transform="rotate(34.322)"
+         d="m143.93-36.482a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#e30613"
+         stroke-width=".265"
+         id="path338" />
     </g>
-    <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(217.21)" d="m-68.437 25.024a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" stroke-width=".26458"/>
-      <path transform="rotate(145.25)" d="m-41.447-65.802a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z" fill="#009640" stroke-width=".265"/>
+    <g
+       transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g346">
+      <path
+         transform="rotate(217.21)"
+         d="m-68.437 25.024a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         stroke-width=".26458"
+         id="path342" />
+      <path
+         transform="rotate(145.25)"
+         d="m-41.447-65.802a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49718l1.8821-4.1845z"
+         fill="#009640"
+         stroke-width=".265"
+         id="path344" />
     </g>
-    <g transform="matrix(.083185 -.99653 -.99653 -.083185 301.64 263.01)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-      <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" stroke-width=".26458"/>
-      <path transform="rotate(-38.484)" d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z" fill="#009fe3" stroke-width=".265"/>
+    <g
+       transform="matrix(.083185 -.99653 -.99653 -.083185 301.64 263.01)"
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="g352">
+      <path
+         transform="rotate(33.468)"
+         d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+         stroke-width=".26458"
+         id="path348" />
+      <path
+         transform="rotate(-38.484)"
+         d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z"
+         fill="#009fe3"
+         stroke-width=".265"
+         id="path350" />
     </g>
-    <g transform="matrix(-.58943 -.80782 -.80782 .58943 333.01 104.92)">
-      <g fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-        <path transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z" fill="#efe8da" stroke-width=".26458"/>
-        <path transform="rotate(-38.484)" d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z" stroke-width=".265"/>
+    <g
+       transform="matrix(-.58943 -.80782 -.80782 .58943 333.01 104.92)"
+       id="g360">
+      <g
+         fill-rule="evenodd"
+         stroke="#000"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="g358">
+        <path
+           transform="rotate(33.468)"
+           d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"
+           fill="#efe8da"
+           stroke-width=".26458"
+           id="path354" />
+        <path
+           transform="rotate(-38.484)"
+           d="m-21.502 165.66a4.5883 4.5883 0 0 1 2.8325 3.6744 4.5883 4.5883 0 0 1-1.821 4.2671 4.5883 4.5883 0 0 1-4.6127 0.49717l1.8821-4.1845z"
+           stroke-width=".265"
+           id="path356" />
       </g>
     </g>
-    <g font-family="sans-serif" font-size="3px" stroke-width=".26458">
-      <g text-anchor="middle">
-        <text x="163.48483" y="171.2668" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="163.48483" y="171.2668" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Dimir</tspan></text>
-        <text x="137.68175" y="200.42857" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="137.68175" y="200.42857" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Izzet</tspan></text>
-        <text x="104.40408" y="211.60379" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="104.40408" y="211.60379" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Rakdos</tspan></text>
-        <text x="71.357056" y="200.75182" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="71.357056" y="200.75182" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Golgari</tspan></text>
+    <g
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       id="g404">
+      <g
+         text-anchor="middle"
+         id="g378">
+        <text
+           x="163.48483"
+           y="171.2668"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text364"><tspan
+             x="163.48483"
+             y="171.2668"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan362">Dimir</tspan></text>
+        <text
+           x="137.68175"
+           y="200.42857"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text368"><tspan
+             x="137.68175"
+             y="200.42857"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan366">Izzet</tspan></text>
+        <text
+           x="104.40408"
+           y="211.60379"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text372"><tspan
+             x="104.40408"
+             y="211.60379"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan370">Rakdos</tspan></text>
+        <text
+           x="71.357056"
+           y="200.75182"
+           text-align="center"
+           style="line-height:1.25"
+           xml:space="preserve"
+           id="text376"><tspan
+             x="71.357056"
+             y="200.75182"
+             font-size="3px"
+             stroke-width=".26458"
+             text-align="center"
+             text-anchor="middle"
+             id="tspan374">Golgari</tspan></text>
       </g>
-      <text x="49.726765" y="129.3829" style="line-height:1.25" xml:space="preserve"><tspan x="49.726765" y="129.3829" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Boros</tspan></text>
-      <text x="44.100929" y="171.7877" style="line-height:1.25" xml:space="preserve"><tspan x="44.100929" y="171.7877" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Gruul</tspan></text>
-      <text x="158.04478" y="129.43413" style="line-height:1.25" xml:space="preserve"><tspan x="158.04478" y="129.43413" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Orzhov</tspan></text>
-      <text x="141.59886" y="99.746872" style="line-height:1.25" xml:space="preserve"><tspan x="141.59886" y="99.746872" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Azorius</tspan></text>
-      <text x="109.75101" y="87.734589" style="line-height:1.25" xml:space="preserve"><tspan x="109.75101" y="87.734589" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Simic</tspan></text>
-      <text x="66.688622" y="101.44799" style="line-height:1.25" xml:space="preserve"><tspan x="66.688622" y="101.44799" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Selesnya</tspan></text>
+      <text
+         x="49.726765"
+         y="129.3829"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text382"><tspan
+           x="49.726765"
+           y="129.3829"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan380">Boros</tspan></text>
+      <text
+         x="44.100929"
+         y="171.7877"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text386"><tspan
+           x="44.100929"
+           y="171.7877"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan384">Gruul</tspan></text>
+      <text
+         x="158.04478"
+         y="129.43413"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text390"><tspan
+           x="158.04478"
+           y="129.43413"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan388">Orzhov</tspan></text>
+      <text
+         x="141.59886"
+         y="99.746872"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text394"><tspan
+           x="141.59886"
+           y="99.746872"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan392">Azorius</tspan></text>
+      <text
+         x="109.75101"
+         y="87.734589"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text398"><tspan
+           x="109.75101"
+           y="87.734589"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan396">Simic</tspan></text>
+      <text
+         x="66.688622"
+         y="101.44799"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text402"><tspan
+           x="66.688622"
+           y="101.44799"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan400">Selesnya</tspan></text>
     </g>
-    <g fill-rule="evenodd" stroke="#000" stroke-width=".26458">
-      <path d="m29.01 109.91a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448" fill="#009640"/>
-      <path d="m59.322 205.24a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448" fill="#e30613"/>
-      <path d="m153.36 205a4.7495 4.7495 0 0 1 2.6261 6.1786 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1706-2.6448"/>
-      <path d="m183.13 109.73a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448" fill="#009fe3"/>
-      <path d="m106.14 55.836a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448" fill="#efe8da"/>
+    <g
+       fill-rule="evenodd"
+       stroke="#000"
+       stroke-width=".26458"
+       id="g416">
+      <path
+         d="m29.01 109.91a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"
+         fill="#009640"
+         id="path406" />
+      <path
+         d="m59.322 205.24a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"
+         fill="#e30613"
+         id="path408" />
+      <path
+         d="m153.36 205a4.7495 4.7495 0 0 1 2.6261 6.1786 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1706-2.6448"
+         id="path410" />
+      <path
+         d="m183.13 109.73a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"
+         fill="#009fe3"
+         id="path412" />
+      <path
+         d="m106.14 55.836a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"
+         fill="#efe8da"
+         id="path414" />
     </g>
-    <g font-family="sans-serif" font-size="3px" stroke-width=".26458">
-      <text x="106.52623" y="67.853714" style="line-height:1.25" xml:space="preserve"><tspan x="106.52623" y="67.853714" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle"><tspan text-align="start" text-anchor="start">Whit</tspan>e</tspan></text>
-      <text x="26.594273" y="122.32647" style="line-height:1.25" xml:space="preserve"><tspan x="26.594273" y="122.32647" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Green</tspan></text>
-      <text x="65.481499" y="212.30121" style="line-height:1.25" xml:space="preserve"><tspan x="65.481499" y="212.30121" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Red</tspan></text>
-      <text x="144.78781" y="210.83403" style="line-height:1.25" xml:space="preserve"><tspan x="144.78781" y="210.83403" font-size="3px" stroke-width=".26458" text-align="end" text-anchor="end">Black</tspan></text>
-      <text x="181.51454" y="122.67811" style="line-height:1.25" xml:space="preserve"><tspan x="181.51454" y="122.67811" font-size="3px" stroke-width=".26458" text-align="center" text-anchor="middle">Blue</tspan></text>
+    <g
+       font-family="sans-serif"
+       font-size="3px"
+       stroke-width=".26458"
+       id="g440">
+      <text
+         x="106.52623"
+         y="67.853714"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text422"><tspan
+           x="106.52623"
+           y="67.853714"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan420"><tspan
+   text-align="start"
+   text-anchor="start"
+   id="tspan418">Whit</tspan>e</tspan></text>
+      <text
+         x="26.594273"
+         y="122.32647"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text426"><tspan
+           x="26.594273"
+           y="122.32647"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan424">Green</tspan></text>
+      <text
+         x="65.481499"
+         y="212.30121"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text430"><tspan
+           x="65.481499"
+           y="212.30121"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan428">Red</tspan></text>
+      <text
+         x="144.78781"
+         y="210.83403"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text434"><tspan
+           x="144.78781"
+           y="210.83403"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="end"
+           text-anchor="end"
+           id="tspan432">Black</tspan></text>
+      <text
+         x="181.51454"
+         y="122.67811"
+         style="line-height:1.25"
+         xml:space="preserve"
+         id="text438"><tspan
+           x="181.51454"
+           y="122.67811"
+           font-size="3px"
+           stroke-width=".26458"
+           text-align="center"
+           text-anchor="middle"
+           id="tspan436">Blue</tspan></text>
     </g>
   </g>
 </svg>

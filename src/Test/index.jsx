@@ -26,25 +26,34 @@ const Test = ({ history }) => {
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
+
   const { answers = '' } = useParams()
   const load = () => {
-    let max, idx = 0
-    for(
-      let packed = atob(answers),
-      num = packed.toString(2).length,
-      off = (Math.ceil(num / 3) - 1) * 3;
-      packed > 0 && idx < statements.length;
-      idx++, off -= 3
-    ) {
-      let bits = (packed & (BigInt(0b111) << BigInt(off))) >> BigInt(off)
-      const stored = parseInt(bits)
-      const res = storageMap[stored]
-      statements[idx].response = res
-      if(max === undefined && res === undefined) {
-        max = idx
+    if(answers === '') {
+      {/* ToDo: Fix this so it clears the responses when
+        * /test (w/o args) is navigated to. */}
+      statements.forEach(
+        r => r.response = undefined
+      )
+    } else {
+      let max, idx = 0
+      for(
+        let packed = atob(answers),
+        num = packed.toString(2).length,
+        off = (Math.ceil(num / 3) - 1) * 3;
+        packed > 0 && idx < statements.length;
+        idx++, off -= 3
+      ) {
+        let bits = (packed & (BigInt(0b111) << BigInt(off))) >> BigInt(off)
+        const stored = parseInt(bits)
+        const res = storageMap[stored]
+        statements[idx].response = res
+        if(max === undefined && res === undefined) {
+          max = idx
+        }
       }
+      setIndex(max ?? idx)
     }
-    setIndex(max ?? idx)
     setStatements(statements)
     const maxes = new Proxy({}, defZero)
     statements.forEach((s) => {
@@ -55,6 +64,36 @@ const Test = ({ history }) => {
   }
 
   useEffect(load, [])
+
+  const update = () => {
+    if(!maxes) return
+
+    const current = new Proxy({}, defZero)
+    statements.forEach(q => {
+      if(q.response !== undefined) {
+        if(q.response < 0) {
+          current[q.low] += Math.abs(q.response)
+        } else if(q.response > 0) {
+          current[q.high] += Math.abs(q.response)
+        } else if(q.response === null) {
+          // do nothing for "don't care"
+        } else if(q.response === 0) {
+          current[q.low] += 1
+          current[q.high] += 1
+        }
+      }
+    })
+
+    setWeights(
+      Object.fromEntries(
+        order.map(
+          c => [c, (current[c] ?? 0) / maxes[c]] // normalized
+        )
+      )
+    )
+  }
+    
+  useEffect(update, [statements, maxes])
 
   const location = useLocation()
   const answer = (res) => {
@@ -80,21 +119,11 @@ const Test = ({ history }) => {
   }
 
   const timents = {
-    'Strongly Disagree': {
-      points: -2, color: 'red'
-    },
-    'Disagree': {
-      points: -1, color: 'pink'
-    },
-    'Ambivalent': {
-      points: 0, color: 'blue'
-    },
-    'Agree': {
-      points: 1, color: 'teal'
-    },
-    'Strongly Agree': {
-      points: 2, color: 'green'
-    },
+    'Strongly Disagree': { points: -2, color: 'red' },
+    'Disagree': { points: -1, color: 'pink' },
+    'Ambivalent': { points: 0, color: 'blue' },
+    'Agree': { points: 1, color: 'teal' },
+    'Strongly Agree': { points: 2, color: 'green' },
   }
   const Sentiments = () => (
     <Stack direction={['column', 'row']}>
@@ -142,22 +171,6 @@ const Test = ({ history }) => {
     ></Box>
   )
 
-  const current = new Proxy({}, defZero)
-  statements.forEach(q => {
-    if(q.response !== undefined) {
-      if(q.response < 0) {
-        current[q.low] += Math.abs(q.response)
-      } else if(q.response > 0) {
-        current[q.high] += Math.abs(q.response)
-      } else if(q.response === null) {
-        // do nothing for "don't care"
-      } else if(q.response === 0) {
-        current[q.low] += 1
-        current[q.high] += 1
-      }
-    }
-  })
-
   if(!maxes) {
     return (
       <Stack align='center' pt={10}>
@@ -166,16 +179,6 @@ const Test = ({ history }) => {
       </Stack>
     )
   }
-
-  const scores = (
-    Object.fromEntries(
-      order.map(
-        c => [c, (current[c] ?? 0) / maxes[c]] // normalized
-      )
-    )
-  )
-
-  setWeights(scores)
 
   const Statement = ({ positon }) => (
     <Box
@@ -223,7 +226,7 @@ const Test = ({ history }) => {
       </Flex>
       {!statements[index]
         ? (
-          <Results {...{ scores }}/>
+          <Results/>
         ) : (
           <Flex direction='column' align='center'>
             <Stack direction='row'>
@@ -246,7 +249,7 @@ const Test = ({ history }) => {
               margin='1rem auto'
               onClick={() => setShowing(s => !s)}
             >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
-            <Chart key='chart' {...{ scores }}/>
+            <Chart key='chart'/>
           </Flex>
         )
       }
@@ -256,7 +259,7 @@ const Test = ({ history }) => {
 
 export default connect(
   (state) => {
-    const { } = state
-    return { }
+    const { weights } = state
+    return { weights }
   },
 )(Test)

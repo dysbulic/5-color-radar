@@ -5,7 +5,7 @@ import { colors as order } from '../data/order'
 import './Chart.scss'
 
 const Chart = ({ weights }) => {
-  const numWeights = Object.keys(weights).length
+  const numWeights = order.length
   const segment = 2 * Math.PI / numWeights
   const start = Math.PI / 2
   const thetas = [...Range(numWeights, segment, start)]

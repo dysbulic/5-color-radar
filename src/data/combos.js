@@ -1,4 +1,10 @@
-import { Text, Link, Stack } from '@chakra-ui/react'
+import { Text, Link as ChakraLink, Stack } from '@chakra-ui/react'
+
+const Link = ({ children, ...args }) => (
+  <ChakraLink {...args} textDecoration='underline'>
+    {children}
+  </ChakraLink>
+)
 
 export const masks = {
 	0b00000: 'Colorless',
@@ -71,8 +77,8 @@ export const descriptions = {
   ),
   'Azorius Senate':(      // WU
     <Stack>
-      <Text></Text>
-      <Text></Text>
+      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#bc9b:~:text=White%20and%20blue%20are%20the%20enemies%20of%20red'>White and blue are the enemies of red</Link>, which they see as unfettered and chaotic. White and blue both agree that <i>structure</i> is important — white because it reduces the risk of conflict, and blue because it makes possible deep investigation and long-term or delicate optimization. Jean-Luc Picard from <cite>Star Trek</cite> is an excellent example of a white/blue archetype, as is the political persona of Hillary Clinton.</Text>
+      <Text>A white/blue agent asks the question <i>how do we <b>know</b> what’s right and good?</i> The whole concept of a <q>rationality technique</q> is extremely white/blue — the idea that we might create carefully defined, algorithmic heuristics for doing things better according to some outside standard is not one that other color combinations are likely to produce. Effective Altruism is also a white/blue movement, though it makes efforts to reach out to red (compassion) and black (taking the long view on self-interest).</Text>
     </Stack>
   ),
   'House Dimir': (        // UB
@@ -95,8 +101,8 @@ export const descriptions = {
   ),
   'Selesnya Conclave': ( // WG
     <Stack>
-      <Text></Text>
-      <Text></Text>
+      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#c621:~:text=Green%20and%20white%20are%20the%20enemies%20of%20black'>Green and white are the enemies of black</Link>, which they see as selfish, short-sighted, and ultimately self-defeating. They both agree on <i>community</i> — that the whole can be greater than the sum of its parts, and that there are things larger than oneself that are worth sacrificing for. Hufflepuff House from <cite>Harry Potter</cite> is a green/white institution, and Akela from The <cite>Jungle Book</cite> is a green/white archetype. Other examples of people and characters in this space include Confucius, Jesus, Rufio from <cite>Hook</cite>, and Obi-Wan Kenobi (as played by Alec Guinness).</Text>
+      <Text>A green/white agent asks the question <i>what’s fair and good?</i> Green/white institutions tend to be centered around compassionate endeavors, but if they go astray it’s in the direction of well-meaning lost purposes and wasted signaling — a lack of blue’s epistemic hygiene — rather than in the direction of cold, heartless efficiency or relentless pursuit of knowledge or the bottom line. They include institutions like the YMCA, Habitat for Humanity, Teach for America, the Lions’ Club, Meals on Wheels, the Boy Scouts and the Girl Scouts, and most small-town churches — basically any organization whose primary purpose is to foster the web of connection between people and to maintain the society’s culture. Some of the institutions above may lean in the direction of red or blue, but they’re <i>primarily</i> green/white.</Text>
     </Stack>
   ),
   'Simic Combine': (     // UG

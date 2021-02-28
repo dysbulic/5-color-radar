@@ -3,13 +3,13 @@ import { Range, capitalize } from '../util'
 import { colors as order } from '../data/order'
 
 const ConicRadar = ({ weights, size }) => {
-  const numWeights = Object.keys(weights).length
+  const numWeights = order.length
   const segment = 2 * Math.PI / numWeights
   const start = Math.PI / 2
   const thetas = [...Range(numWeights, segment, start)]
   const points = (
     order.map((color, i) => {
-      const r = weights[color] * size
+      const r = (weights[color] ?? 0) * size
       return {
         color,
         x: r * Math.cos(thetas[i]),

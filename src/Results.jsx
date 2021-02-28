@@ -45,29 +45,30 @@ const Results = ({ weights }) => {
 
   return (
     <Stack
-      direction='row' align='center' justify='center'
-      maxW='50rem'
+      align='center' justify='center'
     >
-      {icons && (
-        <Stack direction='column' align='center'>
-          <object
-            alt={name} data={icons[name]}
-            style={{ height: '40vh', width: '40vh' }}
-          />
-          <Stack direction='row'>
-            {order.map((c, i) => (mask & (1 << order.length - i)) ? (
-              <object
-                key={c} data={icons[capitalize(c)]}
-                style={{ height: '10vh', width: '10vh'  }}
-              />
-            ) : ( null ))}
+      <Heading pb={5}>{name}</Heading>
+      <Stack direction='row'>
+        {icons && (
+          <Stack direction='column' align='center'>
+            <object
+              alt={name} data={icons[name]}
+              style={{ height: '40vh', width: '40vh' }}
+            />
+            <Stack direction='row'>
+              {order.map((c, i) => (mask & (1 << order.length - i - 1)) ? (
+                <object
+                  key={c} data={icons[capitalize(c)]}
+                  style={{ height: '10vh', width: '10vh'  }}
+                />
+              ) : ( null ))}
+            </Stack>
+            <Chart maxH='50vh'/>
           </Stack>
-          <Chart maxH='50vh'/>
+        )}
+        <Stack maxW='25rem'>
+          {descriptions[name]}
         </Stack>
-      )}
-      <Stack>
-        <Heading>{name}</Heading>
-        {descriptions[name]}
       </Stack>
     </Stack>
   )
