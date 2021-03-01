@@ -1,4 +1,6 @@
-import { Text, Link as ChakraLink, Stack } from '@chakra-ui/react'
+import {
+  Text, Link as ChakraLink, UnorderedList, ListItem
+} from '@chakra-ui/react'
 
 const Link = ({ children, ...args }) => (
   <ChakraLink {...args} textDecoration='underline'>
@@ -13,32 +15,32 @@ export const masks = {
 	0b00100: 'Black',
 	0b00010: 'Red',
 	0b00001: 'Green',
-  0b11000: 'Azorius Senate',    // WU
-  0b01100: 'House Dimir',       // UB
-  0b00101: 'Golgari Swarm',     // BG
-  0b00011: 'Gruul Clans',       // RG
-  0b10001: 'Selesnya Conclave', // WG
-  0b01001: 'Simic Combine',     // UG
-  0b10100: 'Orzhov Syndicate',  // WB
-  0b01010: 'Izzet League',      // UR
-  0b00110: 'Cult of Rakdos',    // BR
-  0b10010: 'Boros Legion',      // WR
-  0b11001: 'Bant Shard',        // WUG
-  0b11100: 'Esper Shard',       // WUB
-  0b01110: 'Grixis Shard',      // UBR
-  0b00111: 'Jund Shard',        // BRG
-  0b10011: 'Naya Shard',        // WRG
-  0b11010: 'Jeskai Way',        // WUR
-  0b01101: 'Sultai Brood',      // UBG
-  0b10110: 'Mardu Horde',       // WBR
-  0b01011: 'Temur Frontier',    // URG
-  0b10101: 'Abzan Houses',      // WBG
+  0b11000: 'The Azorius Senate',    // WU
+  0b01100: 'The House Dimir',       // UB
+  0b00101: 'The Golgari Swarm',     // BG
+  0b00011: 'The Gruul Clans',       // RG
+  0b10001: 'The Selesnya Conclave', // WG
+  0b01001: 'The Simic Combine',     // UG
+  0b10100: 'The Orzhov Syndicate',  // WB
+  0b01010: 'The Izzet League',      // UR
+  0b00110: 'The Cult of Rakdos',    // BR
+  0b10010: 'The Boros Legion',      // WR
+  0b11001: 'The Bant Shard',        // WUG
+  0b11100: 'The Esper Shard',       // WUB
+  0b01110: 'The Grixis Shard',      // UBR
+  0b00111: 'The Jund Shard',        // BRG
+  0b10011: 'The Naya Shard',        // WRG
+  0b11010: 'The Jeskai Way',        // WUR
+  0b01101: 'The Sultai Brood',      // UBG
+  0b10110: 'The Mardu Horde',       // WBR
+  0b01011: 'The Temur Frontier',    // URG
+  0b10101: 'The Abzan Houses',      // WBG
   0b11110: 'Artifice',   // WUBR
   0b11101: 'Growth',     // WUBG
   0b11011: 'Altruism',   // WURG
   0b10111: 'Aggression', // WBRG
   0b01111: 'Chaos',      // UBRG
-	0b11111: 'WUBRG',
+	0b11111: 'Balance',    // WUBRG
 }
 
 export const descriptions = {
@@ -46,189 +48,214 @@ export const descriptions = {
     <Text>You have no personality. Sorry. ☹</Text>
   ),
   White: (
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#e062:~:text=White%20seeks%20peace'><Text as='span' fontWeight='bold'>White</Text> seeks <Text as='i'>peace</Text>,</Link> and it tries to achieve that peace through the imposition of <Text as='i'>order</Text>. White believes that the solution to all suffering and unhappiness is coordination and cooperation and rules and restraint. The archetypal white organization would be a church, and a white dystopia would be a fascist regime such as the one in George Orwell’s <Text as='cite'>1984</Text>, or a stagnant society like the one in Lois Lowry’s <Text as='cite'>The Giver</Text>.</Text>
-      <Text>A white agent, when presented with a decision or quandary, asks <Text as='i'>what is the <Text as='b'>right</Text> course of action to take</Text>, where <Text as='q'>right</Text> depends on their moral or cultural framework.</Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The type of mana drawn from the plains.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#e062:~:text=White%20seeks%20peace' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Peace through order…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/White' target='_blank'>White on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
   Blue: (
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#da92:~:text=Blue%20seeks%20perfection'><Text as='span' fontWeight='bold'>Blue</Text> seeks <Text as='i'>perfection</Text>,</Link> and it tries to achieve that perfection through the pursuit of <Text as='i'>knowledge</Text>. Blue believes that things could be almost arbitrarily good if we could all just figure out the truth, and then apply that understanding to its fullest extent. The archetypal blue organization would be a university or a research lab, and a blue dystopia would be one in which efficiency were pursued without morals or limits, or in which intelligence were the sole axis of a meritocracy.</Text>
-      <Text>A blue agent, when presented with a decision or quandary, asks <Text as='i'>what course of action makes the most <Text as='b'>sense</Text></Text>, where <Text as='i'>sense</Text> is determined by careful thought and the application of knowledge and expertise.</Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The type of mana drawn from islands.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#da92:~:text=Blue%20seeks%20perfection' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Perfection through knowledge…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Blue' target='_blank'>Blue on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
   Black: (
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#4c78:~:text=Black%20seeks%20satisfaction'><Text as='b'>Black</Text> seeks <Text as='i'>satisfaction</Text>,</Link> and it tries to achieve that satisfaction through <Text as='i'>ruthlessness</Text>. Black wants power and agency so that it can act upon its preferences at any time, reshaping the world around it into whatever it wants. It recognizes no limits upon this pursuit except those which emerge from its own desires and self-interest. It is capable of cooperation and alliance, but only consequentially, as in game theory; at its core, black is amoral, not immoral, since it doesn’t think morality is even really a Thing. The archetypal black organization would be a hedge fund or a startup, and a black dystopia would be a totalitarian dictatorship.</Text>
-      <Text>A black agent, when presented with a decision or quandary, asks <i>what course of action will leave me <b>best off</b></i>, where <q>best off</q> includes having power, influence, safety, and wealth, as well as having moved closer to one’s goals.</Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The type of mana drawn from swamps.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#4c78:~:text=Black%20seeks%20satisfaction' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Satisfaction through ruthlessness…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Black' target='_blank'>Black on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
   Red: (
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#4c78:~:text=Black%20seeks%20satisfaction'><Text as='b'>Red</Text> seeks <Text as='i'>freedom</Text>,</Link> and it tries to achieve that freedom through <Text as='i'>action</Text>. Red wants the ability to live in the moment and follow the thread of aliveness and passion. It’s a bit strange to speak of a red <Text as='q'>organization,</Text> but to the extent that it’s <i>possible</i> to have an archetypal red organization, it would be one of those art studios that’s owned by no one where there’s paint on every wall and it’s almost impossible to move around what with all of the dancing and debating and half-finished projects. A red dystopia, on the other hand, would simply be anarchy.</Text>
-      <Text>A red agent, when presented with a decision or quandary, asks <i>what do I <b>feel</b> like doing?</i></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The type of mana drawn from mountains.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#4c78:~:text=Red%20seeks%20freedom' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Freedom through action…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Red' target='_blank'>Red on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
   Green: (
-    <Stack>
-      <Text><b>Green</b> seeks <i>harmony</i>, and it tries to achieve that harmony through <i>acceptance</i>. Green is the color of nature, wisdom, stoicism, taoism, and destiny; it believes that most of the suffering and misfortune in the world comes from attempts to cast off one’s natural mantle, step outside of one’s natural role, or fix things which aren’t broken — it’s the color of Chesterton’s Fence. It seeks to embrace what is — the archetypal green organization would be a hippie commune, or the pop culture interpretation of a Native American tribe (such as in Disney’s <cite>Pocahontas</cite>), while a green dystopia would be something like the society in <cite>Divergent</cite> or a tribe with absolutely rigid traditions and an unchanging and unchangeable relationship to its environment.</Text>
-      <Text>A green agent, when presented with a decision or quandary, asks <i>how are these things usually done?</i> <i>What is the established wisdom?</i></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The type of mana drawn from forests.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#4c78:~:text=Green%20seeks%20harmony' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Harmony through acceptance…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Green' target='_blank'>Green on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Azorius Senate':(      // WU
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#bc9b:~:text=White%20and%20blue%20are%20the%20enemies%20of%20red'>White and blue are the enemies of red</Link>, which they see as unfettered and chaotic. White and blue both agree that <i>structure</i> is important — white because it reduces the risk of conflict, and blue because it makes possible deep investigation and long-term or delicate optimization. Jean-Luc Picard from <cite>Star Trek</cite> is an excellent example of a white/blue archetype, as is the political persona of Hillary Clinton.</Text>
-      <Text>A white/blue agent asks the question <i>how do we <b>know</b> what’s right and good?</i> The whole concept of a <q>rationality technique</q> is extremely white/blue — the idea that we might create carefully defined, algorithmic heuristics for doing things better according to some outside standard is not one that other color combinations are likely to produce. Effective Altruism is also a white/blue movement, though it makes efforts to reach out to red (compassion) and black (taking the long view on self-interest).</Text>
-    </Stack>
+  'The Azorius Senate':(      // WU
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for governing.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#bc9b:~:text=White%20and%20blue%20are%20the%20enemies%20of%20red' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>structure</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Azorius_Senate' target='_blank'>The Azorius Senate on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'House Dimir': (        // UB
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#ce71:~:text=Blue%20and%20black%20are%20the%20enemies%20of%20green'>Blue and black are the enemies of green</Link>, which they see as complacent and passive. Blue and black both agree on <i>growth mindset</i> — the idea that one is not defined by one’s origins or constrained to the role society has set. Blue/black characters are often intelligent, clever, arrogant, and aloof — notable examples include Odysseus from <cite>The Odyssey</cite>, Sherlock Holmes, Lex Luthor, and Quirinus Quirrell from <cite>HPMOR</cite>.</Text>
-      <Text>A blue/black agent asks the question <i>how can I <b>best</b> achieve my goals?</i> It’s fair to describe blue/black as the combination of <q>enlightened self-interest,</q> which is why it’s not surprising to find it overrepresented in communities like LessWrong and Silicon Valley, which see themselves as attempting to disrupt the status quo for the better. Transhumanism is a fundamentally blue-black worldview, in opposition to the green imperative to accept death as a crucial and inevitable part of life.</Text>
-    </Stack>
+  'The House Dimir': (        // UB
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for espionage.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#ce71:~:text=Blue%20and%20black%20are%20the%20enemies%20of%20green' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by a <i>growth mindset</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/House_Dimir' target='_blank'>The House Dimir on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Golgari Swarm': (     // BG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Golgari Swarm': (     // BG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for necromancy.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#ce71:~:text=Blue%20and%20black%20are%20the%20enemies%20of%20green' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>profanity</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Golgari_Swarm' target='_blank'>The Golgari Swarm on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Gruul Clans': (       // RG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Gruul Clans': (       // RG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for membership.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#2ddf:~:text=Red%20and%20green%20are%20the%20enemies%20of%20blue' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>authenticity</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Golgari_Swarm' target='_blank'>The Golgari Swarm on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Selesnya Conclave': ( // WG
-    <Stack>
-      <Text><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#c621:~:text=Green%20and%20white%20are%20the%20enemies%20of%20black'>Green and white are the enemies of black</Link>, which they see as selfish, short-sighted, and ultimately self-defeating. They both agree on <i>community</i> — that the whole can be greater than the sum of its parts, and that there are things larger than oneself that are worth sacrificing for. Hufflepuff House from <cite>Harry Potter</cite> is a green/white institution, and Akela from The <cite>Jungle Book</cite> is a green/white archetype. Other examples of people and characters in this space include Confucius, Jesus, Rufio from <cite>Hook</cite>, and Obi-Wan Kenobi (as played by Alec Guinness).</Text>
-      <Text>A green/white agent asks the question <i>what’s fair and good?</i> Green/white institutions tend to be centered around compassionate endeavors, but if they go astray it’s in the direction of well-meaning lost purposes and wasted signaling — a lack of blue’s epistemic hygiene — rather than in the direction of cold, heartless efficiency or relentless pursuit of knowledge or the bottom line. They include institutions like the YMCA, Habitat for Humanity, Teach for America, the Lions’ Club, Meals on Wheels, the Boy Scouts and the Girl Scouts, and most small-town churches — basically any organization whose primary purpose is to foster the web of connection between people and to maintain the society’s culture. Some of the institutions above may lean in the direction of red or blue, but they’re <i>primarily</i> green/white.</Text>
-    </Stack>
+  'The Selesnya Conclave': ( // WG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for spirituality.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#c621:~:text=Green%20and%20white%20are%20the%20enemies%20of%20black' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>community</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Selesnya_Conclave' target='_blank'>The Selesnya Conclave on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Simic Combine': (     // UG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Simic Combine': (     // UG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for nature.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#d770:~:text=blue%2Fgreen%20is%20the%20combination%20of%20truth%20seeking' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>truth seeking</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Simic_Combine' target='_blank'>The Simic Combine on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Orzhov Syndicate': (  // WB
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Orzhov Syndicate': (  // WB
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for business.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#79b3:~:text=The%20enemy%20colors%20white%20and%20black%20combine%20to%20form%20tribalism' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>tribalism</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Orzhov_Syndicate' target='_blank'>The Orzhov Syndicate on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Izzet League': (      // UR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Izzet League': (      // UR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for municipal works.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#106b:~:text=Blue%20and%20red%20taken%20together%20are%20the%20colors%20of%20creativity' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>creativity</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Izzet_League' target='_blank'>The Izzet League on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Cult of Rakdos': (    // BR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Cult of Rakdos': (    // BR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for service work.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#b38b:~:text=Black%20and%20red%20are%20the%20enemies%20of%20white' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>independence</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Cult_of_Rakdos' target='_blank'>The Cult of Rakdos on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Boros Legion': (      // WR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Boros Legion': (      // WR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for policing.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#e6bc:~:text=red%20and%20white%20are%20the%20colors%20of%20heroism' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>heroism</i>…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Boros_Legion' target='_blank'>The Boros Legion on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Bant Shard': (        // WUG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Bant Shard': (        // WUG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by angels.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CBant%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A slow progression to fulfillment…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Bant' target='_blank'>The Bant Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Esper Shard': (       // WUB
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Esper Shard': (       // WUB
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by sphinxes.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CEsper%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A methodical approach toward a better future for oneself…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/' target='_blank'>The  on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Grixis Shard': (      // UBR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Grixis Shard': (      // UBR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by demons.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CGrixis%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>The well-behaved rarely make history…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/' target='_blank'>The Grixis Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Jund Shard': (        // BRG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Jund Shard': (        // BRG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by dragons.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CJund%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A feral realism…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Jund' target='_blank'>The Jund Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Naya Shard': (        // WRG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Naya Shard': (        // WRG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by behemoths.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CNaya%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A vibrant commitment to one's way of life…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Naya' target='_blank'>The Naya Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Jeskai Way': (        // WUR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Jeskai Way': (        // WUR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The clan of Tarkir concerned with cunning.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CJeskai%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A cycle of inspiration, investigation, &amp; evaluation…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Jeskai_Way' target='_blank'>The Jeskai Way on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Sultai Brood': (      // UBG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Sultai Brood': (      // UBG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The clan of Tarkir concerned with ruthlessness.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CSultai%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A driven wanting, sure and unyielding…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Sultai_Brood' target='_blank'>The Sultai Brood on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Mardu Horde': (       // WBR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Mardu Horde': (       // WBR
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The clan of Tarkir concerned with speed.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CMardu%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Chooses a people or principle to defend, stands their ground, then moves on…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Mardu_Horde' target='_blank'>The Mardu Horde on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Temur Frontier': (    // URG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Temur Frontier': (    // URG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The clan of Tarkir concerned with savagery.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CTemur%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>An insatiable desire to play, explore, discover, &amp; understand…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Temur_Frontier' target='_blank'>The Temur Frontier on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
-  'Abzan Houses': (      // WBG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'The Abzan Houses': (      // WBG
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The clan of Tarkir concerned with endurance.</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CAbzan%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>An unyielding certainty as to one's place…</q></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Abzan_Houses' target='_blank'>The Abzan Houses on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+    </UnorderedList>
   ),
   'Artifice': (          // WUBR
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The four coloring missing green.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
   'Growth': (            // WUBG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The four coloring missing red.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
   'Altruism': (          // WURG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The four coloring missing black.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
   'Aggression': (        // WBRG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The four coloring missing blue.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
   'Chaos': (             // UBRG
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The four coloring missing white.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
-  'WUBRG': (
-    <Stack>
-      <Text></Text>
-      <Text></Text>
-    </Stack>
+  'Balance': (
+    <UnorderedList>
+      <ListItem><b>Magic Mythos</b>: The five coloring.</ListItem>
+      <ListItem>ToDo: Generate something for here…</ListItem>
+    </UnorderedList>
   ),
 }

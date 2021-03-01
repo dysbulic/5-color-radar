@@ -15,6 +15,9 @@ export const reducers = {
   setHandle: (state, { payload: { id, handle }}) => (
     update(state, { handles: { $merge: { [id]: handle } } })
   ),
+  setHandles: (state, { payload }) => (
+    update(state, { handles: { $set: payload } })
+  ),
   setTransform: (state, { payload: { id, transform }}) => (
     update(state, { transforms: { $merge: { [id]: transform } } })
   ),
@@ -60,6 +63,9 @@ export const setPosition = (id, position) => {
 }
 export const setHandle = (id, handle) => {
   store.dispatch(positionSlice.actions.setHandle({ id, handle }))
+}
+export const setHandles = (handles) => {
+  store.dispatch(positionSlice.actions.setHandles(handles))
 }
 export const setTransform = (id, transform) => {
   store.dispatch(positionSlice.actions.setTransform({ id, transform }))

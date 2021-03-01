@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { connect } from 'react-redux'
 import {
-  setActive, setOrigin, setHandle as setNormHandle,
-  setTransform, setConflict,
+  setActive, setHandle as setNormHandle, setConflict,
 } from '../Reducer'
 import { reasons } from '../data/order'
 import { toDeg } from '../util'
@@ -32,7 +31,6 @@ export const Side = ({
   const [handle, setHandle] = useState({ x: 0, y: 0 })
   const mouseDown = (evt) => {
     const conflict = reasons[id]
-    // setOrigin({ x: evt.clientX, y: evt.clientY })
     setActive(id)
     setConflict({
       left: { color: colors[0], text: conflict.left },
@@ -99,14 +97,15 @@ export const Side = ({
         x: -1 + 2.0 * (bounded.x - bounds.x.min) / extents.x,
         y: 1 - (bounded.y - bounds.y.min) / extents.y,
       }
+      console.info({ id, bounded })
       setHandle(bounded)
       setNormHandle(id, norm)
     }
   }
-  //useEffect(repos, [position, transform])
+  useEffect(repos, [position, transform])
 
   return (
-    <>
+    <g key={id}>
       <defs>
         <linearGradient id={id}
           gradientUnits='userSpaceOnUse' // required for vertical lines
@@ -168,7 +167,7 @@ export const Side = ({
           </g>
         </g>
       </g>
-    </>
+    </g>
   )
 }
 

@@ -1,8 +1,8 @@
 import {
-  useRef, useMemo, useState, useEffect, useCallback,
+  useRef, useState, useEffect, useCallback,
 } from 'react'
 import {
-  chakra, Box, Heading, Spacer, Stack, Text,
+  chakra, Box, Heading, Spacer, Stack, Text, Flex,
 } from '@chakra-ui/react'
 import { connect } from 'react-redux'
 import {
@@ -11,7 +11,7 @@ import {
 import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
-import { names } from '../data/order'
+import { colors as order, names } from '../data/order'
 
 // needed b/c dynamic loading is failing
 import Ambition from '../icons/MetaGame/Ambition.svg'
@@ -19,8 +19,6 @@ import Balance from '../icons/MetaGame/Balance.svg'
 import Chaos from '../icons/MetaGame/Chaos.svg'
 import Justice from '../icons/MetaGame/Justice.svg'
 import Wisdom from '../icons/MetaGame/Wisdom.svg'
-
-export { normsToWeights } from './Linkages'
 
 const SVG = chakra('svg', {
   baseStyle: {
@@ -50,8 +48,7 @@ const Sliders = ({ active, conflict }) => {
     try {
       const images = {}
       for(let name of Object.values(names)) {
-        // const path = `../icons/MetaGame/${name}.svg`
-        const path = `./../icons/Red.svg`
+        const path = `../icons/MetaGame/${name}.svg`
         images[name] = (await import(path)).default
       }
       setImages(images)
@@ -89,11 +86,11 @@ const Sliders = ({ active, conflict }) => {
   )
 
   const StarSide = ({ colors, rot }) => (
-    <Side {...{ colors: useMemo(() => colors, []), rot, l, r }}/>
+    <Side {...{ colors, rot, l, r }}/>
   )
 
   const mouseMove = (evt) => {
-    if(!!active && !!svg.current) {
+    if(active && svg.current) {
       const pos = { x: evt.clientX, y: evt.clientY }
       const p = pointFor(pos)
       const { x, y } = p.matrixTransform(
@@ -115,7 +112,7 @@ const Sliders = ({ active, conflict }) => {
   }
 
   return (
-    <Stack direction='column' w='100%' align='center'>
+    <Flex direction='column' w='100%' align='center'>
       <Box minH='3.75rem'>
         {!!conflict && (
           <Box
@@ -157,11 +154,19 @@ const Sliders = ({ active, conflict }) => {
         <defs>
           <filter id="shadow">
             <feGaussianBlur in="SourceAlpha" stdDeviation="8">
-              <animate attributeName='stdDeviation' values='8; 10; 8' dur='1s' begin='0s' repeatCount='indefinite'/>
+              <animate
+                attributeName='stdDeviation'
+                values='8; 10; 8'
+                dur='1s' begin='0s' repeatCount='indefinite'
+              />
             </feGaussianBlur>
             <feOffset dx="0" dy="5" result="offsetblur"/>
             <feFlood floodColor="black">
-              <animate attributeName='floodColor' values='black; orange; black; red; blue; white' dur='4s' begin='0s' repeatCount='indefinite'/>
+              <animate
+                attributeName='floodColor'
+                values='black; orange; black; red; blue; white'
+                dur='4s' begin='0s' repeatCount='indefinite'
+              />
             </feFlood>
             <feComposite in2="offsetblur" operator="in"/>
             <feMerge>
@@ -171,7 +176,7 @@ const Sliders = ({ active, conflict }) => {
           </filter>
           <path id='head' d="M 0 0 L 10 5 L 0 10 z"/>
           {
-            ['white', 'blue', 'black', 'green', 'red']
+            order
             .map((color) => (
               <marker id={`${color}arrow`} key={color}
                 viewBox="0 0 10 10" refX="5" refY="5"
@@ -221,7 +226,7 @@ const Sliders = ({ active, conflict }) => {
           <StarSide rot={8 * Math.PI / 10} colors={['blue', 'red']}/>
         </g>
       </SVG>
-    </Stack>
+    </Flex>
   )
 }
 

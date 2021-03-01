@@ -1,9 +1,9 @@
 import {
-  Spacer, Stack, Text, HStack, Input
+  Spacer, Text, Flex, Input, Heading
 } from '@chakra-ui/react'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { setHandle } from './Reducer'
+import { setHandle, setHandles } from './Reducer'
 import { reasons } from './data/order'
 
 const Ranges = () => {
@@ -12,6 +12,17 @@ const Ranges = () => {
   const [values, setValues] = (
     useState(Array(numReasons).fill(0))
   )
+
+  const load = () => {
+    setHandles(Object.fromEntries(
+      Object.keys(reasons).map(
+        (axis) => [axis, { x: 0, y: 0.5 }]
+      )
+    ))
+  }
+
+  useEffect(load, [])
+
   const change = (id, idx, { target: { value: val }}) => {
     setValues(vs => {
       vs = [...vs]
@@ -22,33 +33,35 @@ const Ranges = () => {
   }
 
   return (
-    <Stack align='center' minW={['100%', '20rem']} ml='5rem'>
+    <Flex
+      align='center' justify='center'
+      minW={['100%', '20rem']} ml='5rem' mr={2}
+      direction='column'
+    >
+      <Heading textAlign='center'>Fundametal Color Conflicts</Heading>
       {Object.entries(reasons).map(([id, split], idx) => {
         return (
-          <Stack key={id} w='100%'>
-            <HStack w='100%'>
+          <Flex key={id} w='100%' direction='column'>
+            <Flex w='100%' fontSize={20}>
               <Text>{split.left}</Text>
               <Spacer/>
               <Text>{split.right}</Text>
-            </HStack>
+            </Flex>
             <Input type='range'
-              maxH={4}
+              maxH={4} mb={3}
               min={-range} max={range} value={values[idx]}
               bg={`linear-gradient(
                 to right, ${id.split('-').join(', ')}
               )`}
               onChange={evt => change(id, idx, evt)}
             />
-          </Stack>
+          </Flex>
         )
       })}
-    </Stack>
+    </Flex>
   )
 }
 
 export default connect(
-  (state) => {
-    const { } = state
-    return { }
-  },
+  (state) => ({ }),
 )(Ranges)

@@ -1,5 +1,4 @@
-import { Image } from '@chakra-ui/image'
-import { Heading, Stack, Text } from '@chakra-ui/react'
+import { Heading, Flex, Spacer } from '@chakra-ui/react'
 import { useEffect, useState, useCallback } from 'react'
 import { connect } from 'react-redux'
 import { capitalize } from './util'
@@ -9,7 +8,7 @@ import {
 import { colors as order } from './data/order'
 import Chart from './Chart'
 
-const Results = ({ weights }) => {
+const Results = ({ weights, chart = true }) => {
   const [icons, setIcons] = useState()
   const load = useCallback(async () => {
     const icons = {}
@@ -44,33 +43,54 @@ const Results = ({ weights }) => {
   useEffect(() => update(), [update])
 
   return (
-    <Stack
-      align='center' justify='center'
+    <Flex
+      direction='column' align='center' justify='center'
     >
-      <Heading pb={5}>{name}</Heading>
-      <Stack direction='row'>
+      <Heading pb={5}  mt='2.5rem' fontSize='4rem' textAlign='center'>
+        {name}
+      </Heading>
+      <Flex
+        direction={['column', chart ? 'row-reverse' : 'column-reverse']}
+        grow={1}
+      >
+        <Flex
+          maxW='30rem' ml='1rem' mb='1rem'
+          fontSize='150%'
+        >
+          {descriptions[name]}
+        </Flex>
         {icons && (
-          <Stack direction='column' align='center'>
-            <object
-              alt={name} data={icons[name]}
-              style={{ height: '40vh', width: '40vh' }}
-            />
-            <Stack direction='row'>
+          <Flex
+            direction='column' align='center' grow={1}
+            flex={chart ? 'flex' : 'none'}
+          >
+            <Flex grow={1} justify='flex-start'>
+              <object
+                aria-label={name}
+                alt={name} data={icons[name]}
+                style={{ height: '100%', width: 'auto' }}
+              />
+            </Flex>
+            <Flex direction='row' pt='0.5rem'>
               {order.map((c, i) => (mask & (1 << order.length - i - 1)) ? (
                 <object
                   key={c} data={icons[capitalize(c)]}
+                  aria-label={capitalize(c)} title={capitalize(c)}
                   style={{ height: '10vh', width: '10vh'  }}
                 />
               ) : ( null ))}
-            </Stack>
-            <Chart maxH='50vh'/>
-          </Stack>
+            </Flex>
+            {chart ? (
+              <Flex justify='flex-start' grow={1}>
+                <Chart h='100%'/>
+              </Flex>
+            ) : (
+              <Spacer grow={1}/>
+            )}
+          </Flex>
         )}
-        <Stack maxW='25rem'>
-          {descriptions[name]}
-        </Stack>
-      </Stack>
-    </Stack>
+      </Flex>
+    </Flex>
   )
 }
 

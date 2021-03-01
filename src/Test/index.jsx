@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { useEffect, useState, useCallback } from 'react'
 import {
-  Flex, Stack, VStack, Box, Spinner, Button, ButtonGroup, Text,
+  Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
 } from '@chakra-ui/react'
 import {
   ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon,
@@ -30,11 +30,10 @@ const Test = ({ history }) => {
   const { answers = '' } = useParams()
   const load = () => {
     if(answers === '') {
-      {/* ToDo: Fix this so it clears the responses when
-        * /test (w/o args) is navigated to. */}
       statements.forEach(
         r => r.response = undefined
       )
+      setIndex(0)
     } else {
       let max, idx = 0
       for(
@@ -63,7 +62,7 @@ const Test = ({ history }) => {
     setMaxes(maxes)
   }
 
-  useEffect(load, [])
+  useEffect(load, [answers])
 
   const update = () => {
     if(!maxes) return
@@ -126,7 +125,7 @@ const Test = ({ history }) => {
     'Strongly Agree': { points: 2, color: 'green' },
   }
   const Sentiments = () => (
-    <Stack direction={['column', 'row']}>
+    <Flex direction={['column', 'row']}>
       {Object.entries(timents)
         .map(([timent, { points, color }]) => (
           <Button
@@ -134,10 +133,11 @@ const Test = ({ history }) => {
             isActive={statements[index]?.response === points}
             colorScheme={color}
             onClick={() => answer(points)}
+            mb={['0.5rem', 0]} mr={[0, '0.5rem']}
           >{timent}</Button>
         ))
       }
-    </Stack>
+    </Flex>
   )
 
   const Navigation = () => (
@@ -180,14 +180,14 @@ const Test = ({ history }) => {
     )
   }
 
-  const Statement = ({ positon }) => (
+  const Statement = ({ position }) => (
     <Box
       maxW={['20rem', '40rem']}
       minH={['6rem', '3rem']}
-      ml={['3rem', 0]}
+      ml={['4rem', 0]}
     >
       <Text textAlign='justify'>
-        <q>{statements[index].position}</q>
+        <q>{position}</q>
       </Text>
     </Box>
   )
@@ -195,15 +195,15 @@ const Test = ({ history }) => {
   const GetResult = () => (
     <Button
       title='Skip To Results'
-      h='auto'
-      w='2rem'
+      w='1.5rem' h='auto'
+      ml='1rem'
       onClick={() => setIndex(statements.length)}
     ><ArrowForwardIcon/></Button>
   )
 
   return (
-    <Stack className={!showing && 'imageOnly'}>
-      <Flex as='nav' key='head'>
+    <Flex justify='center'>
+      <Flex as='nav' key='head' position='fixed' w='100%'>
         {statements.map((s, i) => (
           <span key={i}
             title={`Position #${i + 1}: ${s.position}`}
@@ -228,10 +228,15 @@ const Test = ({ history }) => {
         ? (
           <Results/>
         ) : (
-          <Flex direction='column' align='center'>
-            <Stack direction='row'>
-              <Stack pt={5} id='statements'>
-                <Statement positon={statements[index].position}/>
+          <Flex direction='column' align='center' justify='center'>
+            <Flex direction='row'>
+              <Flex
+                pt={5} grow={1} direction='column'
+                transition='max-height 0.5s'
+                maxH={showing ? ['30rem', '15rem'] : '0rem'}
+                overflow='hidden'
+              >
+                <Statement position={statements[index].position}/>
                 {/* ToDo: Make 100% width on mobile, preserving button width */}
                 <ColorBar
                   from={statements[index].low}
@@ -239,13 +244,12 @@ const Test = ({ history }) => {
                 />
                 <Sentiments/>
                 <Navigation/>
-              </Stack>
+              </Flex>
               <GetResult/>
-            </Stack>
+            </Flex>
             <Button
               title={`${showing ? 'Hide' : 'Show'} Position`}
-              maxH='1rem'
-              minW='50%'
+              maxH='1rem' minW='50%'
               margin='1rem auto'
               onClick={() => setShowing(s => !s)}
             >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
@@ -253,7 +257,7 @@ const Test = ({ history }) => {
           </Flex>
         )
       }
-    </Stack>
+    </Flex>
   )
 }
 

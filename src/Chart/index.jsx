@@ -1,10 +1,13 @@
+import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import ConicRadar from './ConicRadar'
 import { Range } from '../util'
 import { colors as order } from '../data/order'
+import { normsToWeights } from '../util'
+import { setWeights } from '../Reducer'
 import './Chart.scss'
 
-const Chart = ({ weights }) => {
+const Chart = ({ weights, handles }) => {
   const numWeights = order.length
   const segment = 2 * Math.PI / numWeights
   const start = Math.PI / 2
@@ -14,6 +17,11 @@ const Chart = ({ weights }) => {
   const size = numPolys * incr
    // percentage of distance to edge to draw color circle
   const circCent = 0.7
+
+  useEffect(() => {
+    console.info({ handles, norms: normsToWeights(handles) })
+    setWeights(normsToWeights(handles))
+  }, [handles])
 
   const Circles = ({ points }) => (
     <g id='circles' key='circles'>
@@ -87,15 +95,17 @@ const Chart = ({ weights }) => {
                   </defs>
                 )}
                 {last
-                  ? <>
-                    <use
-                      id='outeruse'
-                      key='outer'
-                      href='#outer'
-                      className='ring'
-                    />
-                    <Circles {...{ points }}/>
-                  </> : (
+                  ? (
+                    <>
+                      <use
+                        id='outeruse'
+                        key='outer'
+                        href='#outer'
+                        className='ring'
+                      />
+                      <Circles {...{ points }} key='circles'/>
+                    </>
+                  ) : (
                     <polygon
                       key={idx}
                       className='ring '
@@ -115,7 +125,7 @@ const Chart = ({ weights }) => {
 
 export default connect(
   (state) => {
-    const { weights } = state
-    return { weights }
+    const { weights, handles } = state
+    return { weights, handles }
   },
 )(Chart)

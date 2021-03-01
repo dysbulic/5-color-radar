@@ -5,7 +5,7 @@ export const colors = [
 
 // order of the conflicts going clockwise from the top
 // this could be derived from the `colors` order, allowing
-// the colors to change throughout dyanimcally, but
+// the colors to change throughout dynamically, but
 // I can't be bothered at the moment 🐰
 export const conflicts = [
   'green-blue', 'white-black',
@@ -14,11 +14,11 @@ export const conflicts = [
 ]
 
 export const reasons = {
-  'red-white': { left: 'Chaos', right: 'Order' },
-  'white-black': { left: 'Group', right: 'Individual' },
-  'black-green': { left: 'Exploitation', right: 'Preservation' },
   'green-blue': { left: 'Nature', right: 'Nurture' },
+  'white-black': { left: 'Group', right: 'Individual' },
   'blue-red': { left: 'Reason', right: 'Emotion' },
+  'black-green': { left: 'Exploitation', right: 'Preservation' },
+  'red-white': { left: 'Chaos', right: 'Order' },
 }
 
 
