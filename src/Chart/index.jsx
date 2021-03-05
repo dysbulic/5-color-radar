@@ -19,8 +19,9 @@ const Chart = ({ weights, handles }) => {
   const circCent = 0.7
 
   useEffect(() => {
-    console.info({ handles, norms: normsToWeights(handles) })
-    setWeights(normsToWeights(handles))
+    if(Object.keys(handles).length > 0) {
+      setWeights(normsToWeights(handles))
+    }
   }, [handles])
 
   const Circles = ({ points }) => (

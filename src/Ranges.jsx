@@ -29,7 +29,6 @@ const Ranges = () => {
       vs.splice(idx, 1, val)
       return vs
     })
-    console.info({ id, x: val / range })
     setHandle(id, { x: val / range, y: 0.5 })
   }
 
