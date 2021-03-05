@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[27],{157:function(a,r,s){"use strict";s.r(r),r.default=s.p+"static/media/Naya Shard.41c93743.svg"}}]);
-//# sourceMappingURL=27.b5eda15d.chunk.js.map

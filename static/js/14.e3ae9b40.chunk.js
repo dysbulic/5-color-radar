@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[14],{144:function(a,s,o){"use strict";o.r(s),s.default=o.p+"static/media/Cult of Rakdos.438c3826.svg"}}]);
-//# sourceMappingURL=14.e3ae9b40.chunk.js.map

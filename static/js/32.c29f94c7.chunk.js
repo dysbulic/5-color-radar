@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[32],{162:function(a,o,r){"use strict";r.r(o),o.default=r.p+"static/media/Sultai Brood.05a9a354.svg"}}]);
-//# sourceMappingURL=32.c29f94c7.chunk.js.map

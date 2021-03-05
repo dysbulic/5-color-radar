@@ -1,0 +1,2 @@
+(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[31],{172:function(a,c,r){"use strict";r.r(c),c.default=r.p+"static/media/The Orzhov Syndicate.eaac19a3.svg"}}]);
+//# sourceMappingURL=31.75e22175.chunk.js.map
