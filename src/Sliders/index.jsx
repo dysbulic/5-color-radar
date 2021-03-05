@@ -11,14 +11,14 @@ import {
 import Side from './Side'
 import Linkages from './Linkages'
 import './index.scss'
-import { colors as order, names } from '../data/order'
+import { colors as order } from '../data/order'
+import { capitalize } from '../util'
 
-// needed b/c dynamic loading is failing
-import Ambition from '../icons/MetaGame/Ambition.svg'
-import Balance from '../icons/MetaGame/Balance.svg'
-import Chaos from '../icons/MetaGame/Chaos.svg'
-import Justice from '../icons/MetaGame/Justice.svg'
-import Wisdom from '../icons/MetaGame/Wisdom.svg'
+import White from '../icons/White.svg'
+import Blue from '../icons/Blue.svg'
+import Black from '../icons/Black.svg'
+import Red from '../icons/Red.svg'
+import Green from '../icons/Green.svg'
 
 const SVG = chakra('svg', {
   baseStyle: {
@@ -47,18 +47,16 @@ const Sliders = ({ active, conflict }) => {
   const load = useCallback(async () => {
     try {
       const images = {}
-      for(let name of Object.values(names)) {
-        const path = `../icons/MetaGame/${name}.svg`
-        images[name] = (await import(path)).default
+      for(let name of order) {
+        const path = `../icons/${capitalize(name)}.svg`
+        images[name] = (await import(`${path}`))
       }
       setImages(images)
     } catch(err) {
       console.warn("Couldn't Load Images", err)
-      setImages({
-        Ambition, Balance, Chaos, Justice, Wisdom,
-      })
+      setImages({ White, Blue, Black, Red, Green })
     }
-  }, [names])
+  }, [])
 
   useEffect(() => load(), [load])
   
@@ -192,27 +190,27 @@ const Sliders = ({ active, conflict }) => {
         <g className='images'>
           <BgImage
             x={0} y={-(d + r / 4)}
-            name='Justice'
+            name='White'
           />
           <BgImage
             x={(d * Math.sin(Math.PI / 5)) / Math.sin(Math.PI / 2) + r / 4}
             y={(d * Math.sin(3 * Math.PI / 10)) / Math.sin(Math.PI / 2) + r / 4}
-            name='Ambition'
+            name='Black'
           />
           <BgImage
             x={-(d * Math.sin(Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4)}
             y={(d * Math.sin(3 * Math.PI / 10)) / Math.sin(Math.PI / 2) + r / 4}
-            name='Chaos'
+            name='Red'
           />
           <BgImage
             x={-(d * Math.sin(2 * Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4)}
             y={-(d * Math.sin(Math.PI / 10) / Math.sin(Math.PI / 2))}
-            name='Balance'
+            name='Green'
           />
           <BgImage
             x={d * Math.sin(2 * Math.PI / 5) / Math.sin(Math.PI / 2) + r / 4}
             y={-(d * Math.sin(Math.PI / 10) / Math.sin(Math.PI / 2))}
-            name='Wisdom'
+            name='Blue'
           />
         </g>
         <g className='links' transform={`translate(0, ${r / 8})`}>

@@ -8,7 +8,7 @@ import {
 import { colors as order } from './data/order'
 import Chart from './Chart'
 
-const Results = ({ weights, chart = true }) => {
+const Results = ({ weights, chart = true, dispatch, ...props }) => {
   const [icons, setIcons] = useState()
   const load = useCallback(async () => {
     const icons = {}
@@ -46,12 +46,13 @@ const Results = ({ weights, chart = true }) => {
     <Flex
       direction='column' align='center' justify='center'
     >
-      <Heading pb={5}  mt='2.5rem' fontSize='4rem' textAlign='center'>
+      <Heading pb={5} mt='2.5rem' fontSize='4rem' textAlign='center'>
         {name}
       </Heading>
       <Flex
         direction={['column', chart ? 'row-reverse' : 'column-reverse']}
         grow={1}
+        justifyContent={['flex-start', 'flex-end']}
       >
         <Flex
           maxW='30rem' ml='1rem' mb='1rem'

@@ -14,6 +14,7 @@ import Test from './Test'
 import Combos from './Combos'
 import Explore from './Explore'
 import Home from './Home'
+import Masked from './Masked'
 import { store } from './Reducer'
 import bg from './images/background.jpg'
 
@@ -25,6 +26,9 @@ const overrides = {
     global: {
       body: {
         bgImage: `url('${bg}')`,
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+        minH: '100vh',
       },
       a: {
         textDecoration: 'underline',
@@ -72,6 +76,7 @@ export default () => (
         )}
       </Menu>
       <Switch>
+        <Route path='/combos/:mask' component={Masked}/>
         <Route path='/combos' component={Combos}/>
         <Route path='/explore' component={Explore}/>
         <Route path='/test/:answers' component={Test}/>

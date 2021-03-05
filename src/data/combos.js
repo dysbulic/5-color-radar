@@ -9,12 +9,12 @@ const Link = ({ children, ...args }) => (
 )
 
 export const masks = {
-	0b00000: 'Colorless',
-	0b10000: 'White',
-	0b01000: 'Blue',
-	0b00100: 'Black',
-	0b00010: 'Red',
-	0b00001: 'Green',
+  0b00000: 'Colorless',
+  0b10000: 'White',
+  0b01000: 'Blue',
+  0b00100: 'Black',
+  0b00010: 'Red',
+  0b00001: 'Green',
   0b11000: 'The Azorius Senate',    // WU
   0b01100: 'The House Dimir',       // UB
   0b00101: 'The Golgari Swarm',     // BG
@@ -40,7 +40,7 @@ export const masks = {
   0b11011: 'Altruism',   // WURG
   0b10111: 'Aggression', // WBRG
   0b01111: 'Chaos',      // UBRG
-	0b11111: 'Balance',    // WUBRG
+  0b11111: 'Balance',    // WUBRG
 }
 
 export const descriptions = {
@@ -163,14 +163,14 @@ export const descriptions = {
     <UnorderedList>
       <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by sphinxes.</ListItem>
       <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CEsper%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>A methodical approach toward a better future for oneself…</q></ListItem>
-      <ListItem><Link href='https://mtg.fandom.com/wiki/' target='_blank'>The  on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Esper' target='_blank'>The Esper Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
     </UnorderedList>
   ),
   'The Grixis Shard': (      // UBR
     <UnorderedList>
       <ListItem><b>Magic Mythos</b>: The shard of Alara inhabited by demons.</ListItem>
       <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#34d7:~:text=%E2%80%9CGrixis%E2%80%9D' target='_blank'><b>Sabien's Explanation</b></Link>: <q>The well-behaved rarely make history…</q></ListItem>
-      <ListItem><Link href='https://mtg.fandom.com/wiki/' target='_blank'>The Grixis Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Grixis' target='_blank'>The Grixis Shard on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
     </UnorderedList>
   ),
   'The Jund Shard': (        // BRG

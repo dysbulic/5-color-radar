@@ -29,16 +29,17 @@ const Ranges = () => {
       vs.splice(idx, 1, val)
       return vs
     })
+    console.info({ id, x: val / range })
     setHandle(id, { x: val / range, y: 0.5 })
   }
 
   return (
     <Flex
       align='center' justify='center'
-      minW={['100%', '20rem']} ml='5rem' mr={2}
+      minW={['100%', '20rem']} mr={8}
       direction='column'
     >
-      <Heading textAlign='center'>Fundametal Color Conflicts</Heading>
+      <Heading textAlign='center' ml='5rem'>Fundametal Color Conflicts</Heading>
       {Object.entries(reasons).map(([id, split], idx) => {
         return (
           <Flex key={id} w='100%' direction='column'>

@@ -80,7 +80,7 @@ const Chart = ({ weights, handles }) => {
             ).join(' ')
  
             return (
-              <>
+              <g key={idx}>
                 {last && (
                   <defs key='defs'>
                     <polygon id='outer'
@@ -113,7 +113,7 @@ const Chart = ({ weights, handles }) => {
                     />
                   )
                 }
-              </>
+              </g>
             )
           })}
         </g>

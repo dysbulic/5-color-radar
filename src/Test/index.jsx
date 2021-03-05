@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
 } from '@chakra-ui/react'
