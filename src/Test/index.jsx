@@ -117,29 +117,6 @@ const Test = ({ history }) => {
     setIndex(index + 1)
   }
 
-  const timents = {
-    'Strongly Disagree': { points: -2, color: 'red' },
-    'Disagree': { points: -1, color: 'pink' },
-    'Ambivalent': { points: 0, color: 'blue' },
-    'Agree': { points: 1, color: 'teal' },
-    'Strongly Agree': { points: 2, color: 'green' },
-  }
-  const Sentiments = () => (
-    <Flex direction={['column', 'row']}>
-      {Object.entries(timents)
-        .map(([timent, { points, color }]) => (
-          <Button
-            key={color}
-            isActive={statements[index]?.response === points}
-            colorScheme={color}
-            onClick={() => answer(points)}
-            mb={['0.5rem', 0]} mr={[0, '0.5rem']}
-          >{timent}</Button>
-        ))
-      }
-    </Flex>
-  )
-
   const Navigation = () => (
     <Stack align='center'>
       <ButtonGroup pt={5}>
@@ -160,7 +137,7 @@ const Test = ({ history }) => {
     </Stack>
   )
 
-  const ColorBar = ({ from, to }) => (
+  const ColorBar = ({ from, to, ...props }) => (
     <Box id='colors'
       style={{
         background: `linear-gradient(
@@ -168,6 +145,7 @@ const Test = ({ history }) => {
         )`
       }}
       className={``}
+      {...props}
     ></Box>
   )
 
@@ -182,28 +160,56 @@ const Test = ({ history }) => {
 
   const Statement = ({ position }) => (
     <Box
-      maxW={['20rem', '40rem']}
-      minH={['6rem', '3rem']}
-      ml={['4rem', 0]}
+      maxW={['20rem', '60rem']}
+      minH={{ base: '6rem', sm: '16rem', lg: '12rem' }}
+      ml={{ base: '4rem', xl: 0 }}
+      alignContent="center"
     >
-      <Text textAlign='justify'>
+      <Text
+        textAlign='justify'
+        fontSize={{ base: '1rem', sm: '2.5rem' }}
+      >
         <q>{position}</q>
       </Text>
     </Box>
   )
 
+  const sentiments = {
+    'Strongly Disagree': { points: -2, color: 'red' },
+    'Disagree': { points: -1, color: 'pink' },
+    'Ambivalent': { points: 0, color: 'blue' },
+    'Agree': { points: 1, color: 'teal' },
+    'Strongly Agree': { points: 2, color: 'green' },
+  }
+  const Sentiments = () => (
+    <Flex direction={['column', 'row']} justify="stretch">
+      {Object.entries(sentiments)
+        .map(([timent, { points, color }]) => (
+          <Button
+            key={color} flexGrow={1}
+            isActive={statements[index]?.response === points}
+            colorScheme={color}
+            onClick={() => answer(points)}
+            mb={['0.5rem', 0]} mr={[0, '0.5rem']}
+          >{timent}</Button>
+        ))
+      }
+    </Flex>
+  )
+
+
   const GetResult = () => (
     <Button
-      title='Skip To Results'
-      w='1.5rem' h='auto'
-      ml='1rem'
+      title="Skip To Results"
+      w="1.5rem" h="auto"
+      ml="1rem"
       onClick={() => setIndex(statements.length)}
     ><ArrowForwardIcon/></Button>
   )
 
   return (
-    <Flex justify='center'>
-      <Flex as='nav' key='head' position='fixed' w='100%'>
+    <Flex justify="center">
+      <Flex as="nav" key="head" position="fixed" w="100%">
         {statements.map((s, i) => (
           <span key={i}
             title={`Position #${i + 1}: ${s.position}`}
@@ -228,12 +234,16 @@ const Test = ({ history }) => {
         ? (
           <Results/>
         ) : (
-          <Flex direction='column' align='center' justify='center'>
+          <Flex direction="column" align='center' justify='center'>
             <Flex direction='row'>
               <Flex
                 pt={5} grow={1} direction='column'
                 transition='max-height 0.5s'
-                maxH={showing ? ['30rem', '15rem'] : '0rem'}
+                maxH={
+                  showing
+                  ? { base: '30rem', sm: '28rem', lg: '22rem' }
+                  : '0rem'
+                }
                 overflow='hidden'
               >
                 <Statement position={statements[index].position}/>
@@ -241,6 +251,7 @@ const Test = ({ history }) => {
                 <ColorBar
                   from={statements[index].low}
                   to={statements[index].high}
+                  mb={3}
                 />
                 <Sentiments/>
                 <Navigation/>

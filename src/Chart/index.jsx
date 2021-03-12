@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import ConicRadar from './ConicRadar'
 import { Range } from '../util'
 import { colors as order } from '../data/order'
-import { normsToWeights } from '../util'
+import { normsToWeights, capitalize } from '../util'
 import { setWeights } from '../Reducer'
 import './Chart.scss'
 
-const Chart = ({ weights, handles }) => {
+const Chart = ({ handles }) => {
   const numWeights = order.length
   const segment = 2 * Math.PI / numWeights
   const start = Math.PI / 2
@@ -35,7 +35,7 @@ const Chart = ({ weights, handles }) => {
             mask='url("#surround")'
             fill={order[i]}
           >
-            <title>{order[i].toUpperCase()}</title>
+            <title>{capitalize(order[i])}</title>
           </circle>
           <circle
             cx={circCent * p.x}
@@ -45,7 +45,7 @@ const Chart = ({ weights, handles }) => {
             fill='none' stroke='black'
             strokeWidth={incr / 2}
           >
-            <title>{order[i].toUpperCase()}</title>
+            <title>{capitalize(order[i])}</title>
           </circle>
         </g>
       ))}

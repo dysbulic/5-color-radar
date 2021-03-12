@@ -45,6 +45,7 @@ const Results = ({ weights, chart = true, dispatch, ...props }) => {
   return (
     <Flex
       direction='column' align='center' justify='center'
+      {...props}
     >
       <Heading pb={5} mt='2.5rem' fontSize='4rem' textAlign='center'>
         {name}

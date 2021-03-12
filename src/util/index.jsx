@@ -57,8 +57,8 @@ export const normsToWeights = (handles) => {
     const axes = Object.keys(ordered)
     const scores = Object.values(ordered)
     for(let idx = 1; idx <= scores.length; idx++) {
-      const p1 = scores[(idx + scores.length - 2) % scores.length]
-      const p2 = scores[(idx + 1) % scores.length]
+      const p1 = scores[(idx + 1) % scores.length]
+      const p2 = scores[(idx + 4) % scores.length]
       let l = 0.05 // minimum size
       const portance = (p1.y + p2.y) / 2 // mean of distance from center
       const viction = (p2.x + -p1.x) / 2

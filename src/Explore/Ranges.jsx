@@ -3,8 +3,8 @@ import {
 } from '@chakra-ui/react'
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { setHandle, setHandles } from './Reducer'
-import { reasons } from './data/order'
+import { setHandle, setHandles } from '../Reducer'
+import { reasons } from '../data/order'
 
 const Ranges = () => {
   const range = 100
@@ -38,11 +38,13 @@ const Ranges = () => {
       minW={['100%', '20rem']} mr={8}
       direction='column'
     >
-      <Heading textAlign='center' ml='5rem'>Fundametal Color Conflicts</Heading>
+      <Heading textAlign='center' ml='5rem'>
+        Fundametal Color Conflicts
+      </Heading>
       {Object.entries(reasons).map(([id, split], idx) => {
         return (
           <Flex key={id} w='100%' direction='column'>
-            <Flex w='100%' fontSize={20}>
+            <Flex w='100%' fontSize={[20, 35]}>
               <Text>{split.left}</Text>
               <Spacer/>
               <Text>{split.right}</Text>

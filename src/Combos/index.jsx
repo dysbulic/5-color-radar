@@ -56,6 +56,7 @@ export default () => (
         </g>
         <text><tspan x="104.52714" y="149.84612" textAnchor="middle">WUBRG</tspan></text>
       </g>
+      <a xlinkHref='/5-color-radar#/combos/10111'>
       <g className='partition' id='Aggression'>
         <g transform="translate(-2.2915 1.5732)">
           <path className='red' d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"/>
@@ -65,6 +66,7 @@ export default () => (
         </g>
         <text><tspan x="88.826691" y="157.08694" textAnchor="end">Aggression</tspan></text>
       </g>
+      </a>
       <g className='partition' id='Altruism'>
         <g transform="matrix(-.64542 .76383 .76383 .64542 44.502 -44.454) rotate(4.0434 112.45 301.65)">
           <path className='red' d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"/>
