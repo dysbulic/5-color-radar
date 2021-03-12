@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/5-color-radar/static/css/main.5eb2bebe.chunk.css",
-    "main.js": "/5-color-radar/static/js/main.54e43477.chunk.js",
-    "main.js.map": "/5-color-radar/static/js/main.54e43477.chunk.js.map",
-    "runtime-main.js": "/5-color-radar/static/js/runtime-main.ce6825b8.js",
-    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.ce6825b8.js.map",
-    "static/js/2.a9fb19bc.chunk.js": "/5-color-radar/static/js/2.a9fb19bc.chunk.js",
-    "static/js/2.a9fb19bc.chunk.js.map": "/5-color-radar/static/js/2.a9fb19bc.chunk.js.map",
+    "main.js": "/5-color-radar/static/js/main.21879b4a.chunk.js",
+    "main.js.map": "/5-color-radar/static/js/main.21879b4a.chunk.js.map",
+    "runtime-main.js": "/5-color-radar/static/js/runtime-main.ee5cb3b3.js",
+    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.ee5cb3b3.js.map",
+    "static/js/2.16b5f408.chunk.js": "/5-color-radar/static/js/2.16b5f408.chunk.js",
+    "static/js/2.16b5f408.chunk.js.map": "/5-color-radar/static/js/2.16b5f408.chunk.js.map",
     "static/js/3.5539fe2d.chunk.js": "/5-color-radar/static/js/3.5539fe2d.chunk.js",
     "static/js/3.5539fe2d.chunk.js.map": "/5-color-radar/static/js/3.5539fe2d.chunk.js.map",
     "static/js/4.7c9a734a.chunk.js": "/5-color-radar/static/js/4.7c9a734a.chunk.js",
@@ -33,8 +33,8 @@
     "static/js/14.1b3bfd85.chunk.js.map": "/5-color-radar/static/js/14.1b3bfd85.chunk.js.map",
     "static/js/15.a8ca1b88.chunk.js": "/5-color-radar/static/js/15.a8ca1b88.chunk.js",
     "static/js/15.a8ca1b88.chunk.js.map": "/5-color-radar/static/js/15.a8ca1b88.chunk.js.map",
-    "static/js/16.732b1381.chunk.js": "/5-color-radar/static/js/16.732b1381.chunk.js",
-    "static/js/16.732b1381.chunk.js.map": "/5-color-radar/static/js/16.732b1381.chunk.js.map",
+    "static/js/16.f8c7b377.chunk.js": "/5-color-radar/static/js/16.f8c7b377.chunk.js",
+    "static/js/16.f8c7b377.chunk.js.map": "/5-color-radar/static/js/16.f8c7b377.chunk.js.map",
     "static/js/17.56a89d04.chunk.js": "/5-color-radar/static/js/17.56a89d04.chunk.js",
     "static/js/17.56a89d04.chunk.js.map": "/5-color-radar/static/js/17.56a89d04.chunk.js.map",
     "static/js/18.24d14a66.chunk.js": "/5-color-radar/static/js/18.24d14a66.chunk.js",
@@ -99,7 +99,7 @@
     "static/js/47.5ffeb839.chunk.js.map": "/5-color-radar/static/js/47.5ffeb839.chunk.js.map",
     "index.html": "/5-color-radar/index.html",
     "static/css/main.5eb2bebe.chunk.css.map": "/5-color-radar/static/css/main.5eb2bebe.chunk.css.map",
-    "static/js/2.a9fb19bc.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.a9fb19bc.chunk.js.LICENSE.txt",
+    "static/js/2.16b5f408.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.16b5f408.chunk.js.LICENSE.txt",
     "static/media/Aggression.svg": "/5-color-radar/static/media/Aggression.0e78cec4.svg",
     "static/media/Altruism.svg": "/5-color-radar/static/media/Altruism.bd89620a.svg",
     "static/media/Ambition.svg": "/5-color-radar/static/media/Ambition.9b2c66ed.svg",
@@ -122,7 +122,7 @@
     "static/media/Red and Green.svg": "/5-color-radar/static/media/Red and Green.6a019572.svg",
     "static/media/Red and White.svg": "/5-color-radar/static/media/Red and White.6a019572.svg",
     "static/media/Red.svg": "/5-color-radar/static/media/Red.78f7873f.svg",
-    "static/media/The Abzan Houses.svg": "/5-color-radar/static/media/The Abzan Houses.de8fd649.svg",
+    "static/media/The Abzan Houses.svg": "/5-color-radar/static/media/The Abzan Houses.2a799f94.svg",
     "static/media/The Azorius Senate.svg": "/5-color-radar/static/media/The Azorius Senate.caecc337.svg",
     "static/media/The Bant Shard.svg": "/5-color-radar/static/media/The Bant Shard.4daeb727.svg",
     "static/media/The Boros Legion.svg": "/5-color-radar/static/media/The Boros Legion.afb8677b.svg",
@@ -150,9 +150,9 @@
     "static/media/background.89a5c9b4.jpg": "/5-color-radar/static/media/background.89a5c9b4.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce6825b8.js",
-    "static/js/2.a9fb19bc.chunk.js",
+    "static/js/runtime-main.ee5cb3b3.js",
+    "static/js/2.16b5f408.chunk.js",
     "static/css/main.5eb2bebe.chunk.css",
-    "static/js/main.54e43477.chunk.js"
+    "static/js/main.21879b4a.chunk.js"
   ]
 }
