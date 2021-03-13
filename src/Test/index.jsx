@@ -15,6 +15,7 @@ import ments from '../data/statements'
 import { colors as order } from '../data/order'
 import './index.scss'
 import { setWeights } from '../Reducer'
+import { useBreakpointValue } from '@chakra-ui/react'
 
 // mapping of responses to an octal-representable number
 const storageMap = {
@@ -149,6 +150,20 @@ const Test = ({ history }) => {
     ></Box>
   )
 
+  const GetResult = () => (
+    <Button
+      title="Skip To Results"
+      w="1.5rem" h="auto"
+      ml="1rem"
+      onClick={() => setIndex(statements.length)}
+    ><ArrowForwardIcon/></Button>
+  )
+
+  // this can't be within a conditional
+  const resultButton = useBreakpointValue({
+    base: null, md: <GetResult/>
+  })
+
   if(!maxes) {
     return (
       <Stack align='center' pt={10}>
@@ -182,7 +197,7 @@ const Test = ({ history }) => {
     'Strongly Agree': { points: 2, color: 'green' },
   }
   const Sentiments = () => (
-    <Flex direction={['column', 'row']} justify="stretch">
+    <Flex direction={['column-reverse', 'row']} justify="stretch">
       {Object.entries(sentiments)
         .map(([timent, { points, color }]) => (
           <Button
@@ -195,16 +210,6 @@ const Test = ({ history }) => {
         ))
       }
     </Flex>
-  )
-
-
-  const GetResult = () => (
-    <Button
-      title="Skip To Results"
-      w="1.5rem" h="auto"
-      ml="1rem"
-      onClick={() => setIndex(statements.length)}
-    ><ArrowForwardIcon/></Button>
   )
 
   return (
@@ -256,7 +261,7 @@ const Test = ({ history }) => {
                 <Sentiments/>
                 <Navigation/>
               </Flex>
-              <GetResult/>
+              {resultButton}
             </Flex>
             <Button
               title={`${showing ? 'Hide' : 'Show'} Position`}

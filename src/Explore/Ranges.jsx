@@ -44,7 +44,7 @@ const Ranges = () => {
       {Object.entries(reasons).map(([id, split], idx) => {
         return (
           <Flex key={id} w='100%' direction='column'>
-            <Flex w='100%' fontSize={[20, 35]}>
+            <Flex w='100%' fontSize={[25, 35]}>
               <Text>{split.left}</Text>
               <Spacer/>
               <Text>{split.right}</Text>

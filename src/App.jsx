@@ -16,7 +16,7 @@ import Explore from './Explore'
 import Home from './Home'
 import Masked from './Masked'
 import { store } from './Reducer'
-import bg from './images/background.jpg'
+import Paths from './Paths'
 
 const overrides = {
   config: {
@@ -25,9 +25,6 @@ const overrides = {
   styles: {
     global: {
       body: {
-        bgImage: `url('${bg}')`,
-        backgroundSize: '100% 100%',
-        backgroundRepeat: 'no-repeat',
         minH: '100vh',
       },
       a: {
@@ -81,6 +78,7 @@ export default () => (
         <Route path='/explore' component={Explore}/>
         <Route path='/test/:answers' component={Test}/>
         <Route path='/test' component={Test}/>
+        <Route path='/paths' component={Paths}/>
         <Route path='/' exact={false} component={Home}/>
       </Switch>
     </Router>

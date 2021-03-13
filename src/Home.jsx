@@ -20,6 +20,6 @@ export default () => (
     <Text>There is <ChakraLink textDecoration='underline' href='//humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d'>a comprehensive article</ChakraLink> describing the fundamental characteristics and conflicts.</Text>
     <Link to='/test'><Button>Test</Button></Link>
     <Link to='/combos'><Button>Combinations</Button></Link>
-    <Link to='/explore'><Button>Experiment</Button></Link>
+    <Link to='/explore'><Button>Fundamental Conflicts</Button></Link>
   </Stack>
 )

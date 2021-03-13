@@ -17,15 +17,17 @@ export default () => {
 
   useEffect(() => load(), [load])
 
-  console.info(mask)
-
   return (
-    <Flex justify='center' direction='row'>
+    <Flex
+      align="center" justify="center"
+      direction={['column', 'row']}
+      minH='100vh'
+    >
       <Flex align='center' direction='column'>
         {icons && <Image h='45vh' src={icons[mask]}/>}
         <Heading>{masks[mask]}</Heading>
       </Flex>
-      <Flex align='center' pl={3}>
+      <Flex align='center' pl={4}>
         {descriptions[masks[mask]]}
       </Flex>
     </Flex>
