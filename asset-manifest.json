@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/5-color-radar/static/css/main.5eb2bebe.chunk.css",
-    "main.js": "/5-color-radar/static/js/main.21879b4a.chunk.js",
-    "main.js.map": "/5-color-radar/static/js/main.21879b4a.chunk.js.map",
+    "main.js": "/5-color-radar/static/js/main.391f4596.chunk.js",
+    "main.js.map": "/5-color-radar/static/js/main.391f4596.chunk.js.map",
     "runtime-main.js": "/5-color-radar/static/js/runtime-main.ee5cb3b3.js",
     "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.ee5cb3b3.js.map",
-    "static/js/2.16b5f408.chunk.js": "/5-color-radar/static/js/2.16b5f408.chunk.js",
-    "static/js/2.16b5f408.chunk.js.map": "/5-color-radar/static/js/2.16b5f408.chunk.js.map",
+    "static/js/2.a46b0ac9.chunk.js": "/5-color-radar/static/js/2.a46b0ac9.chunk.js",
+    "static/js/2.a46b0ac9.chunk.js.map": "/5-color-radar/static/js/2.a46b0ac9.chunk.js.map",
     "static/js/3.5539fe2d.chunk.js": "/5-color-radar/static/js/3.5539fe2d.chunk.js",
     "static/js/3.5539fe2d.chunk.js.map": "/5-color-radar/static/js/3.5539fe2d.chunk.js.map",
     "static/js/4.7c9a734a.chunk.js": "/5-color-radar/static/js/4.7c9a734a.chunk.js",
@@ -99,7 +99,7 @@
     "static/js/47.5ffeb839.chunk.js.map": "/5-color-radar/static/js/47.5ffeb839.chunk.js.map",
     "index.html": "/5-color-radar/index.html",
     "static/css/main.5eb2bebe.chunk.css.map": "/5-color-radar/static/css/main.5eb2bebe.chunk.css.map",
-    "static/js/2.16b5f408.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.16b5f408.chunk.js.LICENSE.txt",
+    "static/js/2.a46b0ac9.chunk.js.LICENSE.txt": "/5-color-radar/static/js/2.a46b0ac9.chunk.js.LICENSE.txt",
     "static/media/Aggression.svg": "/5-color-radar/static/media/Aggression.0e78cec4.svg",
     "static/media/Altruism.svg": "/5-color-radar/static/media/Altruism.bd89620a.svg",
     "static/media/Ambition.svg": "/5-color-radar/static/media/Ambition.9b2c66ed.svg",
@@ -146,13 +146,12 @@
     "static/media/White and Black.svg": "/5-color-radar/static/media/White and Black.6a019572.svg",
     "static/media/White and Blue.svg": "/5-color-radar/static/media/White and Blue.6a019572.svg",
     "static/media/White.svg": "/5-color-radar/static/media/White.99a8b423.svg",
-    "static/media/Wisdom.svg": "/5-color-radar/static/media/Wisdom.fbfef02c.svg",
-    "static/media/background.89a5c9b4.jpg": "/5-color-radar/static/media/background.89a5c9b4.jpg"
+    "static/media/Wisdom.svg": "/5-color-radar/static/media/Wisdom.fbfef02c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ee5cb3b3.js",
-    "static/js/2.16b5f408.chunk.js",
+    "static/js/2.a46b0ac9.chunk.js",
     "static/css/main.5eb2bebe.chunk.css",
-    "static/js/main.21879b4a.chunk.js"
+    "static/js/main.391f4596.chunk.js"
   ]
 }
