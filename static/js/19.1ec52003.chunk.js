@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[19],{160:function(a,o,s){"use strict";s.r(o),o.default=s.p+"static/media/The Boros Legion.afb8677b.svg"}}]);
-//# sourceMappingURL=19.1ec52003.chunk.js.map

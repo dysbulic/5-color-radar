@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[22],{163:function(a,r,s){"use strict";s.r(r),r.default=s.p+"static/media/The Golgari Swarm.b4b00abb.svg"}}]);
-//# sourceMappingURL=22.ae9cab6c.chunk.js.map

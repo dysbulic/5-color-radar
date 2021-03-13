@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[25],{166:function(s,a,r){"use strict";r.r(a),a.default=r.p+"static/media/The House Dimir.8b1e75c8.svg"}}]);
-//# sourceMappingURL=25.e3c15fa3.chunk.js.map

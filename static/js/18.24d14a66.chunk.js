@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[18],{159:function(a,r,s){"use strict";s.r(r),r.default=s.p+"static/media/The Bant Shard.4daeb727.svg"}}]);
-//# sourceMappingURL=18.24d14a66.chunk.js.map

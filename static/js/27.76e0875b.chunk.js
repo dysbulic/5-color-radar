@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[27],{168:function(a,s,e){"use strict";e.r(s),s.default=e.p+"static/media/The Jeskai Way.752f40e0.svg"}}]);
-//# sourceMappingURL=27.76e0875b.chunk.js.map
