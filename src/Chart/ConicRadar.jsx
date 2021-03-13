@@ -43,7 +43,7 @@ const ConicRadar = ({ weights, size }) => {
         <circle key={p.color}
           cx={p.x} cy={p.y} r={0.05 * size}
           className='point'
-          style={{ fill: order[i] }}
+          style={{ fill: p.color }}
         >
           <title>{`${capitalize(p.color)}: ${(weights[p.color] * 100).toFixed(1)}%
           `}</title>

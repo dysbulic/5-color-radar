@@ -1,0 +1,81 @@
+line {
+  stroke-width: 15;
+  stroke-opacity: 0.5;
+}
+
+#head {
+  opacity: 0.25;
+}
+
+.conflict {
+  -webkit-text-stroke-width: 0.75px;
+  text-shadow:
+   -2px -2px 0 #000,
+    2px -2px 0 #000,
+   -2px  2px 0 #000,
+    2px  2px 0 #000;
+}
+
+.side .bg {
+  stroke: black;
+  stroke-width: 17;
+  stroke-opacity: 0.25;
+}
+
+.side .handle {
+  transition: fill, transform 0.25s;
+
+  circle:first-of-type {
+    stroke: orangered;
+  }
+
+  circle {
+    transform-origin: center;
+  }
+
+  &:hover {
+    //transform: scale(1.25);
+    fill: blue;
+    fill-opacity: 0.5;
+  }
+}
+
+.bg {
+  rect {
+    fill: gold;
+    fill-opacity: 0.5;
+    stroke: gold;
+    stroke-opacity: 0.75;
+    stroke-width: 25;
+  }
+
+  text {
+    font-size: 55px;
+    user-select: none;
+  }
+}
+
+.justice {
+  fill: peachpuff;
+  rect { stroke: peachpuff; }
+}
+
+.wisdom {
+  fill: darkblue;
+  rect { stroke: darkblue; }
+}
+
+.ambition {
+  fill: black;
+  rect { stroke: black; }
+}
+
+.chaos {
+  fill: darkred;
+  rect { stroke: darkred; }
+}
+
+.balance {
+  fill: darkgreen;
+  rect { stroke: darkgreen; }
+}

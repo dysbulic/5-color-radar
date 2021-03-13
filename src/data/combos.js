@@ -107,7 +107,7 @@ export const descriptions = {
     <UnorderedList>
       <ListItem><b>Magic Mythos</b>: The guild of Ravnica responsible for membership.</ListItem>
       <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#2ddf:~:text=Red%20and%20green%20are%20the%20enemies%20of%20blue' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Joined by <i>authenticity</i>…</q></ListItem>
-      <ListItem><Link href='https://mtg.fandom.com/wiki/Golgari_Swarm' target='_blank'>The Golgari Swarm on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
+      <ListItem><Link href='https://mtg.fandom.com/wiki/Gruul_Clans' target='_blank'>The Gruul Clans on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
     </UnorderedList>
   ),
   'The Selesnya Conclave': ( // WG

@@ -17,6 +17,8 @@ import Home from './Home'
 import Masked from './Masked'
 import { store } from './Reducer'
 import Paths from './Paths'
+import Spectrum from './Spectrum'
+import About from './About'
 
 const overrides = {
   config: {
@@ -68,6 +70,9 @@ export default () => (
               <MenuItem>
                 <Link to='/explore'>🔭 Explore</Link>
               </MenuItem>
+              <MenuItem>
+                <Link to='/about'>📰 About</Link>
+              </MenuItem>
             </MenuList>
           </>
         )}
@@ -79,6 +84,8 @@ export default () => (
         <Route path='/test/:answers' component={Test}/>
         <Route path='/test' component={Test}/>
         <Route path='/paths' component={Paths}/>
+        <Route path='/spectrum' component={Spectrum}/>
+        <Route path='/about' component={About}/>
         <Route path='/' exact={false} component={Home}/>
       </Switch>
     </Router>

@@ -27,8 +27,14 @@
      id="defs8">
     <filter
        style="color-interpolation-filters:sRGB;"
-       inkscape:label="Drop Shadow"
-       id="filter855">
+       inkscape:label="Chalk and Sponge"
+       id="filter855"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.3">
       <feFlood
          flood-opacity="0.803922"
          flood-color="rgb(42,29,4)"
@@ -54,8 +60,53 @@
          in="SourceGraphic"
          in2="offset"
          operator="over"
-         result="composite2"
+         result="fbSourceGraphic"
          id="feComposite853" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix897" />
+      <feTurbulence
+         id="feTurbulence899"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1"
+         in="fbSourceGraphic" />
+      <feDisplacementMap
+         in2="result1"
+         id="feDisplacementMap901"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="30"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       inkscape:label="Chalk and Sponge"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       width="1.6"
+       height="2"
+       y="-0.5"
+       x="-0.3"
+       style="color-interpolation-filters:sRGB;"
+       id="filter907">
+      <feTurbulence
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1"
+         id="feTurbulence903" />
+      <feDisplacementMap
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="30"
+         in="SourceGraphic"
+         in2="result1"
+         id="feDisplacementMap905" />
     </filter>
   </defs>
   <sodipodi:namedview
@@ -72,14 +123,15 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="4"
-     inkscape:cx="-0.27321813"
+     inkscape:cx="49.726782"
      inkscape:cy="70.048502"
      inkscape:window-x="1542"
-     inkscape:window-y="278"
+     inkscape:window-y="191"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="svg4"
+     inkscape:document-rotation="0" />
   <circle
-     style="fill:#fcfcc1;fill-rule:evenodd;fill-opacity:1;stroke:#0a113a;stroke-opacity:0.77288759;stroke-width:1.6;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:#fcfcc1;fill-rule:evenodd;fill-opacity:1;stroke:#0a113a;stroke-opacity:0.77288759;stroke-width:1.6;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter907)"
      id="path839"
      cx="50.069565"
      cy="50.16346"
@@ -99,4 +151,30 @@
        cy="50.147499"
        r="18.12343" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:15.7668px;line-height:0.95;font-family:sans-serif;stroke-width:0.379109;stroke-miterlimit:4;stroke-dasharray:none"
+     x="50.044773"
+     y="27.222897"
+     id="text919"><tspan
+       sodipodi:role="line"
+       x="50.044773"
+       y="27.222897"
+       style="font-size:15.7668px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.379109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan921">Mana</tspan><tspan
+       sodipodi:role="line"
+       x="50.044773"
+       y="42.201355"
+       style="font-size:15.7668px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.379109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan1645">Colors</tspan><tspan
+       sodipodi:role="line"
+       x="50.044773"
+       y="57.179817"
+       style="font-size:15.7668px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.379109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan925">Iconography</tspan><tspan
+       sodipodi:role="line"
+       x="50.044773"
+       y="72.158279"
+       style="font-size:15.7668px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.379109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan923">© MTG</tspan></text>
 </svg>
