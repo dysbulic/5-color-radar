@@ -215,7 +215,15 @@
          type="fractalNoise"
          numOctaves="1"
          baseFrequency="0.2"
-         id="feTurbulence3130" />
+         id="feTurbulence3130">
+         <animate
+            attributeName="baseFrequency"
+            values="0.2; 0.25; 0.5;"
+            dur="1s"
+            begin="0s"
+            repeatCount="indefinite"
+         />
+      </feTurbulence>
       <feComposite
          in2="result8"
          result="result6"
@@ -247,7 +255,7 @@
       <feDisplacementMap
          in2="result4"
          yChannelSelector="G"
-         scale="50"
+         scale="200"
          xChannelSelector="R"
          id="feDisplacementMap3140"
          result="fbSourceGraphic" />
@@ -335,8 +343,9 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg22186"
      inkscape:document-rotation="0" />
+  <g style="filter:url(#filter3142)">
   <circle
-     style="fill:#67c1f5;fill-opacity:1;fill-rule:evenodd;stroke:#0d0d13;stroke-width:28.6745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter3142)"
+     style="fill:#67c1f5;fill-opacity:1;fill-rule:evenodd;stroke:#0d0d13;stroke-width:28.6745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path22770"
      cx="603.44031"
      cy="603.44031"
@@ -346,6 +355,7 @@
      d="M 488.43562,1132.035 C 312.53303,1064.905 212.62293,879.56337 246.78858,683.75761 273.13736,532.74344 406.6181,309.2453 578.60663,128.16184 682.67657,18.589494 681.06671,18.277094 674.32513,146.71116 667.22103,282.05574 691.98554,351.84227 797.86812,494.85933 930.75592,674.3534 960.25786,764.22435 925.51873,883.72321 869.7489,1075.5658 657.06821,1196.3918 488.43562,1132.035 Z M 848.56051,825.89293 c 21.92062,-40.95843 16.78174,-106.03312 -12.97828,-164.36931 -28.9643,-56.77446 -54.94031,-81.69258 -54.61567,-52.39238 0.11265,9.83023 -13.19641,59.03154 -29.56749,109.33478 -24.5812,75.53064 -26.70209,95.15115 -12.18051,112.64976 25.13933,30.29049 92.04612,27.09534 109.34195,-5.22285 z"
      id="path16929"
      sodipodi:nodetypes="ssssssssscsss" />
+  </g>
   <text
      xml:space="preserve"
      style="font-size:183.685px;line-height:0.95;font-family:sans-serif;stroke-width:4.41667;stroke-miterlimit:4;stroke-dasharray:none"

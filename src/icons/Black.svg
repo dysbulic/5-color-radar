@@ -82,9 +82,17 @@
          id="feDisplacementMap2311"
          yChannelSelector="A"
          xChannelSelector="R"
-         scale="14.3"
+         scale="17.3"
          in="fbSourceGraphic"
-         result="fbSourceGraphic" />
+         result="fbSourceGraphic">
+         <animate
+            attributeName="scale"
+            values="17.3; 20; 30; 20;"
+            dur="1s"
+            begin="0s"
+            repeatCount="indefinite"
+         />
+      </feDisplacementMap>
       <feColorMatrix
          result="fbSourceGraphicAlpha"
          in="fbSourceGraphic"
@@ -156,7 +164,16 @@
       <feTurbulence
          numOctaves="1"
          baseFrequency="0.002 0.107"
-         id="feTurbulence2313" />
+         id="feTurbulence2313"
+      >
+         <animate
+            attributeName="baseFrequency"
+            values="0.2 0.107; 0.25 0.15; 0.5 0.25;"
+            dur="1s"
+            begin="0s"
+            repeatCount="indefinite"
+         />
+      </feTurbulence>
       <feColorMatrix
          values="2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0.5"
          result="result91"
@@ -253,8 +270,9 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg20844"
      inkscape:document-rotation="0" />
+  <g style="filter:url(#filter2319)">
   <circle
-     style="fill:#848484;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:61.0547;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter2319)"
+     style="fill:#848484;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:61.0547;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path21419"
      cx="992.73438"
      cy="992.73438"
@@ -265,6 +283,7 @@
      id="path16929"
      sodipodi:nodetypes="sssssssssssssssssssssscccsssscssssssssssscssssscsssssssssssccss"
      transform="matrix(14.536824,0,0,14.536824,3625.4206,269.93885)" />
+  </g>
   <text
      xml:space="preserve"
      style="font-size:293.104px;line-height:1.1;font-family:sans-serif;stroke-width:7.04761;stroke-miterlimit:4;stroke-dasharray:none"

@@ -1,4 +1,4 @@
-import { Heading, Flex, Spacer } from '@chakra-ui/react'
+import { Heading, Flex, Spacer, Tooltip } from '@chakra-ui/react'
 import { useEffect, useState, useCallback } from 'react'
 import { connect } from 'react-redux'
 import { capitalize } from './util'
@@ -75,11 +75,13 @@ const Results = ({ weights, chart = true, dispatch, ...props }) => {
             </Flex>
             <Flex direction='row' pt='0.5rem'>
               {order.map((c, i) => (mask & (1 << order.length - i - 1)) ? (
-                <object
-                  key={c} data={icons[capitalize(c)]}
-                  aria-label={capitalize(c)} title={capitalize(c)}
-                  style={{ height: '10vh', width: '10vh'  }}
-                />
+                <Tooltip hasArrow position="Top" label={capitalize(c)}>
+                  <object
+                    key={c} data={icons[capitalize(c)]}
+                    aria-label={capitalize(c)} title={capitalize(c)}
+                    style={{ height: '10vh', width: '10vh'  }}
+                  />
+                </Tooltip>
               ) : ( null ))}
             </Flex>
             {chart ? (

@@ -46,6 +46,7 @@ export default () => (
         <rect className='green bar' transform="rotate(20.251)" x="63.553" y="96.965" width="43.49" height="1.3198"/>
         <rect className='white bar' transform="rotate(90.107)" x="58.829" y="-105.16" width="43.49" height="1.3198"/>
       </g>
+      <a xlinkHref='/5-color-radar#/combos/11111'>
       <g className='partition' id='WUBRG'>
         <g transform="translate(-.75238 9.3577)">
           <path className='red' d="m105.26 137.21a4.5883 4.5883 0 0 1-4.295-3.0248l4.3137-1.5635z"/>
@@ -56,6 +57,7 @@ export default () => (
         </g>
         <text><tspan x="104.52714" y="149.84612" textAnchor="middle">WUBRG</tspan></text>
       </g>
+      </a>
       <a xlinkHref='/5-color-radar#/combos/10111'>
       <g className='partition' id='Aggression'>
         <g transform="translate(-2.2915 1.5732)">
@@ -67,6 +69,7 @@ export default () => (
         <text><tspan x="88.826691" y="157.08694" textAnchor="end">Aggression</tspan></text>
       </g>
       </a>
+      <a xlinkHref='/5-color-radar#/combos/11011'>
       <g className='partition' id='Altruism'>
         <g transform="matrix(-.64542 .76383 .76383 .64542 44.502 -44.454) rotate(4.0434 112.45 301.65)">
           <path className='red' d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"/>
@@ -76,6 +79,8 @@ export default () => (
         </g>
         <text><tspan x="94.016281" y="132.82716" textAnchor="middle">Altruism</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11101'>
       <g className='partition' id='Growth'>
         <g transform="rotate(141.57 111.1 138.72) rotate(4.0434 112.45 301.65)">
           <path className='white' d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"/>
@@ -85,6 +90,8 @@ export default () => (
         </g>
         <text><tspan x="115.37243" y="132.5842" textAnchor="middle">Growth</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11110'>
       <g className='partition' id='Artifice'>
         <g transform="rotate(217.22 111.57 143.42) rotate(4.0434 112.45 301.65)">
           <path className='blue' d="m89.116 151.8a4.5883 4.5883 0 0 1-5.8731-2.7517l4.3137-1.5635z"/>
@@ -94,6 +101,8 @@ export default () => (
         </g>
         <text><tspan x="126.24714" y="156.67242" textAnchor="middle">Artifice</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01111'>
       <g className='partition' id='Chaos'>
         <g transform="rotate(196.95 107.26 152.42) rotate(4.0434 112.45 301.65)">
           <g transform="translate(8.2708 -4.8021)">
@@ -105,6 +114,8 @@ export default () => (
         </g>
         <text><tspan x="111.35828" y="169.47418" textAnchor="middle">Chaos</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11100'>
       <g className='partition' id='Esper'>
         <g transform="rotate(141.57 123.78 144.87) rotate(4.0434 112.45 301.65)">
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -113,6 +124,8 @@ export default () => (
         </g>
         <text><tspan x="139.82114" y="136.28549" textAnchor="middle">Esper</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01101'>
       <g className='partition' id='Sultai'>
         <g transform="rotate(-58.809 129.64 111.85) rotate(4.0434 112.45 301.65)">
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -121,6 +134,8 @@ export default () => (
         </g>
         <text><tspan x="145.07784" y="164.37773" textAnchor="middle">Sultai</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00111'>
       <g className='partition' id='Jund'>
         <g transform="rotate(-72.679 109.77 172.89) rotate(4.0434 112.45 301.65)">
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -129,6 +144,8 @@ export default () => (
         </g>
         <text><tspan x="82.65567" y="183.77724" textAnchor="middle">Jund</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01110'>
       <g className='partition' id='Grixis'>
         <g transform="rotate(96.582 99.904 173.95) rotate(4.0434 112.45 301.65)">
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -137,6 +154,8 @@ export default () => (
         </g>
         <text><tspan x="125.85937" y="183.6033" textAnchor="middle">Grixis</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01011'>
       <g className='partition' id='Temur'>
         <g transform="rotate(-37.797 96.898 198.95) rotate(4.0434 112.45 301.65)">
           <path className='red' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -145,6 +164,8 @@ export default () => (
         </g>
         <text><tspan x="63.165764" y="164.39967" textAnchor="middle">Temur</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10011'>
       <g className='partition' id='Naya'>
         <g transform="rotate(121.14 87.156 127.95) rotate(4.0434 112.45 301.65)">
           <path className='white' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -153,6 +174,8 @@ export default () => (
         </g>
         <text><tspan x="72.989021" y="136.0551" textAnchor="end">Naya</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10101'>
       <g className='partition' id='Abzan'>
         <g transform='rotate(-82.349 61.852 131.97)'>
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -161,6 +184,8 @@ export default () => (
         </g>
         <text><tspan x="79.214195" y="116.41006" textAnchor="middle">Abzan</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11001'>
       <g className='partition' id='Bant'>
         <g transform="rotate(-48.11 50.939 117.02) rotate(4.0434 112.45 301.65)">
           <path className='white' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -169,6 +194,8 @@ export default () => (
         </g>
         <text><tspan x="103.94183" y="108.98739" textAnchor="middle">Bant</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11010'>
       <g className='partition' id='Jeskai'>
         <g transform="matrix(.92202 .38715 .38715 -.92202 -18.084 206.31) rotate(4.0434 112.45 301.65)">
           <g transform="translate(-1.6747 .4394)">
@@ -179,6 +206,8 @@ export default () => (
         </g>
         <text><tspan x="129.69531" y="116.34969" textAnchor="middle">Jeskai</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10110'>
       <g className='partition' id='Mardu'>
         <g transform="rotate(130.11 92.762 165.99) rotate(4.0434 112.45 301.65)">
           <path className='white' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-4.2998 1.4893 4.5883 4.5883 0 0 1-3.4679-2.9462l4.3137-1.5635z"/>
@@ -187,6 +216,8 @@ export default () => (
         </g>
         <text><tspan x="111.05529" y="190.504" textAnchor="middle">Mardu</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/11000'>
       <g className='partition' id='Azorius'>
         <g transform="matrix(.94702 .32117 .32117 -.94702 9.4846 203.42)">
           <path className='white' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -194,6 +225,8 @@ export default () => (
         </g>
         <text><tspan x="141.59886" y="99.746872" textAnchor="middle">Azorius</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01001'>
       <g className='partition' id='Simic'>
         <g transform="matrix(.96486 -.26276 -.26276 -.96486 58.623 246.09)">
           <path className='blue' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -201,6 +234,8 @@ export default () => (
         </g>
         <text><tspan x="109.75101" y="87.734589" textAnchor="middle">Simic</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10001'>
       <g className='partition' id='Selesnya'>
         <g>
           <path className='white' transform="matrix(-.093379 .99563 .99563 .093379 0 0)" d="m88.404 80.425a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -208,6 +243,8 @@ export default () => (
         </g>
         <text><tspan x="66.688622" y="101.44799" textAnchor="middle">Selesnya</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10010'>
       <g className='partition' id='Boros'>
         <g>
           <path className='white' transform="matrix(.50201 .86486 .86486 -.50201 0 0)" d="m131.5-17.406a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -215,6 +252,8 @@ export default () => (
         </g>
         <text><tspan x="49.726765" y="129.3829" textAnchor="middle">Boros</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00011'>
       <g className='partition' id='Gruul'>
         <g>
           <path className='green' transform="matrix(.93672 .35007 .35007 -.93672 0 0)" d="m104.12-133.7a4.5883 4.5883 0 0 1-6.432 0.47022 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -222,6 +261,8 @@ export default () => (
         </g>
         <text><tspan x="44.100929" y="171.7877" textAnchor="middle">Gruul</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00110'>
       <g className='partition' id='Rakdos'>
         <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)">
           <path className='black' transform="rotate(252.65)" d="m-56.753 96.652a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -229,6 +270,8 @@ export default () => (
         </g>
         <text><tspan x="104.40408" y="211.60379" textAnchor="middle">Rakdos</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01010'>
       <g className='partition' id='Izzet'>
         <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)">
           <path className='blue' transform="rotate(106.27)" d="m16.873-142.15a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -236,6 +279,8 @@ export default () => (
         </g>
         <text><tspan x="137.68175" y="200.42857" textAnchor="middle">Izzet</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00101'>
       <g className='partition' id='Golgari'>
         <g transform="matrix(.92202 .38715 .38715 -.92202 -6.161 189.42)">
           <path className='black' transform="rotate(217.21)" d="m-68.437 25.024a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -243,6 +288,8 @@ export default () => (
         </g>
         <text><tspan x="71.357056" y="200.75182" textAnchor="middle">Golgari</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01100'>
       <g className='partition' id='Dimir'>
         <g transform="matrix(.083185 -.99653 -.99653 -.083185 301.64 263.01)">
           <path className='black' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -250,6 +297,8 @@ export default () => (
         </g>
         <text><tspan x="163.48483" y="171.2668" textAnchor="middle">Dimir</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10100'>
       <g className='partition' id='Orzhov'>
         <g transform="matrix(-.58943 -.80782 -.80782 .58943 333.01 104.92)">
           <path className='white' transform="rotate(33.468)" d="m157.82 77.772a4.5883 4.5883 0 0 1-6.432 0.47023 4.5883 4.5883 0 0 1-0.54859-6.4258l3.5266 2.9352z"/>
@@ -257,36 +306,47 @@ export default () => (
         </g>
         <text><tspan x="158.04478" y="129.43413" textAnchor="middle">Orzhov</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00001'>
       <g className='partition' id='Green'>
         <g>
           <path className='green' d="m29.01 109.91a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"/>
         </g>
         <text><tspan x="26.594273" y="122.32647" textAnchor="middle">Green</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00010'>
       <g className='partition' id='Red'>
         <g>
           <path className='red' d="m59.322 205.24a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"/>
         </g>
         <text><tspan x="65.481499" y="212.30121" textAnchor="middle">Red</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/00100'>
       <g className='partition' id='Black'>
         <g>
           <path className='black' d="m153.36 205a4.7495 4.7495 0 0 1 2.6261 6.1786 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1706-2.6448"/>
         </g>
         <text><tspan x="144.78781" y="210.83403" textAnchor="end">Black</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/01000'>
       <g className='partition' id='Blue'>
         <g>
           <path className='blue' d="m183.13 109.73a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"/>
         </g>
         <text><tspan x="181.51454" y="122.67811" textAnchor="middle">Blue</tspan></text>
       </g>
+      </a>
+      <a xlinkHref='/5-color-radar#/combos/10000'>
       <g className='partition' id='White'>
         <g>
           <path className='white' d="m106.14 55.836a4.7495 4.7495 0 0 1 2.6261 6.1785 4.7495 4.7495 0 0 1-6.1759 2.6323 4.7495 4.7495 0 0 1-2.6386-6.1732 4.7495 4.7495 0 0 1 6.1705-2.6448"/>
         </g>
         <text><tspan x="106.52623" y="67.853714" textAnchor="start">White</tspan></text>
       </g>
+      </a>
     </g>
   </SVG>
 )

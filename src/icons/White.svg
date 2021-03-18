@@ -99,7 +99,15 @@
          seed="0"
          numOctaves="5"
          result="result1"
-         id="feTurbulence903" />
+         id="feTurbulence903">
+        <animate
+          attributeName="baseFrequency"
+          values="0.4; 0.5; 0.65;"
+          dur="1s"
+          begin="0s"
+          repeatCount="indefinite"
+        />
+      </feTurbulence>
       <feDisplacementMap
          xChannelSelector="R"
          yChannelSelector="G"
@@ -130,8 +138,9 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg4"
      inkscape:document-rotation="0" />
+  <g style="filter:url(#filter907)">
   <circle
-     style="fill:#fcfcc1;fill-rule:evenodd;fill-opacity:1;stroke:#0a113a;stroke-opacity:0.77288759;stroke-width:1.6;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter907)"
+     style="fill:#fcfcc1;fill-rule:evenodd;fill-opacity:1;stroke:#0a113a;stroke-opacity:0.77288759;stroke-width:1.6;stroke-miterlimit:4;stroke-dasharray:none"
      id="path839"
      cx="50.069565"
      cy="50.16346"
@@ -150,6 +159,7 @@
        cx="50.215729"
        cy="50.147499"
        r="18.12343" />
+  </g>
   </g>
   <text
      xml:space="preserve"

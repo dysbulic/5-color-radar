@@ -107,7 +107,15 @@
          seed="0"
          numOctaves="5"
          result="result1"
-         in="fbSourceGraphic" />
+         in="fbSourceGraphic">
+        <animate
+          attributeName="baseFrequency"
+          values="0.4; 0.5; 0.65;"
+          dur="1s"
+          begin="0s"
+          repeatCount="indefinite"
+        />
+      </feTurbulence>
       <feDisplacementMap
          in2="result1"
          id="feDisplacementMap9257"
@@ -207,7 +215,15 @@
          seed="0"
          numOctaves="5"
          result="result1"
-         in="fbSourceGraphic" />
+         in="fbSourceGraphic">
+        <animate
+          attributeName="baseFrequency"
+          values="0.4; 0.5; 0.65;"
+          dur="1s"
+          begin="0s"
+          repeatCount="indefinite"
+        />
+      </feTurbulence>
       <feDisplacementMap
          in2="result1"
          id="feDisplacementMap9251"
