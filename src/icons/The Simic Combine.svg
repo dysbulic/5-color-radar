@@ -216,7 +216,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="2.7075311"
-     inkscape:cx="-97.108725"
+     inkscape:cx="33.637696"
      inkscape:cy="92.233407"
      inkscape:window-x="590"
      inkscape:window-y="207"
@@ -235,7 +235,7 @@
      id="path5839" />
   <text
      xml:space="preserve"
-     style="font-size:14.7211px;line-height:1.25;font-family:sans-serif;stroke-width:0.356;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     style="font-size:14.7211px;line-height:1.25;font-family:sans-serif;stroke:#000000;stroke-width:0.356;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      x="58.847687"
      y="39.299496"
      id="text919"><tspan
@@ -243,20 +243,20 @@
        id="tspan917"
        x="58.847687"
        y="39.299496"
-       style="font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.356;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;font-weight:bold">Guilds of</tspan><tspan
+       style="font-weight:bold;font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.356;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Guilds of</tspan><tspan
        sodipodi:role="line"
-       x="58.847687"
+       x="58.847683"
        y="57.700871"
-       style="font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.356;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;font-weight:bold"
+       style="font-weight:bold;font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.356;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="tspan921">Ravnica</tspan><tspan
        sodipodi:role="line"
        x="58.847687"
-       y="76.102242"
-       style="font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.356;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;font-weight:bold"
+       y="76.102249"
+       style="font-weight:bold;font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.356;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="tspan925">Iconography</tspan><tspan
        sodipodi:role="line"
        x="58.847687"
        y="94.503616"
-       style="font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.356;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;font-weight:bold"
-       id="tspan923">© MTG</tspan></text>
+       style="font-weight:bold;font-size:14.7211px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.356;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan923">© Wizards</tspan></text>
 </svg>

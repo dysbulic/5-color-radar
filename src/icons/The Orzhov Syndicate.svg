@@ -17,13 +17,13 @@
   <defs
      id="defs2143">
     <filter
-       inkscape:label="Glowing Bubble"
-       inkscape:menu="Ridges"
-       inkscape:menu-tooltip="Bubble effect with refraction and glow"
-       x="-0.25"
-       y="-0.25"
-       width="1.5"
-       height="1.5"
+       inkscape:label="Chalk and Sponge"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       x="-0.3"
+       y="-0.5"
+       width="1.6"
+       height="2"
        style="color-interpolation-filters:sRGB;"
        id="filter8961">
       <feGaussianBlur
@@ -93,16 +93,37 @@
       <feBlend
          mode="multiply"
          in2="result91"
-         id="feBlend8959" />
+         id="feBlend8959"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix9253" />
+      <feTurbulence
+         id="feTurbulence9255"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1"
+         in="fbSourceGraphic" />
+      <feDisplacementMap
+         in2="result1"
+         id="feDisplacementMap9257"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="30"
+         in="fbSourceGraphic" />
     </filter>
     <filter
-       inkscape:label="Glowing Bubble"
-       inkscape:menu="Ridges"
-       inkscape:menu-tooltip="Bubble effect with refraction and glow"
-       x="-0.25"
-       y="-0.25"
-       width="1.5"
-       height="1.5"
+       inkscape:label="Chalk and Sponge"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Low turbulence gives sponge look and high turbulence chalk"
+       x="-0.3"
+       y="-0.5"
+       width="1.6"
+       height="2"
        style="color-interpolation-filters:sRGB;"
        id="filter8987">
       <feGaussianBlur
@@ -172,7 +193,28 @@
       <feBlend
          mode="multiply"
          in2="result91"
-         id="feBlend8985" />
+         id="feBlend8985"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix9247" />
+      <feTurbulence
+         id="feTurbulence9249"
+         baseFrequency="0.4"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="5"
+         result="result1"
+         in="fbSourceGraphic" />
+      <feDisplacementMap
+         in2="result1"
+         id="feDisplacementMap9251"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="30"
+         in="fbSourceGraphic" />
     </filter>
   </defs>
   <sodipodi:namedview
@@ -248,8 +290,8 @@
          id="tspan925">Iconography</tspan><tspan
          sodipodi:role="line"
          x="112.13496"
-         y="197.46722"
+         y="197.46724"
          style="font-weight:bold;font-size:32.9394px;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.9808;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="tspan923">© MTG</tspan></text>
+         id="tspan923">© Wizards</tspan></text>
   </g>
 </svg>
