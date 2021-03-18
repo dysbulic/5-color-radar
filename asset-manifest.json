@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/5-color-radar/static/css/main.b47c593e.chunk.css",
-    "main.js": "/5-color-radar/static/js/main.5ab65398.chunk.js",
-    "main.js.map": "/5-color-radar/static/js/main.5ab65398.chunk.js.map",
-    "runtime-main.js": "/5-color-radar/static/js/runtime-main.13718fe4.js",
-    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.13718fe4.js.map",
+    "main.js": "/5-color-radar/static/js/main.4506febf.chunk.js",
+    "main.js.map": "/5-color-radar/static/js/main.4506febf.chunk.js.map",
+    "runtime-main.js": "/5-color-radar/static/js/runtime-main.f5bb8324.js",
+    "runtime-main.js.map": "/5-color-radar/static/js/runtime-main.f5bb8324.js.map",
     "static/js/2.a526b11d.chunk.js": "/5-color-radar/static/js/2.a526b11d.chunk.js",
     "static/js/2.a526b11d.chunk.js.map": "/5-color-radar/static/js/2.a526b11d.chunk.js.map",
     "static/js/3.6e4d9eda.chunk.js": "/5-color-radar/static/js/3.6e4d9eda.chunk.js",
@@ -13,8 +13,8 @@
     "static/js/4.165d1d19.chunk.js.map": "/5-color-radar/static/js/4.165d1d19.chunk.js.map",
     "static/js/5.c381ee81.chunk.js": "/5-color-radar/static/js/5.c381ee81.chunk.js",
     "static/js/5.c381ee81.chunk.js.map": "/5-color-radar/static/js/5.c381ee81.chunk.js.map",
-    "static/js/6.2082886f.chunk.js": "/5-color-radar/static/js/6.2082886f.chunk.js",
-    "static/js/6.2082886f.chunk.js.map": "/5-color-radar/static/js/6.2082886f.chunk.js.map",
+    "static/js/6.0278c106.chunk.js": "/5-color-radar/static/js/6.0278c106.chunk.js",
+    "static/js/6.0278c106.chunk.js.map": "/5-color-radar/static/js/6.0278c106.chunk.js.map",
     "static/js/7.8ca3ed89.chunk.js": "/5-color-radar/static/js/7.8ca3ed89.chunk.js",
     "static/js/7.8ca3ed89.chunk.js.map": "/5-color-radar/static/js/7.8ca3ed89.chunk.js.map",
     "static/js/8.b758982e.chunk.js": "/5-color-radar/static/js/8.b758982e.chunk.js",
@@ -104,7 +104,7 @@
     "static/media/Altruism.svg": "/5-color-radar/static/media/Altruism.bd89620a.svg",
     "static/media/Ambition.svg": "/5-color-radar/static/media/Ambition.9b2c66ed.svg",
     "static/media/Artifice.svg": "/5-color-radar/static/media/Artifice.c2083bd0.svg",
-    "static/media/Balance.svg": "/5-color-radar/static/media/Balance.d6be8147.svg",
+    "static/media/Balance.svg": "/5-color-radar/static/media/Balance.50ff1b67.svg",
     "static/media/Black and Green.svg": "/5-color-radar/static/media/Black and Green.6a019572.svg",
     "static/media/Black and Red.svg": "/5-color-radar/static/media/Black and Red.6a019572.svg",
     "static/media/Black.svg": "/5-color-radar/static/media/Black.c0964182.svg",
@@ -149,9 +149,9 @@
     "static/media/Wisdom.svg": "/5-color-radar/static/media/Wisdom.fbfef02c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.13718fe4.js",
+    "static/js/runtime-main.f5bb8324.js",
     "static/js/2.a526b11d.chunk.js",
     "static/css/main.b47c593e.chunk.css",
-    "static/js/main.5ab65398.chunk.js"
+    "static/js/main.4506febf.chunk.js"
   ]
 }
