@@ -52,7 +52,6 @@ const Test = ({ history }) => {
           max = idx
         }
       }
-      setIndex(max ?? idx)
     }
     setStatements(statements)
     const maxes = new Proxy({}, defZero)
