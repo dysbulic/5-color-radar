@@ -1,8 +1,9 @@
 {
   "name": "5-color-radar",
   "homepage": "http://dysbulic.github.io/5-color-radar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
+  "license": "MIT",
   "dependencies": {
     "@chakra-ui/icons": "^1.0.5",
     "@chakra-ui/react": "^1.3.3",
