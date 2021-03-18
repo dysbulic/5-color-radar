@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[33],{179:function(a,i,s){"use strict";s.r(i),i.default=s.p+"static/media/The Simic Combine.a70d26f2.svg"}}]);
-//# sourceMappingURL=33.f42a5721.chunk.js.map

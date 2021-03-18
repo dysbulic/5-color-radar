@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[44],{190:function(a,s,t){"use strict";t.r(s),s.default=t.p+"static/media/Red and White.6a019572.svg"}}]);
-//# sourceMappingURL=44.c054e5c7.chunk.js.map

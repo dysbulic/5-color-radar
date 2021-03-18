@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[24],{170:function(a,s,r){"use strict";r.r(s),s.default=r.p+"static/media/The Gruul Clans.529861c2.svg"}}]);
-//# sourceMappingURL=24.5c40f157.chunk.js.map
