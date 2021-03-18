@@ -1,0 +1,2 @@
+(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[26],{172:function(a,c,e){"use strict";e.r(c),c.default=e.p+"static/media/The Izzet League.085c123c.svg"}}]);
+//# sourceMappingURL=26.2d0b378c.chunk.js.map

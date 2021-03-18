@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[32],{178:function(a,s,c){"use strict";c.r(s),s.default=c.p+"static/media/The Selesnya Conclave.a333351c.svg"}}]);
-//# sourceMappingURL=32.052a9705.chunk.js.map
