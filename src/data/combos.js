@@ -50,7 +50,13 @@ export const descriptions = {
   White: (
     <UnorderedList>
       <ListItem><b>Magic Mythos</b>: The type of mana drawn from the plains.</ListItem>
-      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#e062:~:text=White%20seeks%20peace' target='_blank'><b>Sabien's Explanation</b></Link>: <q>Peace through order…</q></ListItem>
+      <ListItem><b>MetaGame Term</b>: Justice</ListItem>
+      <ListItem><Link href='https://humanparts.medium.com/the-mtg-color-wheel-c9700a7cf36d#e062:~:text=White%20seeks%20peace' target='_blank'><b>Sabien's Explanation</b></Link>:
+        <UnorderedList>
+          <ListItem><q>Peace through order…</q></ListItem>
+          <ListItem><q>A white agent, when presented with a decision or quandary, asks <i>what is the <b>right</b> course of action to take</i>, where <q>right</q> depends on their moral or cultural framework.</q></ListItem>
+        </UnorderedList>
+      </ListItem>
       <ListItem><Link href='https://mtg.fandom.com/wiki/White' target='_blank'>White on the <acronym title='Magic: The Gathering'>MTG</acronym> Wiki</Link></ListItem>
     </UnorderedList>
   ),
