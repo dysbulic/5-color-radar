@@ -1,0 +1,2 @@
+(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[17],{166:function(a,s,r){"use strict";r.r(s),s.default=r.p+"static/media/The Azorius Senate.1f189143.svg"}}]);
+//# sourceMappingURL=17.e12ac982.chunk.js.map

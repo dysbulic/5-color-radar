@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[35],{189:function(r,a,e){"use strict";e.r(a),a.default=e.p+"static/media/The Temur Frontier.71e7c844.svg"}}]);
-//# sourceMappingURL=35.1c5ab8ee.chunk.js.map

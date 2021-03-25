@@ -1,2 +1,0 @@
-(this["webpackJsonp5-color-radar"]=this["webpackJsonp5-color-radar"]||[]).push([[23],{177:function(a,r,s){"use strict";s.r(r),r.default=s.p+"static/media/The Grixis Shard.65417b96.svg"}}]);
-//# sourceMappingURL=23.a509603c.chunk.js.map
