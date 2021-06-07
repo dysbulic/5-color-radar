@@ -27,7 +27,7 @@ export default () => {
         {icons && <Image h='45vh' src={icons[mask]}/>}
         <Heading>{masks[mask]}</Heading>
       </Flex>
-      <Flex align='center' pl={4}>
+      <Flex align='center' pl={4} maxW="35rem">
         {descriptions[masks[mask]]}
       </Flex>
     </Flex>

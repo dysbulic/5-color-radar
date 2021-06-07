@@ -18,6 +18,6 @@ export const reasons = {
   'green-blue': { left: 'Nature', right: 'Nurture' },
   'white-black': { left: 'Group', right: 'Individual' },
   'blue-red': { left: 'Reason', right: 'Emotion' },
-  'black-green': { left: 'Exploitation', right: 'Preservation' },
+  'black-green': { left: 'Leveraging', right: 'Preserving' },
   'red-white': { left: 'Chaos', right: 'Order' },
 }

@@ -75,9 +75,9 @@ const Results = ({ weights, chart = true, dispatch, ...props }) => {
             </Flex>
             <Flex direction='row' pt='0.5rem'>
               {order.map((c, i) => (mask & (1 << order.length - i - 1)) ? (
-                <Tooltip hasArrow position="Top" label={capitalize(c)}>
+                <Tooltip hasArrow key={c} position="Top" label={capitalize(c)}>
                   <object
-                    key={c} data={icons[capitalize(c)]}
+                    data={icons[capitalize(c)]}
                     aria-label={capitalize(c)} title={capitalize(c)}
                     style={{ height: '10vh', width: '10vh'  }}
                   />

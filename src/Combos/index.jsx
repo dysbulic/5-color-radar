@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { chakra } from '@chakra-ui/react'
 import './index.scss'
 

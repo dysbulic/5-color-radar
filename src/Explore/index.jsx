@@ -1,6 +1,6 @@
 import { Flex, useBreakpointValue } from '@chakra-ui/react'
 import { connect } from 'react-redux'
-import Sliders from '../Sliders'
+//import Sliders from '../Sliders'
 import Results from '../Results'
 import Ranges from './Ranges'
 import Chart from '../Chart'

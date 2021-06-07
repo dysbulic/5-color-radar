@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 import { useEffect, useState } from 'react'
 import {
-  Flex, Stack, Box, Spinner, Button, ButtonGroup, Text,
+  Flex, Stack, Box, Spinner, Button, ButtonGroup,
+  Text, Checkbox,
 } from '@chakra-ui/react'
 import {
   ArrowBackIcon, ArrowForwardIcon, ArrowUpIcon, ArrowDownIcon,
@@ -27,6 +28,7 @@ const Test = ({ history }) => {
   const [maxes, setMaxes] = useState()
   const [index, setIndex] = useState(0)
   const [showing, setShowing] = useState(true)
+  const [colors, setColors] = useState(false)
 
   const { answers = '' } = useParams()
   const load = () => {
@@ -62,7 +64,7 @@ const Test = ({ history }) => {
     setMaxes(maxes)
   }
 
-  useEffect(load, [answers])
+  useEffect(load, [answers, statements])
 
   const update = () => {
     if(!maxes) return
@@ -221,10 +223,11 @@ const Test = ({ history }) => {
             style={{
               background: ((() => {
                 if(index === i) return 'yellow'
-                if(s.response < 0) return s.low
-                if(s.response > 0) return s.high
                 if(s.response === 0) return 'orange'
                 if(s.response === null) return 'cyan'
+                if(!colors && s.response) return 'gray'
+                if(s.response < 0) return s.low
+                if(s.response > 0) return s.high
                 return 'transparent'
               })()),
               filter: `brightness(
@@ -252,23 +255,31 @@ const Test = ({ history }) => {
               >
                 <Statement position={statements[index].position}/>
                 {/* ToDo: Make 100% width on mobile, preserving button width */}
-                <ColorBar
+                {colors && <ColorBar
                   from={statements[index].low}
                   to={statements[index].high}
                   mb={3}
-                />
+                />}
                 <Sentiments/>
                 <Navigation/>
               </Flex>
               {resultButton}
             </Flex>
-            <Button
+            <Checkbox
+              type="checkbox"
+              value={colors}
+              onChange={(evt) => setColors(evt.target.checked)}
+              m='1rem auto'
+            >
+              Show Color Choices
+            </Checkbox>
+            {colors && <Button
               title={`${showing ? 'Hide' : 'Show'} Position`}
               maxH='1rem' minW='50%'
               margin='1rem auto'
               onClick={() => setShowing(s => !s)}
-            >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>
-            <Chart key='chart'/>
+            >{showing ? <ArrowUpIcon/> : <ArrowDownIcon/>}</Button>}
+            {colors && <Chart key='chart'/>}
           </Flex>
         )
       }
